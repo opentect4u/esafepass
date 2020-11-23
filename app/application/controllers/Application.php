@@ -15,6 +15,8 @@
 
             $this->load->model('Process');
 
+            $this->load->library('upload');
+
             // For pdf converter -- 
             //$this->load->library('Pdf');
 
@@ -64,9 +66,8 @@
         }
 
         //Leave New Add Form
-        public function add()
-        {
-            
+        public function add(){
+
             if($_SERVER['REQUEST_METHOD'] == "POST")
             {
 
@@ -190,15 +191,14 @@
 
 
         // For handling second application 
-        public function addApplicant()
-        {
+        public function addApplicant(){
 
             $appl_no    =   $this->input->get('appl_no');
             $sl_no      =   $this->input->get('sl_no');
 
-            if($_SERVER['REQUEST_METHOD'] == "POST")
-            {
-                
+
+            if($_SERVER['REQUEST_METHOD'] == "POST"){  
+
                 //Applicant Details
                 $appl_no        =       $_POST['appl_no'];
 
@@ -210,16 +210,19 @@
 
                 $apl_lname      =       $_POST['apl_lst_name'];  
              
-                if(!empty($_FILES["apl_name_path"]["name"])&& $_FILES['apl_name_path']['size']<2000000)
+                if(!empty($_FILES["apl_name_path"]["name"])&& $_FILES['apl_name_path']['size'] < 5000000)
                 { 
                     // * config* //
+                    $apl_name_data = 'i'.time().$_FILES["apl_name_path"]["name"];
+
                     $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
                     $config['allowed_types'] = 'gif|jpg|jpeg';
                     $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
-                    
-                    $apl_name_data = $_FILES["apl_name_path"]["name"];
+                    $config['file_name'] = $apl_name_data;
 
+                    //$this->load->library('upload', $config);
+                     $this->upload->initialize($config); 
+                    
                     if(! $this->upload->do_upload("apl_name_path"))
                     {
 
@@ -227,6 +230,7 @@
 
                         $this->session->set_flashdata('error',$error['error']);
 
+                       
                         redirect('Application/apln');
 
                     }
@@ -244,22 +248,24 @@
 
                 $apl_nric_no    =       $_POST['nric_no'];
 
-                if(!empty($_FILES["nric_path"]["name"])&& $_FILES['nric_path']['size']<2000000)
+                if(!empty($_FILES["nric_path"]["name"])&& $_FILES['nric_path']['size'] < 5000000)
                 {
                     // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
+                    $apl_nric_data = 'n'.time().$_FILES["nric_path"]["name"];
+                    $config1['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
+                    $config1['allowed_types'] = 'gif|jpg|jpeg';
+                    $config1['overwrite'] = TRUE;
+                    $config1['file_name'] = $apl_nric_data;
+                    //$this->load->library('upload', $config1);
                     // * config* //
-
-                    $apl_nric_data = $_FILES["nric_path"]["name"];
+                     $this->upload->initialize($config1); 
 
                     if(! $this->upload->do_upload("nric_path"))
                     {
                         $error = array('error' => 'Error in NRIC doc upload '.$this->upload->display_errors());
 
                         $this->session->set_flashdata('error',$error['error']);
+                      
 
                         redirect('Application/apln');
                     }
@@ -275,23 +281,26 @@
 
                 $pp_no          =       $_POST['apl_pp_no'];
                 
-                if(!empty($_FILES["pp_no"]["name"])&& $_FILES['pp_no']['size']<2000000)
+                if(!empty($_FILES["pp_no"]["name"])&& $_FILES['pp_no']['size'] < 5000000)
                 {
                     // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
-                    // * config* //
 
-                    $pp_no_data = $_FILES["pp_no"]["name"];
+                    $pp_no_data = 'p'.time().$_FILES["pp_no"]["name"];
+                    $config2['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
+                    $config2['allowed_types'] = 'gif|jpg|jpeg';
+                    $config2['overwrite'] = TRUE;
+                    $config2['file_name'] = $pp_no_data;
+                    //$this->load->library('upload', $config2);
+                    // * config* //
+                     $this->upload->initialize($config2); 
+                   
 
                     if(! $this->upload->do_upload("pp_no"))
                     {
                         $error = array('error' => 'Error in passport doc upload '.$this->upload->display_errors());
 
                         $this->session->set_flashdata('error',$error['error']);
-
+                      
                         redirect('Application/apln');
                     }
                     else
@@ -320,7 +329,6 @@
 
                 $apl_email      =       $_POST['apl_email'];
 
-
                 //Next of Kin Details
                 $kin_name       =       $_POST['kin_name'];
 
@@ -330,16 +338,21 @@
 
                 $kin_nric       =       $_POST['kin_nric'];
 
-                if(!empty($_FILES["kin_nric_path"]["name"])&& $_FILES['kin_nric_path']['size']<2000000)
+                if(!empty($_FILES["kin_nric_path"]["name"])&& $_FILES['kin_nric_path']['size'] < 5000000)
                 {
-                    // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
+                //     // * config* //
+
+                    $kin_nric_data = 'kn'.time().$_FILES["kin_nric_path"]["name"];
+
+                    $config3['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
+                    $config3['allowed_types'] = 'gif|jpg|jpeg';
+
+                    $config3['overwrite']     = TRUE;
+                    $config3['file_name']     = $kin_nric_data;
+                    $this->load->library('upload', $config3);
                     // * config* //
 
-                    $kin_nric_data = $_FILES["kin_nric_path"]["name"];
+                    
 
                     if(! $this->upload->do_upload("kin_nric_path"))
                     {
@@ -362,16 +375,19 @@
 
                 $kin_pp         =       $_POST['kin_pp'];
 
-                if(!empty($_FILES["kin_pp"]["name"])&& $_FILES['kin_pp']['size']<2000000)
+                if(!empty($_FILES["kin_pp"]["name"])&& $_FILES['kin_pp']['size'] < 5000000)
                 {
                     // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
-                    // * config* //
 
-                    $kin_pp_data = $_FILES["kin_pp"]["name"];
+                    $kin_pp_data = 'kp'.time().$_FILES["kin_pp"]["name"];
+
+                    $config4['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
+                    $config4['allowed_types'] = 'gif|jpg|jpeg';
+                    $config4['overwrite']     = TRUE;
+                    $config4['file_name']     = $kin_pp_data;
+                    //$this->load->library('upload', $config4);
+                    // * config* //
+                   $this->upload->initialize($config4); 
 
                     if(! $this->upload->do_upload("kin_pp"))
                     {
@@ -410,11 +426,11 @@
 
 
                 $value = array(
-                    'appl_name'     =>  $apl_name,
+                    'appl_name'         =>  $apl_name,
 
-                    'appl_mid_name' =>  $apl_mname,
+                    'appl_mid_name'     =>  $apl_mname,
 
-                    'appl_last_name'=>  $apl_lname,
+                    'appl_last_name'    =>  $apl_lname,
 
                     'appl_photo_path'   =>  $apl_name_path,
 
@@ -475,6 +491,7 @@
                     'applcnt_kin_reltion' =>    $reln 
                 );
 
+
                 $this->Applications->f_insert_nextFormDtls($value, $appl_no, $sl_no);
             
                 //redirect to form-III -> 
@@ -486,7 +503,7 @@
 
                 $data['country'] = $this->Applications->f_get_country();
                 $data['appl_no'] = $appl_no;
-                $data['sl_no'] = $sl_no;
+                $data['sl_no']   = $sl_no;
 
                 $this->load->view('application/form2',$data);
 
@@ -508,8 +525,7 @@
 
 
         // For III Form handling -> 
-        public function addCertificate()
-        {
+        public function addCertificate(){
 
             $appl_no     =      $this->input->get('appl_no');
             $sl_no       =      $this->input->get('sl_no');
@@ -549,7 +565,7 @@
                     $this->load->library('upload', $config);
                     // * config* //
 
-                    $kin_med_cert_data = $_FILES["kin_med_cert"]["name"];
+                    $kin_med_cert_data = time().$_FILES["kin_med_cert"]["name"];
 
                     if(! $this->upload->do_upload("kin_med_cert"))
                     {
@@ -668,7 +684,7 @@
                 if(!empty($_FILES["h2s_cert_path"]["name"])&& $_FILES['h2s_cert_path']['size']<2000000)
                 {
                     // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
+                    $config['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config['allowed_types'] = 'gif|jpg|jpeg';
                     $config['overwrite'] = TRUE;
                     $this->load->library('upload', $config);

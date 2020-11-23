@@ -2,7 +2,7 @@
 
         <div class="col-md-6 col-8 align-self-center">
 
-            <h3 class="text-themecolor m-b-0 m-t-0">Form</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Form (PLEASE FILL THE FORM IN CAPITAL LETTERS)</h3>
 
             <ol class="breadcrumb">
 
@@ -115,7 +115,7 @@
 
                                             <label class="control-label">Organisation Name<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="org_name" name="org_name" required
+                                            <input type='text' class="form-control" id="org_name" name="org_name" required style='text-transform:uppercase'
                                             />
                                             
                                         </div>
@@ -133,7 +133,7 @@
 
                                             <label class="control-label">Organisation Address<font color= "red"> *</font></label>
 
-                                            <textarea class="form-control" id="org_adr" name="org_adr" required
+                                            <textarea class="form-control" id="org_adr" name="org_adr" required style='text-transform:uppercase'
                                             ></textarea>
                                             
                                         </div>
@@ -156,19 +156,6 @@
                                 </div>
 
                                 <div class="row">
-
-                                    <!-- <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Email</label>
-
-                                            <input type='email' class="form-control" id="org_email" name="org_email"
-                                            >
-                        
-                                        </div>
-
-                                    </div> -->
 
                                     <div class="col-md-6">
 
@@ -196,8 +183,7 @@
                                         <select class="form-control" 
                                                     id="apl_for"
                                                     name="apl_for"
-                                                    required
-                                                >
+                                                    required>
 
                                                 <option value="">Select</option>
 
@@ -223,7 +209,7 @@
 
                                             <label class="control-label">Your First Name</label>
 
-                                            <input type='text' class="form-control" id="yf_name" name="yf_name" required
+                                            <input type='text' class="form-control" id="yf_name" name="yf_name" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -240,20 +226,20 @@
 
                                             <label class="control-label">Middle Name</label>
 
-                                            <input type='text' class="form-control" id="ym_name" name="ym_name"
+                                            <input type='text' class="form-control" id="ym_name" name="ym_name" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
 
                                     </div>
 
-                                    <div class="col-md-6">
+                                <div class="col-md-6">
 
                                         <div class="form-group">
 
                                             <label class="control-label">Last Name</label>
 
-                                            <input type='text' class="form-control" id="yl_name" name="yl_name" required
+                                            <input type='text' class="form-control" id="yl_name" name="yl_name" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -267,9 +253,9 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Your Position / Title</label>
+                                            <label class="control-label">Your Position / Title<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="ypt" name="ypt"
+                                            <input type='text' class="form-control" id="ypt" name="ypt" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -293,7 +279,7 @@
 
                                     </div>
 
-                                    <div class="col-md-6">
+                                <div class="col-md-6">
 
                                         <div class="form-group">
 
@@ -328,7 +314,7 @@
 
                                             <label class="control-label">Sponsor Name<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="spn_name" name="spn_name" required
+                                            <input type='text' class="form-control" id="spn_name" name="spn_name" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -341,7 +327,7 @@
 
                                             <label class="control-label">Sponsor Department<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="spn_dpt" name="spn_dpt" required
+                                            <input type='text' class="form-control" id="spn_dpt" name="spn_dpt" required style='text-transform:uppercase'
                                             >
                         
                                         </div>

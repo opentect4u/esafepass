@@ -151,6 +151,7 @@
 		//Log In
 		public function index(){
 
+
 			if($_SERVER['REQUEST_METHOD']=="POST"){
 
 					$userId	=	$_POST['email'];
@@ -190,6 +191,7 @@
 
 		/**Login into system according to the type of user */	
 		public function login(){
+
 
 			if($this->session->userdata('login')){
 

@@ -26,11 +26,12 @@
 
 
     <!-- JS // For selecting date range Start-->
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+ 
+  
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="<?php echo base_url();?>lib/jquery.formatter.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
 
     <!-- For date Range End-->
 
@@ -43,7 +44,7 @@
 
                 <div class="card-header">
 
-                    <h4 class="m-b-0 text-white">Application Form</h4>
+                    <h4 class="m-b-0 text-white">Application Form (PLEASE FILL THE FORM IN CAPITAL LETTERS)</h4>
 
                 </div>
 
@@ -56,8 +57,7 @@
                         id="form"
                         method="post" 
                         action="<?php echo site_url('application/addApplicant');?>"
-                        enctype="multipart/form-data"
-                    >
+                        enctype="multipart/form-data">
 
                         <input type='hidden' class="form-control" id="appl_no" name="appl_no" value= "<?php echo $appl_no; ?>" readonly>
                         <input type='hidden' class="form-control" id="sl_no" name="sl_no" value= "<?php echo $sl_no; ?>" readonly>
@@ -95,7 +95,7 @@
 
                                             <label class="control-label">First Name<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="apl_name" name="apl_name" required
+                                            <input type='text' class="form-control" id="apl_name" name="apl_name" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -109,7 +109,7 @@
 
                                             <label class="control-label">Middle Name</label>
 
-                                            <input type='text' class="form-control" id="apl_mid_name" name="apl_mid_name"
+                                            <input type='text' class="form-control" id="apl_mid_name" name="apl_mid_name" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -126,7 +126,7 @@
 
                                             <label class="control-label">Last Name<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="apl_lst_name" name="apl_lst_name" required
+                                            <input type='text' class="form-control" id="apl_lst_name" name="apl_lst_name" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -157,12 +157,46 @@
 
                                             <label class="control-label">Position / Title</label>
 
-                                            <input type='text' class="form-control" id="pos_tit" name="pos_tit"
+                                            <input type='text' class="form-control" id="pos_tit" name="pos_tit" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
 
                                     </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Nationality<font color= "red"> *</font></label>
+
+                                            <select class="form-control" 
+                                                    id="apl_ntl"
+                                                    name="apl_ntl"
+                                                    required
+                                                >
+
+                                                <option value="">Select</option>
+
+                                                <?php
+                                                    foreach($country as $row){
+                                                ?>
+
+                                                <option value="<?php echo $row->country_name;?>"><?php echo $row->country_name; ?></option>
+
+                                                <?php 
+                                                    }
+                                                ?>
+
+                                            </select>
+
+                                            <!--<input type='text' class="form-control" id="apl_ntl" name="apl_ntl"
+                                            >-->
+                                            
+                                        </div>
+
+                                    </div>
+                                  
+
                                 </div> 
 
                                 <div class="row">
@@ -173,7 +207,7 @@
 
                                             <label class="control-label">NRIC No (<font color= "green">Compulsory for Malaysians</font>)</label>
 
-                                            <input type='text' class="form-control" id="nric_no" name="nric_no"
+                                            <input type='text' class="form-control" id="nric_no" name="nric_no" maxlength="14" placeholder="xxxxxx-xx-xxxx" 
                                             >
                                             
                                         </div>
@@ -205,7 +239,7 @@
 
                                             <label class="control-label">Passport No.(<font color= "green">Compulsory for Non-Malaysians</font>)</label>
 
-                                            <input type='text' class="form-control" id="apl_pp_no" name="apl_pp_no"
+                                            <input type='text' class="form-control" id="apl_pp_no" name="apl_pp_no" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -251,9 +285,7 @@
 
                                             <select class="form-control" 
                                                     id="apl_gen"
-                                                    name="apl_gen"
-                                                    
-                                                >
+                                                    name="apl_gen">
 
                                                 <option value="">Select</option>
 
@@ -279,46 +311,12 @@
 
                                             <label class="control-label">Address<font color= "red"> *</font></label>
 
-                                            <textarea class="form-control" id="apl_adr" name="apl_adr" required
+                                            <textarea class="form-control" id="apl_adr" name="apl_adr" required style='text-transform:uppercase'
                                             ></textarea>
                                             
                                         </div>
 
                                     </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Nationality<font color= "red"> *</font></label>
-
-                                            <select class="form-control" 
-                                                    id="apl_ntl"
-                                                    name="apl_ntl"
-                                                    required
-                                                >
-
-                                                <option value="">Select</option>
-
-                                                <?php
-                                                    foreach($country as $row){
-                                                ?>
-
-                                                <option value="<?php echo $row->country_name;?>"><?php echo $row->country_name; ?></option>
-
-                                                <?php 
-                                                    }
-                                                ?>
-
-                                            </select>
-
-                                            <!--<input type='text' class="form-control" id="apl_ntl" name="apl_ntl"
-                                            >-->
-                                            
-                                        </div>
-
-                                    </div>
-
 
                                 </div>
 
@@ -330,7 +328,7 @@
 
                                             <label class="control-label">Job Position / Title</label>
 
-                                            <input type='text' class="form-control" id="job_pos" name="job_pos"
+                                            <input type='text' class="form-control" id="job_pos" name="job_pos" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -403,7 +401,8 @@
 
                                             <label class="control-label">First Name<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="kin_name" name="kin_name" required
+                                            <input type='text' class="form-control" id="kin_name" name="kin_name" required 
+                                            style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -421,6 +420,7 @@
                                             <label class="control-label">Middle Name</label>
 
                                             <input type='text' class="form-control" id="kin_mid_name" name="kin_mid_name"
+                                            style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -434,6 +434,7 @@
                                             <label class="control-label">Last Name<font color= "red"> *</font></label>
 
                                             <input type='text' class="form-control" id="kin_lst_name" name="kin_lst_name" required
+                                            style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -450,7 +451,7 @@
 
                                             <label class="control-label">NRIC No (<font color= "green">Compulsory for Malaysians</font>)</label>
 
-                                            <input type='text' class="form-control" id="kin_nric" name="kin_nric"
+                                            <input type='text' class="form-control" id="kin_nric" name="kin_nric" maxlength="14" placeholder="xxxxxx-xx-xxxx" 
                                             >
                                             
                                         </div>
@@ -480,7 +481,7 @@
 
                                             <label class="control-label">Passport No (<font color= "green">Compulsory for Non-Malaysians</font>)</label>
 
-                                            <input type='text' class="form-control" id="kin_pp" name="kin_pp"
+                                            <input type='text' class="form-control" id="kin_pp" name="kin_pp"  style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -493,9 +494,10 @@
 
                                             <label class="control-label">Upload Passport (<font color= "green">Compulsory for Non-Malaysians</font>)</label>
 
-                                            <input type='file' class="form-control upload_img" id="kin_pp_path" name="kin_pp"
-                                            >
+                                            <input type='file' class="form-control upload_img" id="kin_pp_path" name="kin_pp">
+
                                             <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+
                                         </div>
 
                                     </div>
@@ -554,7 +556,7 @@
 
                                             <label class="control-label">Address<font color= "red"> *</font></label>
 
-                                            <textarea class="form-control" id="kin_adr" name="kin_adr" required
+                                            <textarea class="form-control" id="kin_adr" name="kin_adr" required style='text-transform:uppercase'
                                             ></textarea>
                                             
                                         </div>
@@ -591,6 +593,8 @@
 
                                     </div>
 
+                                  
+
                                 </div>
 
 
@@ -603,7 +607,7 @@
 
                                             <label class="control-label">Relationship with Applicant<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="reln" name="reln" required
+                                            <input type='text' class="form-control" id="reln" name="reln" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -814,6 +818,24 @@
                 return false;
             };
         });
+          // Code For Checking Country
+
+      
+     
+       
     })
+
+    $('#nric_no').formatter({
+      'pattern': '{{999999}}-{{99}}-{{9999}}'
+      });
+
+    $('#kin_nric').formatter({
+      'pattern': '{{999999}}-{{99}}-{{9999}}'
+      });
+
+
+
+    
+
 
 </script>
