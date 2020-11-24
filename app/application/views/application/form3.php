@@ -42,7 +42,7 @@
 
                 <div class="card-header">
 
-                    <h4 class="m-b-0 text-white">Application Form</h4>
+                    <h4 class="m-b-0 text-white">Application Form (PLEASE FILL THE FORM IN CAPITAL LETTERS)</h4>
 
                 </div>
 
@@ -95,7 +95,7 @@
 
                                             <label class="control-label">Medical Test Centre / Clinic Name<font color= "red"> *</font></label>
 
-                                            <input type="text"class="form-control" id="med_crt" name="med_crt" required
+                                            <input type="text"class="form-control" id="med_crt" name="med_crt" required style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -108,7 +108,7 @@
 
                                             <label class="control-label">Medical Certificate No.<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="med_crt_no" name="med_crt_no" required
+                                            <input type='text' class="form-control" id="med_crt_no" name="med_crt_no" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -125,7 +125,7 @@
 
                                             <label class="control-label">AME Name<font color= "red"> *</font></label>
 
-                                            <input type="text"class="form-control" id="ame_name" name="ame_name" required
+                                            <input type="text"class="form-control" id="ame_name" name="ame_name" required style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -138,7 +138,7 @@
 
                                             <label class="control-label">AME No.<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="ame_no" name="ame_no" required
+                                            <input type='text' class="form-control" id="ame_no" name="ame_no" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -155,7 +155,7 @@
 
                                             <label class="control-label">Date of Examination<font color= "red"> *</font></label>
 
-                                            <input type="date"class="form-control" id="exam_dt" name="exam_dt" required
+                                            <input type="date"class="form-control" id="exam_dt" name="exam_dt" required style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -232,7 +232,7 @@
 
                                             <label class="control-label">If Yes please state</label>
 
-                                            <input type='text' class="form-control" id="alg_dtl" name="alg_dtl"
+                                            <input type='text' class="form-control" id="alg_dtl" name="alg_dtl" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -250,7 +250,7 @@
 
                                             <label class="control-label">Expiry Date of Medical Certificate<font color= "red"> *</font></label>
 
-                                            <input type="date"class="form-control" id="mexp_dt" name="mexp_dt" required
+                                            <input type="date"class="form-control" id="mexp_dt" name="mexp_dt" required 
                                             /> 
                                             
                                         </div>
@@ -292,7 +292,7 @@
 
                                             <label class="control-label">Training Institution Name<font color= "red"> *</font></label>
 
-                                            <input type="text"class="form-control" id="inst_name" name="inst_name" required
+                                            <input type="text"class="form-control" id="inst_name" name="inst_name" required style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -305,7 +305,7 @@
 
                                             <label class="control-label">Training Institution Address<font color= "red"> *</font></label>
 
-                                            <textarea class="form-control" id="inst_adr" name="inst_adr" required
+                                            <textarea class="form-control" id="inst_adr" name="inst_adr" required style='text-transform:uppercase'
                                             ></textarea>
                                             
                                         </div>
@@ -322,7 +322,7 @@
 
                                             <label class="control-label">Course Title<font color= "red"> *</font></label>
 
-                                            <input type="text"class="form-control" id="course_tit" name="course_tit" required
+                                            <input type="text"class="form-control" id="course_tit" name="course_tit" required style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -335,7 +335,7 @@
 
                                             <label class="control-label">Certificate No<font color= "red"> *</font></label>
 
-                                            <input type="text" class="form-control" id="inst_cert_no" name="inst_cert_no" required
+                                            <input type="text" class="form-control" id="inst_cert_no" name="inst_cert_no" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -352,7 +352,7 @@
 
                                             <label class="control-label">Training Attended From<font color= "red"> *</font></label>
 
-                                            <input type="date"class="form-control" id="atnd_from" name="atnd_from" required
+                                            <input type="date"class="form-control" id="atnd_from" name="atnd_from" required 
                                             /> 
                                             
                                         </div>
@@ -461,7 +461,7 @@
 
                                             <label class="control-label">Training Institution Name</label>
 
-                                            <input type="text"class="form-control" id="h2s_inst_name" name="h2s_inst_name"
+                                            <input type="text"class="form-control" id="h2s_inst_name" name="h2s_inst_name" style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -474,7 +474,7 @@
 
                                             <label class="control-label">Training Institution Address</label>
 
-                                            <textarea class="form-control" id="h2s_inst_adr" name="h2s_inst_adr"
+                                            <textarea class="form-control" id="h2s_inst_adr" name="h2s_inst_adr" style='text-transform:uppercase'
                                             ></textarea>
                                             
                                         </div>
@@ -491,7 +491,7 @@
 
                                             <label class="control-label">Course Title</label>
 
-                                            <input type="text"class="form-control" id="h2s_course" name="h2s_course"
+                                            <input type="text"class="form-control" id="h2s_course" name="h2s_course" style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -504,7 +504,7 @@
 
                                             <label class="control-label">Certificate No</label>
 
-                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no" required
+                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no" required style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -551,7 +551,7 @@
 
                                             <label class="control-label">Training Validity</label>
 
-                                            <input type="date"class="form-control" id="h2s_exp_dt" name="h2s_exp_dt"
+                                            <input type="date" class="form-control" id="h2s_exp_dt" name="h2s_exp_dt"
                                             /> 
                                             
                                         </div>
@@ -626,7 +626,7 @@
 
                                         <label class="control-label">Remarks</label>
 
-                                        <textarea class="form-control" name="remarks" ></textarea>
+                                        <textarea class="form-control" name="remarks" style='text-transform:uppercase' ></textarea>
 
                                     </div>
 

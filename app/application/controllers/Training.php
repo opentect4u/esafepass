@@ -12,6 +12,7 @@
             $this->load->model('Trainings');
 
             $this->load->model('Process');
+            $this->load->library('upload');
 
             // For pdf converter -- 
             //$this->load->library('Pdf');
@@ -131,20 +132,15 @@
                 $to_dt5             =       $_POST['to_dt5'];
                 $validity5          =       $_POST['validity5'];
 
-                //$certificate1_path  =   $_POST['certificate1'];
-                // $certificate2_path  =   $_POST['certificate2'];
-                // $certificate3_path  =   $_POST['certificate3'];
-                // $certificate4_path  =   $_POST['certificate4'];
-                // $certificate5_path  =   $_POST['certificate5'];
 
                 // * config* //
-                $config['upload_path']  = FCPATH.'assets/userDocs/training';
-                $config['allowed_types'] = 'gif|jpg|jpeg';
-                $config['overwrite'] = TRUE;
+                $config['upload_path']   = FCPATH.'assets/userDocs/training';
+                $config['allowed_types'] = 'png|jpg|jpeg|pdf';
+                $config['overwrite']     = TRUE;
                 $this->load->library('upload', $config);
                 // * config* //
                 $certificate1_path = '';
-                if(!empty($_FILES["certificate1"]["name"])&& $_FILES['certificate1']['size']<2000000)
+                if(!empty($_FILES["certificate1"]["name"])&& $_FILES['certificate1']['size']< 3000000)
                 {
                     $certificate_data = $_FILES["certificate1"]["name"];
 
@@ -167,7 +163,7 @@
                 }
 
                 $certificate2_path = '';
-                if(!empty($_FILES["certificate2"]["name"])&& $_FILES['certificate2']['size']<2000000)
+                if(!empty($_FILES["certificate2"]["name"])&& $_FILES['certificate2']['size'] < 3000000)
                 {
                     $certificate_data = $_FILES["certificate2"]["name"];
 
@@ -190,7 +186,7 @@
                 }
 
                 $certificate3_path = '';
-                if(!empty($_FILES["certificate3"]["name"])&& $_FILES['certificate3']['size']<2000000)
+                if(!empty($_FILES["certificate3"]["name"])&& $_FILES['certificate3']['size'] < 3000000)
                 {
                     $certificate_data = $_FILES["certificate3"]["name"];
 
@@ -213,7 +209,7 @@
                 }
 
                 $certificate4_path = '';
-                if(!empty($_FILES["certificate4"]["name"])&& $_FILES['certificate4']['size']<2000000)
+                if(!empty($_FILES["certificate4"]["name"])&& $_FILES['certificate4']['size'] < 3000000)
                 {
                     $certificate_data = $_FILES["certificate4"]["name"];
 
@@ -236,7 +232,7 @@
                 }
 
                 $certificate5_path = '';
-                if(!empty($_FILES["certificate5"]["name"])&& $_FILES['certificate5']['size']<2000000)
+                if(!empty($_FILES["certificate5"]["name"])&& $_FILES['certificate5']['size'] < 3000000)
                 {
                     $certificate_data = $_FILES["certificate5"]["name"];
 
