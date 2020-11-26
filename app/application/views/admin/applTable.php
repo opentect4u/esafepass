@@ -31,8 +31,11 @@
 
                                 <tr>
                                     <th style= "text-align: center;">Application No.</th>
-                                    <!-- <th style= "text-align: center;">Date</th> -->
-                                    <th style= "text-align: center;">Name</th>
+                                    <th style= "text-align: center;">Date</th>
+                                    <th style= "text-align: center;">NAME</th>
+                                    <th style= "text-align: center;">NRIC Number</th>
+                                    <th style= "text-align: center;">Passport</th>
+
                                     <!-- <th style= "text-align: center;">Applicant Id</th> -->
                                     <th style= "text-align: center;">Organisation</th>
                                     <th style= "text-align: center;">Satus</th>
@@ -59,7 +62,7 @@
 
                                             <td style= "text-align: center;"><?php echo $a_dtls->appl_no; ?></td>
 
-                                            <!-- <td style= "text-align: center;"><?php echo date('d-m-Y',strtotime($a_dtls->appl_dt)); ?></td> -->
+                                            <td style= "text-align: center;"><?php echo date('d/m/Y',strtotime($a_dtls->appl_dt)); ?></td>
                                             
                                             <td style= "text-align: center;">
                                                 <?php if($a_dtls->appl_mid_name == '' ) 
@@ -76,7 +79,8 @@
                                             </td>
                                             
                                             <!-- <td style= "text-align: center;"><?php //echo $a_dtls->user_id; ?></td> -->
-                                            
+                                             <td style= "text-align: center;"><?php echo $a_dtls->nric_no; ?></td>
+                                              <td style= "text-align: center;"><?php echo $a_dtls->applcnt_pasprt_no; ?></td>
                                             <td style= "text-align: center;"><?php echo $a_dtls->org_name; ?></td>
                                             
                                             <td style= "text-align: center;"><?php  if($a_dtls->status=='U'){

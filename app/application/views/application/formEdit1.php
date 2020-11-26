@@ -82,7 +82,7 @@
 
                             <div class="row">
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
 
                                     <div class="form-group">
 
@@ -95,7 +95,7 @@
 
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
 
                                     <div class="form-group">
 
@@ -129,6 +129,19 @@
                                                 ?>" readonly/>
                                         
                                         <input type="hidden" name= "appl_status" value= "<?php echo $row->status; ?>" >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Application Date.</label>
+
+                                        <input type='text' class="form-control" id="appl_no" name="appl_no"
+                                         value="<?php echo date('d/m/Y',strtotime($row->appl_dt)); ?>" readonly />
 
                                     </div>
 
@@ -172,8 +185,7 @@
                                             <select class="form-control" 
                                                     id="org_type"
                                                     name="org_type"
-                                                    required
-                                                >
+                                                    required>
 
                                                 <option value="V" <?php if($row->org_type == "V") echo "selected"?>>Vestigo</option> 
 

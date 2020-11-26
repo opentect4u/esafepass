@@ -535,7 +535,7 @@
 
                                 </div>
 
-                                <div class="row">
+                             <!--    <div class="row">
 
                                     <div class="col-md-6">
 
@@ -563,9 +563,9 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
-                                <div class="row">
+                                <!-- <div class="row">
 
                                     <div class="col-md-6">
 
@@ -588,18 +588,18 @@
 
                                             <input type='file' class="form-control upload_img" id="h2s_cert_path" name="h2s_cert_path"
                                             >
-                                            <input type='hidden' value="<?php echo ($row->h2s_cert_path); ?>" id="h2s_cert_path_prev" name="h2s_cert_path_prev">
+                                            <input type='hidden' value="<?php //echo ($row->h2s_cert_path); ?>" id="h2s_cert_path_prev" name="h2s_cert_path_prev">
                                             <?php if($row->h2s_cert_path != ''){ ?>
-                                                <a href="<?php echo base_url($row->h2s_cert_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
+                                                <a href="<?php //echo base_url($row->h2s_cert_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
                                             <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
                                         </div>
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
-                                <div class="row">
+                                <!-- <div class="row">
 
                                     <div class="col-md-6">
 
@@ -609,9 +609,7 @@
 
                                             <select class="form-control" 
                                                     id="h2s_trn_flg"
-                                                    name="h2s_trn_flg"
-                                                    
-                                                >
+                                                    name="h2s_trn_flg">
 
                                                 <option value="">Select</option>
 
@@ -645,7 +643,7 @@
                                 </div>
 
                                
-                            </div>
+                            </div> -->
 <!------------------------------------------------------------------------------------------->
 
                             
@@ -663,6 +661,21 @@
 
                                 </div>
                                 
+                            </div>
+
+                            <div class="row">
+                       
+                               <div class="col-md-12">
+                             <div class="form-group">
+                                  <input type="checkbox" id="declaration" name="declaration" value="Y" required 
+                                  <?php if($row->declaration){echo "checked"; }?> 
+
+                                  >&nbsp;&nbsp;&nbsp;
+                               I hereby confirm that the information provided herein is accurate, correct and complete and that the documents submitted along with this application form are genuine. I hereby undertake to provide to Vestigo Petroleum Sdn. Bhd. 
+                                And / or its representatives with any additional documentation requested in order to support the applicant and its approval as deemed necessary.
+                                </div> 
+
+                               </div> 
                             </div>
 
                             <div class="form-actions">

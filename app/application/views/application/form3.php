@@ -449,7 +449,7 @@
                             </div>
 
 <!------------------------------------------------------------------------------------------->
-                            <h3 class="box-title">DETAILS OF H2S Training</h3>
+                            <h3 class="box-title">DETAILS OF H2S Training </h3>(H2S is required for Larut, xxx and xxx.)
                             <hr class="m-t-0 m-b-40">
                             <div id= "section7">
 
@@ -513,7 +513,7 @@
 
                                 </div>
 
-                                <div class="row">
+                              <!--   <div class="row">
 
                                     <div class="col-md-6">
 
@@ -541,9 +541,9 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
-                                <div class="row">
+                               <!--  <div class="row">
 
                                     <div class="col-md-6">
 
@@ -571,9 +571,9 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
-                                <div class="row">
+                                <!-- <div class="row">
 
                                     <div class="col-md-6">
 
@@ -612,7 +612,7 @@
 
                                     </div>
 
-                                </div>
+                                </div> -->
 
                                
                             </div>
@@ -635,6 +635,19 @@
                             </div>
 
                             <div class="form-actions">
+
+                            <div class="row">
+                       
+                               <div class="col-md-12">
+                             <div class="form-group">
+                                  <input type="checkbox" id="declaration" name="declaration" value="Y" required>&nbsp;&nbsp;&nbsp;
+                               I hereby confirm that the information provided herein is accurate, correct and complete and that the documents submitted along with this application form are genuine. I hereby undertake to provide to Vestigo Petroleum Sdn. Bhd. 
+                                And / or its representatives with any additional documentation requested in order to support the applicant and its approval as deemed necessary.
+                                </div> 
+
+                               </div> 
+                            </div>
+
 
                                 <div class="row">
 

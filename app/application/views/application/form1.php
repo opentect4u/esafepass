@@ -1,8 +1,8 @@
     <div class="row page-titles">
 
-        <div class="col-md-6 col-8 align-self-center">
+        <div class="col-md-7 col-8 align-self-center">
 
-            <h3 class="text-themecolor m-b-0 m-t-0">Form (PLEASE FILL THE FORM IN CAPITAL LETTERS)</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Form </h3>
 
             <ol class="breadcrumb">
 
@@ -39,7 +39,7 @@
 
                 <div class="card-header">
 
-                    <h4 class="m-b-0 text-white">Application Form</h4>
+                    <h4 class="m-b-0 text-white">Application Form (PLEASE FILL THE FORM IN CAPITAL LETTERS)</h4>
 
                 </div>
 
@@ -80,6 +80,19 @@
                             <div id= "section1">
 
                                 <div class="row">
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Application Date</label>
+
+                                            <input type='text' class="form-control" id="app_dt" name="app_dt" style='text-transform:uppercase' value="<?php echo date('d/m/Y') ?>"  readonly
+                                            />
+                                            
+                                        </div>
+
+                                    </div>
 
                                     <div class="col-md-6">
 
@@ -215,12 +228,8 @@
                                         </div>
 
                                     </div>
-                                </div>
 
-
-                                <div class="row">
-
-                                    <div class="col-md-6">
+                                        <div class="col-md-6">
 
                                         <div class="form-group">
 
@@ -232,8 +241,12 @@
                                         </div>
 
                                     </div>
+                                </div>
 
-                                <div class="col-md-6">
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
 
                                         <div class="form-group">
 
@@ -245,9 +258,6 @@
                                         </div>
 
                                     </div>
-                                </div>
-
-                                <div class="row">
 
                                     <div class="col-md-6">
 
@@ -262,7 +272,9 @@
 
                                     </div>
 
+
                                 </div>
+
 
                                 <div class="row">
 
@@ -297,12 +309,7 @@
                             </div>
                            
                             <h3 class="box-title">DETAILS OF THE SPONSOR</h3>
-                            <!-- <span>
-                                <font id="addMessage2" color= "blue">Click to add </font>
-                                <font id="removeMessage2" color= "blue">Click to Hide </font>
-                                <button class="btn btn-success" type= "button" title="Add" id="addSection2"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                                <button class="btn btn-danger" type= "button" title="remove" id="removeSection2"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                            </span> -->
+                        
                             <hr class="m-t-0 m-b-40">
                             <div id= "section2">
 
@@ -334,7 +341,28 @@
 
                                     </div>
 
+                               
+
                                 </div>
+                                <div class="row">
+                                   
+                                    <div class="col-md-6">
+                                          <div class="form-group">
+                                         Note: Name of the Person In Charge from <span id="org_namess"></span>
+
+                                         </div>   
+
+                                    </div>
+                                    <div class="col-md-6">
+                                          <div class="form-group">
+                                         Note: The Department of the Person In Charge from <span id="org_deptss"></span>
+
+                                         </div>   
+
+                                    </div>
+
+                                </div>
+
 
                             </div>
                              
@@ -447,6 +475,39 @@
             }
 
         })
+
+        $('#org_type').on('change', function(){
+
+            var org_type = $(this).val();
+
+            console.log(org_type);
+
+            if( org_type == 'V'){
+
+             $('#org_namess').html('Vestigo');
+             $('#org_deptss').html('Vestigo');
+
+            
+            }
+            else if( org_type == 'P'){
+
+                $('#org_namess').html('Petronas');
+                $('#org_deptss').html('Petronas');
+
+            }else if( org_type == 'C'){
+
+                $('#org_namess').html('Contractor');
+                $('#org_deptss').html('Contractor');
+
+            }else{
+
+                $('#org_namess').html('Others');
+                $('#org_deptss').html('Others');
+
+            }
+
+
+        })    
 
     })
 

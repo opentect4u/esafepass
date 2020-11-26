@@ -67,7 +67,7 @@
 
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
 
                             <div class="form-group">
 
@@ -80,7 +80,7 @@
 
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
 
                             <div class="form-group">
 
@@ -113,6 +113,23 @@
                                                }
                                         ?>" readonly/>
                                 
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="form-group">
+
+                                <label class="control-label">Application Date.</label>
+
+                                <input type='text' class="form-control" id="appl_dt" name="appl_dt"
+                                 value="<?php $appl_dt = substr($row->created_dt,0,10); 
+                                     $phpdate = strtotime($appl_dt) ;
+                                    echo date('d/m/Y',$phpdate);   
+                                          ?>" readonly
+                                     />
+
                             </div>
 
                         </div>

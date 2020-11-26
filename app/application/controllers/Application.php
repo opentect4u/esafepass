@@ -616,7 +616,6 @@
                     $this->upload->initialize($config1); 
                     // * config* //
 
-                    
 
                     if(! $this->upload->do_upload("kin_huet_cert"))
                     {
@@ -682,79 +681,73 @@
 
                 $h2s_cert_no        =   $_POST['h2s_cert_no'];
 
-                $h2s_frm_dt         =   $_POST['h2s_frm_dt'];
+                // if(!empty($_FILES["h2s_cert_path"]["name"])&& $_FILES['h2s_cert_path']['size'] < 3000000)
+                // {
+                //     // * config* //
+                //     $h2s_cert_path_data      = 'h2s_cert'.time().$_FILES["h2s_cert_path"]["name"];
+                //     $config3['upload_path']    = FCPATH.'assets/userDocs/certificate';
+                //     $config3['allowed_types']  = 'png|jpg|jpeg|pdf';
+                //     $config3['overwrite']      = TRUE;
+                //     $config3['file_name']      = $h2s_cert_path_data;
 
-                $h2s_to_dt          =   $_POST['h2s_to_dt'];
-
-                $h2s_exp_dt         =   $_POST['h2s_exp_dt'];
-
-                if(!empty($_FILES["h2s_cert_path"]["name"])&& $_FILES['h2s_cert_path']['size'] < 3000000)
-                {
-                    // * config* //
-                    $h2s_cert_path_data      = 'h2s_cert'.time().$_FILES["h2s_cert_path"]["name"];
-                    $config3['upload_path']    = FCPATH.'assets/userDocs/certificate';
-                    $config3['allowed_types']  = 'png|jpg|jpeg|pdf';
-                    $config3['overwrite']      = TRUE;
-                    $config3['file_name']      = $h2s_cert_path_data;
-
-                    //$this->load->library('upload', $config3);
-                    // * config* //
-                    $this->upload->initialize($config3); 
+                //     //$this->load->library('upload', $config3);
+                //     // * config* //
+                //     $this->upload->initialize($config3); 
                    
 
-                    if(! $this->upload->do_upload("h2s_cert_path"))
-                    {
-                        $error = array('error' => 'Error in kin H2S Certificate upload '.$this->upload->display_errors());
+                //     if(! $this->upload->do_upload("h2s_cert_path"))
+                //     {
+                //         $error = array('error' => 'Error in kin H2S Certificate upload '.$this->upload->display_errors());
 
-                        $this->session->set_flashdata('error',$error['error']);
+                //         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
-                    }
-                    else
-                    {
-                        $this->upload->data();
-                        //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                        $h2s_cert_path_name  =   'assets/userDocs/certificate/'.$h2s_cert_path_data;
-                    }
-                }else{
+                //         redirect('Application/apln');
+                //     }
+                //     else
+                //     {
+                //         $this->upload->data();
+                //         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
+                //         $h2s_cert_path_name  =   'assets/userDocs/certificate/'.$h2s_cert_path_data;
+                //     }
+                // }else{
 
-                    $h2s_cert_path_name = '';
-                }
+                //     $h2s_cert_path_name = '';
+                // }
 
-                $h2s_trn_flg        =   $_POST['h2s_trn_flg'];
+                // $h2s_trn_flg        =   $_POST['h2s_trn_flg'];
 
-                if(!empty($_FILES["h2s_vrf_path"]["name"])&& $_FILES['h2s_vrf_path']['size'] < 3000000)
-                {
-                    // * config* //
-                    $h2s_vrf_cert_data        = 'h2s_vrf'.time().$_FILES["h2s_vrf_path"]["name"];
+                // if(!empty($_FILES["h2s_vrf_path"]["name"])&& $_FILES['h2s_vrf_path']['size'] < 3000000)
+                // {
+                //     // * config* //
+                //     $h2s_vrf_cert_data        = 'h2s_vrf'.time().$_FILES["h2s_vrf_path"]["name"];
 
-                    $config4['upload_path']    = FCPATH.'assets/userDocs/certificate';
-                    $config4['allowed_types']  = 'png|jpg|jpeg|pdf';
-                    $config4['overwrite']      = TRUE;
-                    $config4['file_name']      = $h2s_vrf_cert_data;
+                //     $config4['upload_path']    = FCPATH.'assets/userDocs/certificate';
+                //     $config4['allowed_types']  = 'png|jpg|jpeg|pdf';
+                //     $config4['overwrite']      = TRUE;
+                //     $config4['file_name']      = $h2s_vrf_cert_data;
 
-                   // $this->load->library('upload', $config4);
-                    // * config* //
-                    $this->upload->initialize($config4); 
+                //    // $this->load->library('upload', $config4);
+                //     // * config* //
+                //     $this->upload->initialize($config4); 
 
-                    if(! $this->upload->do_upload("h2s_vrf_path"))
-                    {
-                        $error = array('error' => 'Error in H2S Verification Certificate upload '.$this->upload->display_errors());
+                //     if(! $this->upload->do_upload("h2s_vrf_path"))
+                //     {
+                //         $error = array('error' => 'Error in H2S Verification Certificate upload '.$this->upload->display_errors());
 
-                        $this->session->set_flashdata('error',$error['error']);
+                //         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
-                    }
-                    else
-                    {
-                        $this->upload->data();
-                        //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                        $h2s_vrf_cert_path  =   'assets/userDocs/certificate/'.$h2s_vrf_cert_data;
-                    }
-                }else{
+                //         redirect('Application/apln');
+                //     }
+                //     else
+                //     {
+                //         $this->upload->data();
+                //         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
+                //         $h2s_vrf_cert_path  =   'assets/userDocs/certificate/'.$h2s_vrf_cert_data;
+                //     }
+                // }else{
 
-                    $h2s_vrf_cert_path = '';
-                }
+                //     $h2s_vrf_cert_path = '';
+                // }
 
                 $remarks        =       $_POST['remarks'];
 
@@ -808,19 +801,9 @@
 
                                 'h2s_cert_no'         =>    $h2s_cert_no,
 
-                                'h2s_frm_dt'          =>    $h2s_frm_dt,
+                                'remarks'             =>    $remarks,
 
-                                'h2s_to_dt'           =>    $h2s_to_dt,
-
-                                'h2s_exp_dt'          =>    $h2s_exp_dt,
-
-                                'h2s_cert_path'       =>    $h2s_cert_path_name,
-
-                                'h2s_trn_flg'         =>    $h2s_trn_flg,
-
-                                'h2s_vrf_path'        =>    $h2s_vrf_cert_path,
-
-                                'remarks'             =>    $remarks
+                                'declaration'         =>    $this->input->post('declaration')
                 );
 
                 $this->Applications->f_insert_nextFormDtls($value, $appl_no, $sl_no);
@@ -1983,7 +1966,9 @@
 
                                 'h2s_vrf_path'        =>    $h2s_vrf_cert_path,
 
-                                'remarks'             =>    $remarks
+                                'remarks'             =>    $remarks,
+
+                                'declaration'         =>    $this->input->post('declaration')
 
                                 );
 
@@ -2567,17 +2552,6 @@
             $mpdf->Output(); // opens in browser
             
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

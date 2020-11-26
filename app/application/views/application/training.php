@@ -41,11 +41,10 @@
                     id="form"
                     method="post" 
                     action="<?php echo site_url('training/newtrainings');?>"
-                    enctype="multipart/form-data"
-                >
+                    enctype="multipart/form-data">
                     
                     <input type="hidden" name= "appl_no" id= "appl_no" value= "<?php echo $appl_no; ?>" class= "form-control" >
-                    <!-- <input type="hidden" name= "sl_no" id= "sl_no" value= "<?php echo $sl_no; ?>" class= "form-control" > -->
+                    <!-- <input type="hidden" name= "sl_no" id= "sl_no" value= "<?php //echo $sl_no; ?>" class= "form-control" > -->
 
                     <div class="form-body">
 
@@ -709,9 +708,15 @@
                         </div>
                         </div>
 
+
+                      
+
                     </div>
 
+                    
                     <div class="form-actions">
+
+                    
 
                         <div class="row">
 

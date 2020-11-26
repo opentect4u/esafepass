@@ -45,27 +45,17 @@
             
             $this->load->view('admin/applTable', $tableData);
 
-            // $script['script'] = [
-
-            //     "/assets/plugins/moment/moment.js",
-
-            //     "/assets/plugins/daterangepicker/daterangepicker.js",
-
-            //     "/js/moduleValidations.js"
-
-            // ];
-
             $script['script'] = [
         
-                '/assets/plugins/footable/js/footable.all.min.js',
-    
-                '/assets/plugins/bootstrap-select/bootstrap-select.min.js',
-    
-                'js/footable-init.js',
-    
-                '/assets/plugins/datatables/jquery.dataTables.min.js'
+                                '/assets/plugins/footable/js/footable.all.min.js',
+                    
+                                '/assets/plugins/bootstrap-select/bootstrap-select.min.js',
+                    
+                                'js/footable-init.js',
+                    
+                                '/assets/plugins/datatables/jquery.dataTables.min.js'
             
-            ];
+                                ];
 
             $this->load->view('dashboard/footer', $script);
 
@@ -107,8 +97,6 @@
             {
 
                 $appl_no        =       $_POST['appl_no'];
-
-                //$sl_no          =       $_POST['sl_no'];
 
                 //Organisation Details
                 $org_type       =       $_POST['org_type'];
