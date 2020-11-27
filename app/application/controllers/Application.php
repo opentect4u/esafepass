@@ -9,6 +9,8 @@
 
             parent:: __construct();
 
+             $this->load->library('session'); 
+
             $this->load->model('Applications');
 
             $this->load->model('Trainings');
@@ -16,6 +18,8 @@
             $this->load->model('Process');
 
             $this->load->library('upload');
+
+            $this->load->library('email');
 
             // For pdf converter -- 
             //$this->load->library('Pdf');
@@ -671,86 +675,6 @@
                     $trn_vrf_path = '';
                 }
 
-                //H2S Details
-
-                $h2s_inst_name      =   $_POST['h2s_inst_name'];
-
-                $h2s_inst_adr       =   $_POST['h2s_inst_adr'];
-
-                $h2s_course         =   $_POST['h2s_course'];
-
-                $h2s_cert_no        =   $_POST['h2s_cert_no'];
-
-                // if(!empty($_FILES["h2s_cert_path"]["name"])&& $_FILES['h2s_cert_path']['size'] < 3000000)
-                // {
-                //     // * config* //
-                //     $h2s_cert_path_data      = 'h2s_cert'.time().$_FILES["h2s_cert_path"]["name"];
-                //     $config3['upload_path']    = FCPATH.'assets/userDocs/certificate';
-                //     $config3['allowed_types']  = 'png|jpg|jpeg|pdf';
-                //     $config3['overwrite']      = TRUE;
-                //     $config3['file_name']      = $h2s_cert_path_data;
-
-                //     //$this->load->library('upload', $config3);
-                //     // * config* //
-                //     $this->upload->initialize($config3); 
-                   
-
-                //     if(! $this->upload->do_upload("h2s_cert_path"))
-                //     {
-                //         $error = array('error' => 'Error in kin H2S Certificate upload '.$this->upload->display_errors());
-
-                //         $this->session->set_flashdata('error',$error['error']);
-
-                //         redirect('Application/apln');
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                //         $h2s_cert_path_name  =   'assets/userDocs/certificate/'.$h2s_cert_path_data;
-                //     }
-                // }else{
-
-                //     $h2s_cert_path_name = '';
-                // }
-
-                // $h2s_trn_flg        =   $_POST['h2s_trn_flg'];
-
-                // if(!empty($_FILES["h2s_vrf_path"]["name"])&& $_FILES['h2s_vrf_path']['size'] < 3000000)
-                // {
-                //     // * config* //
-                //     $h2s_vrf_cert_data        = 'h2s_vrf'.time().$_FILES["h2s_vrf_path"]["name"];
-
-                //     $config4['upload_path']    = FCPATH.'assets/userDocs/certificate';
-                //     $config4['allowed_types']  = 'png|jpg|jpeg|pdf';
-                //     $config4['overwrite']      = TRUE;
-                //     $config4['file_name']      = $h2s_vrf_cert_data;
-
-                //    // $this->load->library('upload', $config4);
-                //     // * config* //
-                //     $this->upload->initialize($config4); 
-
-                //     if(! $this->upload->do_upload("h2s_vrf_path"))
-                //     {
-                //         $error = array('error' => 'Error in H2S Verification Certificate upload '.$this->upload->display_errors());
-
-                //         $this->session->set_flashdata('error',$error['error']);
-
-                //         redirect('Application/apln');
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                //         $h2s_vrf_cert_path  =   'assets/userDocs/certificate/'.$h2s_vrf_cert_data;
-                //     }
-                // }else{
-
-                //     $h2s_vrf_cert_path = '';
-                // }
-
-                $remarks        =       $_POST['remarks'];
-
 
                 $value = array(
                                 'med_center'          =>    $med_cntr,
@@ -793,15 +717,15 @@
 
                                 'trn_vrf_cert_path'   =>    $trn_vrf_path,
 
-                                'h2s_inst_name'       =>    $h2s_inst_name,
+                                'h2s_inst_name'       =>    $_POST['h2s_inst_name'],
 
-                                'h2s_inst_adr'        =>    $h2s_inst_adr,
+                                'h2s_inst_adr'        =>    $_POST['h2s_inst_adr'],
 
-                                'h2s_course'          =>    $h2s_course,
+                                'h2s_course'          =>    $_POST['h2s_course'],
 
-                                'h2s_cert_no'         =>    $h2s_cert_no,
+                                'h2s_cert_no'         =>    $_POST['h2s_cert_no'],
 
-                                'remarks'             =>    $remarks,
+                                'remarks'             =>    $_POST['remarks'],
 
                                 'declaration'         =>    $this->input->post('declaration')
                 );
@@ -907,102 +831,6 @@
 
                 $spn_dept       =       $_POST['spn_dpt'];  
 
-                
-                // //Medical Details
-                // $med_cntr      =       $_POST['med_crt'];
-
-                // $med_crt_no    =       $_POST['med_crt_no'];
-
-                // $ame_name      =       $_POST['ame_name'];
-
-                // $ame_no        =       $_POST['ame_no'];
-
-                // $exam_dt       =       $_POST['exam_dt'];
-
-                // $bld_grp       =       $_POST['bld_grp'];
-
-                // $alergies      =       $_POST['alergies'];
-
-                // $alg_dtl       =       $_POST['alg_dtl'];
-
-                // $med_exp_dt    =       $_POST['mexp_dt']; 
-
-                // if(!empty($_FILES["kin_med_cert"]["name"]))
-                // {
-                //     // * config* //
-                //     $config6['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-
-                //     if(!is_dir($config6['upload_path'])) 
-                //     {
-                //         mkdir($config6['upload_path'],0777,TRUE);
-                //     }
-
-                //     $config6['allowed_types'] = 'gif|jpg|jpeg|png|pdf';
-                //     $config6['overwrite'] = TRUE;
-                //     $this->load->library('upload', $config6);
-                //     // * config* //
-
-                //     $kin_med_cert_data = $_FILES["kin_med_cert"]["name"];
-
-                //     if(! $this->upload->do_upload("kin_med_cert"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         //$data_array = array("kin_med_cert_path"  => 'assets/userDocs/'.$kin_med_cert_data);
-                //         $kin_med_cert_path  =   'assets/userDocs/appl_photo/'.$kin_med_cert_data;
-                //     }
-                // }else{
-
-                //         $kin_med_cert_path  =  $_POST['med_cert_path_prev'];
-                // }
-
-                // //Bosiet Details
-
-                // $inst_name      =   $_POST['inst_name'];
-
-                // $inst_adr       =   $_POST['inst_adr'];
-
-                // $course_tit     =   $_POST['course_tit'];
-
-                // $inst_cert_no   =   $_POST['inst_cert_no'];
-
-                // $trn_frm_dt     =   $_POST['atnd_from'];
-
-                // $trn_to_dt      =   $_POST['atnd_to'];
-
-                // $hexp_dt        =   $_POST['hexp_dt'];
-
-
-                // if(!empty($_FILES["kin_huet_cert"]["name"]))
-                // {
-                //     // * config* //
-                //     $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                //     $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf';
-                //     $config['overwrite'] = TRUE;
-                //     $this->load->library('upload', $config);
-                //     // * config* //
-
-                //     $kin_huet_cert_data = $_FILES["kin_huet_cert"]["name"];
-
-                //     if(! $this->upload->do_upload("kin_huet_cert"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                //         $kin_huet_cert_path  =   'assets/userDocs/appl_photo/'.$kin_huet_cert_data;
-                //     }
-                // }else{
-
-                //         $kin_huet_cert_path  =  $_POST['huit_cert_path_prev'];
-                // }
-
-
 
                 if ($_POST['appl_status']=='R'){
 
@@ -1063,211 +891,7 @@
                 // $from_dt5           =       $_POST['from_dt5'];
                 // $to_dt5             =       $_POST['to_dt5'];
                 // $validity5          =       $_POST['validity5'];
-
-
-                // // * config* //
-                // $config['upload_path']  = FCPATH.'assets/userDocs/training';
-                // $config['allowed_types'] = 'gif|jpg|jpeg|png|pdf';
-                // $config['overwrite'] = TRUE;
-                // $this->load->library('upload', $config);
-                // // * config* //
-
-                // $certificate1_path = '';
-                // if(!empty($_FILES["certificate1"]["name"]))
-                // {
-                //     $certificate_data = $_FILES["certificate1"]["name"];
-
-                //     if(! $this->upload->do_upload("certificate1"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         $certificate1_path  =   'assets/userDocs/training/'.$certificate_data;
-                //     }
-                // }
-                // else
-                // {
-                //     //echo "nooo.."; die;
-                //     $certificate1_path = $_POST['certificate1_path'];
-                // }
-
-                // $certificate2_path = '';
-                // if(!empty($_FILES["certificate2"]["name"]))
-                // {
-                //     $certificate_data = $_FILES["certificate2"]["name"];
-
-                //     if(! $this->upload->do_upload("certificate2"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         $certificate2_path  =   'assets/userDocs/training/'.$certificate_data;
-                //     }
-                // }
-                // else
-                // {
-                //     $certificate2_path = $_POST['certificate2_path'];
-                // }
-
-                // $certificate3_path = '';
-                // if(!empty($_FILES["certificate3"]["name"]))
-                // {
-                //     $certificate_data = $_FILES["certificate3"]["name"];
-
-                //     if(! $this->upload->do_upload("certificate3"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         $certificate3_path  =   'assets/userDocs/training/'.$certificate_data;
-                //     }
-                // }
-                // else
-                // {
-                //     $certificate3_path = $_POST['certificate3_path'];
-                // }
-
-                // $certificate4_path = '';
-                // if(!empty($_FILES["certificate4"]["name"]))
-                // {
-                //     $certificate_data = $_FILES["certificate4"]["name"];
-
-                //     if(! $this->upload->do_upload("certificate4"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         $certificate4_path  =   'assets/userDocs/training/'.$certificate_data;
-                //     }
-                // }
-                // else
-                // {
-                //     $certificate4_path = $_POST['certificate4_path'];
-                // }
-
-                // $certificate5_path = '';
-                // if(!empty($_FILES["certificate5"]["name"]))
-                // {
-                //     $certificate_data = $_FILES["certificate5"]["name"];
-
-                //     if(! $this->upload->do_upload("certificate5"))
-                //     {
-                //         echo $this->upload->display_errors();
-                //     }
-                //     else
-                //     {
-                //         $this->upload->data();
-                //         $certificate5_path  =   'assets/userDocs/training/'.$certificate_data;
-                //     }
-                // }
-                // else
-                // {
-                //     $certificate5_path = $_POST['certificate5_path'];
-                // }
-
-
-                // $editTrainingVal = array(
-                //     'inst_name1' => $inst_name1,
-                //     'adr1' => $adr1,
-                //     'course1' => $course1,
-                //     'cert_no1' => $cert_no1,
-                //     'from_dt1' => $from_dt1,
-                //     'to_dt1' => $to_dt1,
-                //     'validity1' => $validity1,
-                //     'certificate1_path' => $certificate1_path,
-                
-                //     'inst_name2' => $inst_name2,
-                //     'adr2' => $adr2,
-                //     'course2' => $course2,
-                //     'cert_no2' => $cert_no2,
-                //     'from_dt2' => $from_dt2,
-                //     'to_dt2' => $to_dt2,
-                //     'validity2' => $validity2,
-                //     'certificate2_path' => $certificate2_path,
-
-                //     'inst_name3' => $inst_name3,
-                //     'adr3' => $adr3,
-                //     'course3' => $course3,
-                //     'cert_no3' => $cert_no3,
-                //     'from_dt3' => $from_dt3,
-                //     'to_dt3' => $to_dt3,
-                //     'validity3' => $validity3,
-                //     'certificate3_path' => $certificate3_path,
-
-                //     'inst_name4' => $inst_name4,
-                //     'adr4' => $adr4,
-                //     'course4' => $course4,
-                //     'cert_no4' => $cert_no4,
-                //     'from_dt4' => $from_dt4,
-                //     'to_dt4' => $to_dt4,
-                //     'validity4' => $validity4,
-                //     'certificate4_path' => $certificate4_path,
-
-                //     'inst_name5' => $inst_name5,
-                //     'adr5' => $adr5,
-                //     'course5' => $course5,
-                //     'cert_no5' => $cert_no5,
-                //     'from_dt5' => $from_dt5,
-                //     'to_dt5' => $to_dt5,
-                //     'validity5' => $validity5,
-                //     'certificate5_path' => $certificate5_path );
-
-
-                // $insertTrainingVal = array(
-                //     'appl_no' => $appl_no,
-                //     'inst_name1' => $inst_name1,
-                //     'adr1' => $adr1,
-                //     'course1' => $course1,
-                //     'cert_no1' => $cert_no1,
-                //     'from_dt1' => $from_dt1,
-                //     'to_dt1' => $to_dt1,
-                //     'validity1' => $validity1,
-                //     'certificate1_path' => $certificate1_path,
-                
-                //     'inst_name2' => $inst_name2,
-                //     'adr2' => $adr2,
-                //     'course2' => $course2,
-                //     'cert_no2' => $cert_no2,
-                //     'from_dt2' => $from_dt2,
-                //     'to_dt2' => $to_dt2,
-                //     'validity2' => $validity2,
-                //     'certificate2_path' => $certificate2_path,
-
-                //     'inst_name3' => $inst_name3,
-                //     'adr3' => $adr3,
-                //     'course3' => $course3,
-                //     'cert_no3' => $cert_no3,
-                //     'from_dt3' => $from_dt3,
-                //     'to_dt3' => $to_dt3,
-                //     'validity3' => $validity3,
-                //     'certificate3_path' => $certificate3_path,
-
-                //     'inst_name4' => $inst_name4,
-                //     'adr4' => $adr4,
-                //     'course4' => $course4,
-                //     'cert_no4' => $cert_no4,
-                //     'from_dt4' => $from_dt4,
-                //     'to_dt4' => $to_dt4,
-                //     'validity4' => $validity4,
-                //     'certificate4_path' => $certificate4_path,
-
-                //     'inst_name5' => $inst_name5,
-                //     'adr5' => $adr5,
-                //     'course5' => $course5,
-                //     'cert_no5' => $cert_no5,
-                //     'from_dt5' => $from_dt5,
-                //     'to_dt5' => $to_dt5,
-                //     'validity5' => $validity5,
-                //     'certificate5_path' => $certificate5_path
-                // );
+               
                 
                 
                 
@@ -1306,18 +930,6 @@
 
                 
                 $this->Applications->f_update_applcationDtls($updateValue, $appl_no);
-
-                // checking whather previously training entry was done or not --
-                // $checkTrainingEntry = $this->Applications->f_check_training_byApplnNo($appl_no);
-                // $checkVal = $checkTrainingEntry->row;
-                // if($checkVal > 0)
-                // {
-                //     $this->Trainings->f_update_trainingDtls($appl_no, $editTrainingVal);
-                // }
-                // elseif($checkVal == 0)
-                // {
-                //     $this->Trainings->f_insert_trainingDtls($insertTrainingVal);
-                // }
 
                 //redirect('Application/apln');
                 redirect('Application/edit2?appl_no='.$appl_no);
@@ -1365,16 +977,16 @@
 
                 $apl_lname      =       $_POST['apl_lst_name'];
 
-                if(!empty($_FILES["apl_name_path"]["name"])&& $_FILES['apl_name_path']['size']<2000000)
+                if(!empty($_FILES["apl_name_path"]["name"])&& $_FILES['apl_name_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $config1['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config1['allowed_types'] = 'gif|jpg|jpeg';
-                    $config1['overwrite'] = TRUE;
+                    $apl_name_data            = 'i'.time().$_FILES["apl_name_path"]["name"];
+                    $config1['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
+                    $config1['allowed_types'] = 'png|jpg|jpeg';
+                    $config1['overwrite']     = TRUE;
+                    $config['file_name']      = $apl_name_data;
                     $this->load->library('upload', $config1);
                     // * config* //
-
-                    $apl_name_data = $_FILES["apl_name_path"]["name"];
 
                     if(! $this->upload->do_upload("apl_name_path"))
                     {
@@ -1400,16 +1012,18 @@
 
                 $apl_nric_no    =       $_POST['nric_no'];
 
-                if(!empty($_FILES["nric_path"]["name"])&& $_FILES['nric_path']['size']<2000000)
+                if(!empty($_FILES["nric_path"]["name"])&& $_FILES['nric_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $config2['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config2['allowed_types'] = 'gif|jpg|jpeg';
-                    $config2['overwrite'] = TRUE;
+                    $apl_nric_data            = 'n'.time().$_FILES["nric_path"]["name"];
+                    $config2['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
+                    $config2['allowed_types'] = 'png|jpg|jpeg|pdf';
+                    $config2['overwrite']     = TRUE;
+                    $config2['file_name']     = $apl_nric_data;
                     $this->load->library('upload', $config2);
                     // * config* //
 
-                    $apl_nric_data = $_FILES["nric_path"]["name"];
+                    //$apl_nric_data = $_FILES["nric_path"]["name"];
 
                     if(! $this->upload->do_upload("nric_path"))
                     {
@@ -1435,15 +1049,17 @@
                 if(!empty($_FILES["pp_no"]["name"])&& $_FILES['pp_no']['size']<2000000)
                 {
                     // * config* //
-                    $config3['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
+                    $pp_no_data               = 'p'.time().$_FILES["pp_no"]["name"];
 
-                    $config3['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['max_size'] = '2048';
-                    $config3['overwrite'] = TRUE;
+                    $config3['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
+                    $config3['allowed_types'] = 'png|jpg|jpeg|pdf';
+                    //$config3['max_size']      = '2048';
+                    $config3['overwrite']     = TRUE;
+                    $config3['file_name']     = $pp_no_data;
                     $this->load->library('upload', $config3);
                     // * config* //
 
-                    $pp_no_data = $_FILES["pp_no"]["name"];
+                    //$pp_no_data = $_FILES["pp_no"]["name"];
 
                     if(! $this->upload->do_upload("pp_no"))
                     {
@@ -1496,18 +1112,18 @@
 
                 $kin_nric       =       $_POST['kin_nric'];
 
-                if(!empty($_FILES["kin_nric_path"]["name"])&& $_FILES['kin_nric_path']['size']<2000000)
+                if(!empty($_FILES["kin_nric_path"]["name"])&& $_FILES['kin_nric_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $config4['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
 
+                    $kin_nric_data = 'kn'.time().$_FILES["kin_nric_path"]["name"];
+                    $config4['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
 
-                    $config4['allowed_types'] = 'gif|jpg|jpeg';
-                    $config4['overwrite'] = TRUE;
+                    $config4['allowed_types'] = 'png|jpg|jpeg|pdf';
+                    $config4['overwrite']     = TRUE;
+                    $config4['file_name']     = $kin_nric_data;
                     $this->load->library('upload', $config4);
                     // * config* //
-
-                    $kin_nric_data = $_FILES["kin_nric_path"]["name"];
 
                     if(! $this->upload->do_upload("kin_nric_path"))
                     {
@@ -1531,20 +1147,20 @@
 
                 $kin_pp         =       $_POST['kin_pp'];
 
-                if(!empty($_FILES["kin_pp"]["name"])&& $_FILES['kin_pp']['size']<2000000)
+                if(!empty($_FILES["kin_pp"]["name"])&& $_FILES['kin_pp']['size'] < 3000000)
                 {
                     // * config* //
+                    $kin_pp_data             = 'kp'.time().$_FILES["kin_pp"]["name"];
                     $config5['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
                     if(!is_dir($config5['upload_path'])) 
                     {
                         mkdir($config5['upload_path'],0777,TRUE);
                     }
-                    $config5['allowed_types'] = 'gif|jpg|jpeg';
-                    $config5['overwrite'] = TRUE;
+                    $config5['allowed_types'] = 'png|jpg|jpeg|pdf';
+                    $config5['overwrite']     = TRUE;
+                    $config5['file_name']     = $kin_pp_data;
                     $this->load->library('upload', $config5);
                     // * config* //
-
-                    $kin_pp_data = $_FILES["kin_pp"]["name"];
 
                     if(! $this->upload->do_upload("kin_pp"))
                     {
@@ -1585,9 +1201,9 @@
 
                 $updateValue    = array('appl_name'     =>  $apl_name,
 
-                                    'appl_mid_name' =>  $apl_mname,
+                                    'appl_mid_name'     =>  $apl_mname,
 
-                                    'appl_last_name'=>  $apl_lname,
+                                    'appl_last_name'    =>  $apl_lname,
 
                                     'appl_photo_path'   =>  $apl_name_path,
 
@@ -1708,22 +1324,22 @@
 
                 $med_exp_dt    =       $_POST['mexp_dt']; 
 
-                if(!empty($_FILES["kin_med_cert"]["name"])&& $_FILES['kin_med_cert']['size']<2000000)
+                if(!empty($_FILES["kin_med_cert"]["name"])&& $_FILES['kin_med_cert']['size'] < 3000000)
                 {
                     // * config* //
-                    $config6['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
 
-                    if(!is_dir($config6['upload_path'])) 
-                    {
-                        mkdir($config6['upload_path'],0777,TRUE);
-                    }
+                    $kin_med_cert_data =   'kin_med_cert'.time().$_FILES["kin_med_cert"]["name"];
 
-                    $config6['allowed_types'] = 'gif|jpg|jpeg';
-                    $config6['overwrite'] = TRUE;
+                    $config6['upload_path']  = FCPATH.'assets/userDocs/certificate';
+
+                  
+                    $config6['allowed_types'] = 'png|jpg|jpeg|pdf';
+                    $config6['overwrite']     = TRUE;
+                    $config6['file_name']     = $kin_med_cert_data;
                     $this->load->library('upload', $config6);
                     // * config* //
 
-                    $kin_med_cert_data = $_FILES["kin_med_cert"]["name"];
+                    
 
                     if(! $this->upload->do_upload("kin_med_cert"))
                     {
@@ -1737,7 +1353,7 @@
                     {
                         $this->upload->data();
                         //$data_array = array("kin_med_cert_path"  => 'assets/userDocs/'.$kin_med_cert_data);
-                        $kin_med_cert_path  =   'assets/userDocs/appl_photo/'.$kin_med_cert_data;
+                        $kin_med_cert_path  =   'assets/userDocs/certificate/'.$kin_med_cert_data;
                     }
                 }else{
 
@@ -1761,17 +1377,18 @@
                 $hexp_dt        =   $_POST['hexp_dt'];
 
 
-                if(!empty($_FILES["kin_huet_cert"]["name"])&& $_FILES['kin_huet_cert']['size']<2000000)
+                if(!empty($_FILES["kin_huet_cert"]["name"])&& $_FILES['kin_huet_cert']['size'] < 3000000)
                 {
                     // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
+                    $kin_huet_cert_data       = 'kin_huet_cert'.time().$_FILES["kin_huet_cert"]["name"];
+                    $config7['upload_path']   = FCPATH.'assets/userDocs/certificate';
+                    $config7['allowed_types'] = 'png|jpg|jpeg|pdf';
+                    $config7['overwrite']     = TRUE;
+                    $config7['file_name']     =  $kin_huet_cert_data;
+                    $this->load->library('upload', $config7);
                     // * config* //
 
-                    $kin_huet_cert_data = $_FILES["kin_huet_cert"]["name"];
-
+                   
                     if(! $this->upload->do_upload("kin_huet_cert"))
                     {
                         $error = array('error' => 'Error in kin huet certificate upload '.$this->upload->display_errors());
@@ -1784,7 +1401,7 @@
                     {
                         $this->upload->data();
                         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                        $kin_huet_cert_path  =   'assets/userDocs/appl_photo/'.$kin_huet_cert_data;
+                        $kin_huet_cert_path  =   'assets/userDocs/certificate/'.$kin_huet_cert_data;
                     }
                 }else{
 
@@ -1793,16 +1410,16 @@
 
                 $vrf_flg        =   $_POST['trn_vrf_flg'];
 
-                if(!empty($_FILES["trn_vrf_cert_path"]["name"])&& $_FILES['trn_vrf_cert_path']['size']<2000000)
+                if(!empty($_FILES["trn_vrf_cert_path"]["name"])&& $_FILES['trn_vrf_cert_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
+                    $trn_vrf_cert_data         = 'trn_vrf_cert'.time().$_FILES["trn_vrf_cert_path"]["name"];
+                    $config8['upload_path']    = FCPATH.'assets/userDocs/certificate';
+                    $config8['allowed_types']  = 'png|jpg|jpeg|pdf';
+                    $config8['overwrite']      = TRUE;
+                    $config8['file_name']      = $trn_vrf_cert_data;
+                    $this->load->library('upload', $config8);
                     // * config* //
-
-                    $trn_vrf_cert_data = $_FILES["trn_vrf_cert_path"]["name"];
 
                     if(! $this->upload->do_upload("trn_vrf_cert_path"))
                     {
@@ -1816,7 +1433,7 @@
                     {
                         $this->upload->data();
                         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                        $trn_vrf_path  =   'assets/userDocs/appl_photo/'.$trn_vrf_cert_data;
+                        $trn_vrf_path  =   'assets/userDocs/certificate/'.$trn_vrf_cert_data;
                     }
                 }else{
 
@@ -1824,86 +1441,6 @@
                 }
 
                 //H2S Details
-
-                $h2s_inst_name      =   $_POST['h2s_inst_name'];
-
-                $h2s_inst_adr       =   $_POST['h2s_inst_adr'];
-
-                $h2s_course         =   $_POST['h2s_course'];
-
-                $h2s_cert_no        =   $_POST['h2s_cert_no'];
-
-                $h2s_frm_dt         =   $_POST['h2s_frm_dt'];
-
-                $h2s_to_dt          =   $_POST['h2s_to_dt'];
-
-                $h2s_exp_dt         =   $_POST['h2s_exp_dt'];
-
-
-
-                if(!empty($_FILES["h2s_cert_path"]["name"])&& $_FILES['h2s_cert_path']['size']<2000000)
-                {
-                    // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
-                    // * config* //
-
-                    $h2s_cert_path_data = $_FILES["h2s_cert_path"]["name"];
-
-                    if(! $this->upload->do_upload("h2s_cert_path"))
-                    {
-                        $error = array('error' => 'Error in H2S certificate upload '.$this->upload->display_errors());
-
-                        $this->session->set_flashdata('error',$error['error']);
-
-                        redirect('Application/apln');
-                    }
-                    else
-                    {
-                        $this->upload->data();
-                        //$data_array = array("h2s_cert_path_name"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                        $h2s_cert_path_name  =   'assets/userDocs/appl_photo/'.$h2s_cert_path_data;
-                    }
-                }else{
-
-                        $h2s_cert_path_name  =  $_POST['h2s_cert_path_prev'];
-                }
-
-                $h2s_trn_flg        =   $_POST['h2s_trn_flg'];
-
-                if(!empty($_FILES["h2s_vrf_path"]["name"])&& $_FILES['h2s_vrf_path']['size']<2000000)
-                {
-                    // * config* //
-                    $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    $config['allowed_types'] = 'gif|jpg|jpeg';
-                    $config['overwrite'] = TRUE;
-                    $this->load->library('upload', $config);
-                    // * config* //
-
-                    $h2s_vrf_path_data = $_FILES["h2s_vrf_path"]["name"];
-
-                    if(! $this->upload->do_upload("h2s_vrf_path"))
-                    {
-                        $error = array('error' => 'Error in H2S Verification certificate upload '.$this->upload->display_errors());
-
-                        $this->session->set_flashdata('error',$error['error']);
-
-                        redirect('Application/apln');
-                    }
-                    else
-                    {
-                        $this->upload->data();
-                        //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
-                        $h2s_vrf_cert_path  =   'assets/userDocs/appl_photo/'.$h2s_vrf_path_data;
-                    }
-                }else{
-
-                        $h2s_vrf_cert_path  =  $_POST['h2s_vrf_path_prev'];
-                }
-
-                $remarks        =       $_POST['remarks'];
 
                 $updateValue    = array(
                                 'med_center'          =>    $med_cntr,
@@ -1946,27 +1483,15 @@
 
                                 'trn_vrf_cert_path'   =>    $trn_vrf_path,
 
-                                'h2s_inst_name'       =>    $h2s_inst_name,
+                                'h2s_inst_name'       =>    $_POST['h2s_inst_name'],
 
-                                'h2s_inst_adr'        =>    $h2s_inst_adr,
+                                'h2s_inst_adr'        =>    $_POST['h2s_inst_adr'],
 
-                                'h2s_course'          =>    $h2s_course,
+                                'h2s_course'          =>    $_POST['h2s_course'],
 
-                                'h2s_cert_no'         =>    $h2s_cert_no,
+                                'h2s_cert_no'         =>    $_POST['h2s_cert_no'],
 
-                                'h2s_frm_dt'          =>    $h2s_frm_dt,
-
-                                'h2s_to_dt'           =>    $h2s_to_dt,
-
-                                'h2s_exp_dt'          =>    $h2s_exp_dt,
-
-                                'h2s_cert_path'       =>    $h2s_cert_path_name,
-
-                                'h2s_trn_flg'         =>    $h2s_trn_flg,
-
-                                'h2s_vrf_path'        =>    $h2s_vrf_cert_path,
-
-                                'remarks'             =>    $remarks,
+                                'remarks'             =>    $_POST['remarks'],
 
                                 'declaration'         =>    $this->input->post('declaration')
 
@@ -2323,43 +1848,7 @@
                 $medExpDt       = date('d-F-Y',strtotime($key->med_exp_dt));
 
                 $signaturePath = base_url('assets/images/pass/signature.png');
-
-
-                /*
-                $content1 = '<html>';
-
-                $content1 .= '<body>';
-                $content1 .= '<div style= "overflow: hidden; background-color: #f1f1f1; line-height: 5px;">';
-                $content1 .= '<p><img style= "width: 150px;  text-align: left;"  src= "'.$logoPath.'"/>';            
-                //$content1 .= '<div style= "text-align: right;" >';
-                $content1 .= '<span style= "color: #23527c; padding-left: 80px; font-size: 20px; text-align: right;" >         Vestigo Petroleum Sdn Bhd</span></p>';
-                //$content1 .= '</div></p>';
-                $content1 .= '</div>';
-
-                $content1 .= '<br><br>';
-                $content1 .= '<div class= "inline" style= "margin-top= 10px;" align="right">';
-                    $content1 .= '<p><img align="center" src= "'.base_url($key->appl_photo_path).'" width= "150" height= "150" alt= "applicant image" style= "float: right;" /></p>';
-                $content1 .= '</div>';
-                $content1 .= '<div margin-top: 100px; margin-bottom: 100px; margin-right: 150px; margin-left: 80px;>';
-                $content1 .= '<div align="left">';
-                    $content1 .= '<p><span style= "font-size: 15px; "><strong>Safepass No : </strong></span> '.$key->appl_no.'</p>';
-                    $content1 .= '<p><span style= "font-size: 15px;"><strong>Applicant Name : </strong></span> '.$key->appl_name.' '.$key->appl_mid_name.' '.$key->appl_last_name.'</p>';
-                    $content1 .= '<p><span style= "font-size: 15px;"><strong>NRIC / Passport No : </strong></span> '.$key->applcnt_pasprt_no.'</p>';
-                    $content1 .= '<p><span style= "font-size: 15px;"><strong>Blood Group : </strong></span> '.$key->blood_grp.'</p>';
-                    $content1 .= '<p><span style= "font-size: 15px;"><strong>Medical Validity : </strong></span> '.date("d-m-Y",strtotime($key->med_exp_dt)).'</p>';
-                    $content1 .= '<p><span style= "font-size: 15px;"><strong>Training Validity : </strong></span>'.date("d-m-Y",strtotime($key->huit_exp_dt)).'</p>';
-                $content1 .= '</div>';
-                $content1 .= '</div>';
-
-                $content1 .= '<div style= "text-align:center;">';
-                $content1 .= '<p style= "font-size: 10px;">*************************************************************************************************************************</p>';
-                $content1 .= '<p style= "font-size: 10px;">This Safety Pass belongs to Vestigo Petroleum Sdn Bhd. If found, please return to Vestigo Petroleum Sdn Bhd, Level 13 Menara Binjai, Jln Binjai, Kuala Lumpur, 50450 Kuala Lumpur.</p>';
-                $content1 .= '<p style= "font-size: 10px;">Contact: 03-2776 9999</p>';
-                $content1 .= '</div>';
-
-                $content1 .= '</body>';
-                $content1 .= '</html>'; */
-
+    
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////
                 
                 if($key->h2s_cert_path != "")
@@ -2553,7 +2042,25 @@
             
         }
 
+       public function testemail(){
 
+
+        $this->email->from('safepass@esafepass.com', 'Esafepass');
+        $this->email->to('admin@esafepass.com');
+ 
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');
+
+         if($this->email->send()) 
+        // $this->session->set_flashdata("email_sent","Email sent successfully."); 
+
+            echo "email_sent";
+
+         else 
+         //$this->session->set_flashdata("email_sent","Error in sending Email."); 
+
+            echo "email_not_sent";
+       }
 
     }
 

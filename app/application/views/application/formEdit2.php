@@ -69,7 +69,10 @@
                 <div class="card-body">
 
                     <?php
+
                         foreach($data1 as $row) {
+
+
                     ?>
 
                     <form class="form-horizontal" 
@@ -165,7 +168,7 @@
                                             <input type='hidden' value= "<?php echo ($row->appl_photo_path); ?>"  class="form-control" id="apl_name_path_prev" name="apl_name_path_prev">
 
                                             <input type='file' width="120" class="form-control upload_img" id="apl_name_path" name="apl_name_path">
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg & maximum size 3MB</font></label>
                                             
                                         </div>
 
@@ -211,7 +214,7 @@
                                             <label class="control-label">Upload NRIC</label>
 
                                             <input type='file' class="form-control upload_img" id="nric_path" name="nric_path">
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
 
                                             <input type='hidden' value="<?php echo ($row->nric_path); ?>" id="nric_path_prev" name="nric_path_prev">
                                             <?php if($row->nric_path != ''){ ?>
@@ -252,7 +255,7 @@
                                             <?php if($row->appl_pp_path != ''){ ?>
                                                 <a href="<?php echo base_url($row->appl_pp_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -320,13 +323,11 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Nationality</label>
+                                            <label class="control-label">Nationality </label>
 
                                             <select class="form-control" 
                                                     id="apl_ntl"
-                                                    name="apl_ntl"
-                                                    
-                                                >
+                                                    name="apl_ntl">
 
                                                 <option value="">Select</option>
 
@@ -334,8 +335,7 @@
                                                     foreach($country as $row1){
                                                 ?>
 
-                                                <option <?php if($row1->country_name== $row->appl_nation)echo "selected" ?> value="<?php echo $row1->country_name;?>">
-                                                    <?php echo $row1->country_name; ?>
+                                                <option value="<?php echo $row1->country_name;?>" <?php if($row1->country_name == $row->appl_nation) { echo "selected"; } ?> > <?php echo $row1->country_name; ?>
                                                         
                                                 </option>
 
@@ -493,7 +493,7 @@
                                             <?php if($row->kin_nric_path != ''){ ?>
                                                 <a href="<?php echo base_url($row->kin_nric_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -527,7 +527,7 @@
                                             <?php if($row->kin_pp_path != ''){ ?>
                                                 <a href="<?php echo base_url($row->kin_pp_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -606,10 +606,12 @@
                                                 <option value="">Select</option>
 
                                                 <?php
+                                             //  echo $row->appl_nation;
                                                     foreach($country as $row2){
                                                 ?>
 
-                                                <option <?php if($row2->country_name== $row->appl_nation)echo "selected" ?> value="<?php echo $row2->country_name;?>">
+                                                <option <?php if($row2->country_name == $row->appl_nation) echo "selected" ?> value="<?php echo $row2->country_name;?>">
+
                                                     <?php echo $row2->country_name; ?>
                                                         
                                                 </option>

@@ -283,7 +283,7 @@
                                                 <a href="<?php echo base_url($row->med_cert_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
 
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -414,7 +414,7 @@
                                             <?php if($row->huit_cert_path != ''){ ?>
                                                 <a href="<?php echo base_url($row->huit_cert_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -462,7 +462,7 @@
                                             <?php if($row->trn_vrf_cert_path != ''){ ?>
                                                 <a href="<?php echo base_url($row->trn_vrf_cert_path); ?>" target= "blank">Download <i class="fa fa-download" aria-hidden="true"></i></a>
                                             <?php } ?>
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
