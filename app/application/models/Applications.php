@@ -27,7 +27,8 @@
 
 public function f_get_appl_name($appl_no)
 {
-  	$sql = $this->db->query(" SELECT concat('Name: ',appl_name)appl_name,concat('Expiry Date: ',DATE_FORMAT(h2s_exp_dt,'%M %d %Y'))h2s_exp_dt FROM td_application WHERE appl_no = '$appl_no'");
+  	$sql = $this->db->query(" SELECT concat('Name: ',appl_name)appl_name,
+  		                     concat('Expiry Date: ',DATE_FORMAT(h2s_exp_dt,'%M %d %Y'))h2s_exp_dt,appl_no appl_no,nric_no nric_no,applcnt_pasprt_no applcnt_pasprt_no,appl_nation,org_name,applcnt_add,apl_cnt_mob,position_title,huit_exp_dt huit_exp_dt,med_exp_dt med_exp_dt FROM td_application WHERE appl_no = '$appl_no'");
 
 			return $sql->row();  
 }

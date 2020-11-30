@@ -272,6 +272,19 @@
 
                                 </div>
 
+                                <div class="row">
+
+                                <div class="col-md-12">
+                                <div class="form-group">
+                                  <input type="checkbox" id="medical_declar" name="medical_declar" value="Y" required>&nbsp;&nbsp;&nbsp;
+                               I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease. (can be added under vestigo address, the place where the earlier qr code was positioned.)
+                                </div> 
+
+                               </div>
+
+                                  
+                                </div>
+
                             </div>
 
                             <h3 class="box-title">DETAILS OF BOSIET/STCW/FOET</h3>
@@ -414,9 +427,7 @@
 
                                             <select class="form-control" 
                                                     id="trn_vrf_flg"
-                                                    name="trn_vrf_flg"
-                                                    
-                                                >
+                                                    name="trn_vrf_flg">
 
                                                 <option value="">Select</option>
 
@@ -639,7 +650,7 @@
                             <div class="row">
                        
                                <div class="col-md-12">
-                             <div class="form-group">
+                               <div class="form-group">
                                   <input type="checkbox" id="declaration" name="declaration" value="Y" required>&nbsp;&nbsp;&nbsp;
                                I hereby confirm that the information provided herein is accurate, correct and complete and that the documents submitted along with this application form are genuine. I hereby undertake to provide to Vestigo Petroleum Sdn. Bhd. 
                                 And / or its representatives with any additional documentation requested in order to support the applicant and its approval as deemed necessary.
@@ -788,7 +799,7 @@
 
         $('.upload_img').bind('change', function() {
             var a=(this.files[0].size);
-            if(a > 2000000) {
+            if(a > 3000000) {
                 alert('Image size must be within 2MB');
                 return false;
             };

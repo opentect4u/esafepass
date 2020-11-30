@@ -111,7 +111,7 @@
 
                                             <label class="control-label">Medical Test Centre / Clinic Name</label>
 
-                                            <input type="text"class="form-control" id="med_crt" name="med_crt"
+                                            <input type="text"class="form-control" id="med_crt" name="med_crt" style='text-transform:uppercase'
                                             value="<?php echo $row->med_center; ?>">
                                             
                                         </div>
@@ -124,7 +124,7 @@
 
                                             <label class="control-label">Medical Certificate No.</label>
 
-                                            <input type='text' class="form-control" id="med_crt_no" name="med_crt_no"
+                                            <input type='text' class="form-control" id="med_crt_no" name="med_crt_no" style='text-transform:uppercase'
                                             value="<?php echo $row->med_cert_no; ?>">
                                             
                                         </div>
@@ -141,7 +141,7 @@
 
                                             <label class="control-label">AME Name</label>
 
-                                            <input type="text"class="form-control" id="ame_name" name="ame_name"
+                                            <input type="text"class="form-control" id="ame_name" name="ame_name" style='text-transform:uppercase'
                                             value="<?php echo $row->ame_name; ?>">
                                             
                                         </div>
@@ -154,7 +154,7 @@
 
                                             <label class="control-label">AME No.</label>
 
-                                            <input type='text' class="form-control" id="ame_no" name="ame_no"
+                                            <input type='text' class="form-control" id="ame_no" name="ame_no" style='text-transform:uppercase'
                                             value="<?php echo $row->ame_no; ?>">
                                             
                                         </div>
@@ -170,8 +170,8 @@
                                         <div class="form-group">
 
                                             <label class="control-label">Date of Examination</label>
-
-                                            <input type="date"class="form-control" id="exam_dt" name="exam_dt"
+ 
+                                            <input type="date"class="form-control" id="exam_dt" name="exam_dt" 
                                             value="<?php echo $row->exam_dt; ?>">
                                             
                                         </div>
@@ -246,7 +246,7 @@
                                             <label class="control-label">If Yes please state</label>
 
                                             <input type='text' class="form-control" id="alg_dtl" name="alg_dtl"
-                                            value="<?php echo $row->alergy_dtls; ?>">
+                                            value="<?php echo $row->alergy_dtls; ?>" style='text-transform:uppercase' /> 
                                             
                                         </div>
 
@@ -290,6 +290,21 @@
 
                                 </div>
 
+
+                            <div class="row">
+                       
+                               <div class="col-md-12">
+                             <div class="form-group">
+                                  <input type="checkbox" id="medical_declar" name="medical_declar" value="Y" required 
+                                  <?php if(isset($row->medical_declar) && $row->medical_declar == 'Y'){echo "checked"; }?> 
+
+                                  >&nbsp;&nbsp;&nbsp;
+                               I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease. (can be added under vestigo address, the place where the earlier qr code was positioned.)
+                                </div> 
+
+                               </div> 
+                            </div>
+
                             </div>
 
                             <h3 class="box-title">DETAILS OF BOSIET/STCW/FOET</h3>
@@ -305,7 +320,7 @@
 
                                             <label class="control-label">Training Institution Name</label>
 
-                                            <input type="text"class="form-control" id="inst_name" name="inst_name"
+                                            <input type="text"class="form-control" id="inst_name" name="inst_name" style='text-transform:uppercase'
                                             value="<?php echo $row->inst_name; ?>"> 
                                             
                                         </div>
@@ -318,7 +333,7 @@
 
                                             <label class="control-label">Training Institution Address</label>
 
-                                            <textarea class="form-control" id="inst_adr" name="inst_adr"
+                                            <textarea class="form-control" id="inst_adr" name="inst_adr" style='text-transform:uppercase'
                                             ><?php echo $row->inst_adr;?></textarea>
                                             
                                         </div>
@@ -335,7 +350,7 @@
 
                                             <label class="control-label">Course Title</label>
 
-                                            <input type="text"class="form-control" id="course_tit" name="course_tit"
+                                            <input type="text"class="form-control" id="course_tit" name="course_tit" style='text-transform:uppercase'
                                             value="<?php echo $row->course_title; ?>"> 
                                             
                                         </div>
@@ -348,7 +363,7 @@
 
                                             <label class="control-label">Certificate No</label>
 
-                                            <input type="text" class="form-control" id="inst_cert_no" name="inst_cert_no"
+                                            <input type="text" class="form-control" id="inst_cert_no" name="inst_cert_no" style='text-transform:uppercase'
                                             value="<?php echo $row->tr_cert_no; ?>">
                                             
                                         </div>
@@ -433,9 +448,7 @@
 
                                             <select class="form-control" 
                                                     id="trn_vrf_flg"
-                                                    name="trn_vrf_flg"
-                                                    
-                                                >
+                                                    name="trn_vrf_flg">
 
                                                 <option value="">Select</option>
 
@@ -483,7 +496,7 @@
 
                                             <label class="control-label">Training Institution Name</label>
 
-                                            <input type="text"class="form-control" id="h2s_inst_name" name="h2s_inst_name" value="<?php echo $row->h2s_inst_name; ?>"
+                                            <input type="text"class="form-control" id="h2s_inst_name" name="h2s_inst_name" value="<?php echo $row->h2s_inst_name; ?>" style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -496,7 +509,7 @@
 
                                             <label class="control-label">Training Institution Address</label>
 
-                                            <textarea class="form-control" id="h2s_inst_adr" name="h2s_inst_adr"
+                                            <textarea class="form-control" id="h2s_inst_adr" name="h2s_inst_adr" style='text-transform:uppercase'
                                             ><?php echo $row->h2s_inst_adr; ?></textarea>
                                             
                                         </div>
@@ -513,7 +526,7 @@
 
                                             <label class="control-label">Course Title</label>
 
-                                            <input type="text"class="form-control" id="h2s_course" name="h2s_course" value="<?php echo $row->h2s_course; ?>"
+                                            <input type="text"class="form-control" id="h2s_course" name="h2s_course" value="<?php echo $row->h2s_course; ?>" style='text-transform:uppercase'
                                             /> 
                                             
                                         </div>
@@ -526,7 +539,7 @@
 
                                             <label class="control-label">Certificate No</label>
 
-                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no" value="<?php echo $row->h2s_cert_no; ?>"
+                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no" value="<?php echo $row->h2s_cert_no; ?>" style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -655,7 +668,11 @@
 
                                         <label class="control-label">Remarks</label>
 
-                                        <textarea class="form-control" name="remarks" required><?php echo $row->remarks; ?></textarea>
+                                        <textarea class="form-control" name="remarks" required
+                                                                            style='text-transform:uppercase'
+
+
+                                        ><?php echo $row->remarks; ?></textarea>
 
                                     </div>
 
@@ -668,7 +685,7 @@
                                <div class="col-md-12">
                              <div class="form-group">
                                   <input type="checkbox" id="declaration" name="declaration" value="Y" required 
-                                  <?php if($row->declaration){echo "checked"; }?> 
+                                 <?php if(isset($row->medical_declar) && $row->medical_declar == 'Y'){echo "checked"; }?> 
 
                                   >&nbsp;&nbsp;&nbsp;
                                I hereby confirm that the information provided herein is accurate, correct and complete and that the documents submitted along with this application form are genuine. I hereby undertake to provide to Vestigo Petroleum Sdn. Bhd. 
@@ -827,7 +844,7 @@
 
         $('.upload_img').bind('change', function() {
             var a=(this.files[0].size);
-            if(a > 2000000) {
+            if(a > 3000000) {
                 alert('Image size must be within 2MB');
                 return false;
             };

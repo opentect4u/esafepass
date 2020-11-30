@@ -141,7 +141,7 @@
 
                                             <input type='file' class="form-control upload_img" id="apl_name_path" name="apl_name_path" required
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg & maximum size 3MB</font></label>
                                             
                                         </div>
 
@@ -155,9 +155,11 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Position / Title</label>
+                                            <label class="control-label">Position / Title<font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="pos_tit" name="pos_tit" style='text-transform:uppercase'
+                                            <input type='text' class="form-control" id="pos_tit" name="pos_tit"  required
+
+                                            style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -222,7 +224,7 @@
 
                                             <input type='file' class="form-control upload_img" id="nric_path" name="nric_path"
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                             
                                         </div>
 
@@ -254,7 +256,7 @@
 
                                             <input type='file' class="form-control upload_img" id="pp_no" name="pp_no"
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -326,9 +328,10 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Job Position / Title</label>
+                                            <label class="control-label">Job Position / Title <font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="job_pos" name="job_pos" style='text-transform:uppercase'
+                                            <input type='text' class="form-control" id="job_pos" name="job_pos" required
+                                            style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -409,9 +412,6 @@
 
                                     </div>
 
-                                </div>
-
-                                <div class="row">
 
                                     <div class="col-md-6">
 
@@ -427,6 +427,11 @@
 
                                     </div>
 
+                                </div>
+
+                                <div class="row">
+
+
                                     <div class="col-md-6">
 
                                         <div class="form-group">
@@ -440,6 +445,37 @@
                                         </div>
 
                                     </div>
+
+                                      <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Nationality<font color= "red"> *</font></label>
+
+                                            <select class="form-control" 
+                                                    id="kin_ntn"
+                                                    name="kin_ntn"
+                                                    required
+                                                >
+
+                                                <option value="">Select</option>
+
+                                                <?php
+                                                    foreach($country as $row){
+                                                ?>
+
+                                                <option value="<?php echo $row->country_name;?>"><?php echo $row->country_name; ?></option>
+
+                                                <?php 
+                                                    }
+                                                ?>
+
+                                            </select>
+                                            
+                                        </div>
+
+                                    </div>
+
 
                                 </div>
 
@@ -466,7 +502,7 @@
 
                                             <input type='file' class="form-control upload_img" id="kin_nric_path" name="kin_nric_path"
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -496,7 +532,7 @@
 
                                             <input type='file' class="form-control upload_img" id="kin_pp_path" name="kin_pp">
 
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
 
                                         </div>
 
@@ -563,36 +599,7 @@
 
                                     </div>
 
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Nationality<font color= "red"> *</font></label>
-
-                                            <select class="form-control" 
-                                                    id="kin_ntn"
-                                                    name="kin_ntn"
-                                                    required
-                                                >
-
-                                                <option value="">Select</option>
-
-                                                <?php
-                                                    foreach($country as $row){
-                                                ?>
-
-                                                <option value="<?php echo $row->country_name;?>"><?php echo $row->country_name; ?></option>
-
-                                                <?php 
-                                                    }
-                                                ?>
-
-                                            </select>
-                                            
-                                        </div>
-
-                                    </div>
-
+                                  
                                   
 
                                 </div>
@@ -747,30 +754,28 @@
             if(kin_ntn == 'Malaysia')
             {
                 $('#kin_nric').prop('required', true);
+                $('#kin_nric').prop('readonly', false);
                 $('#kin_nric_path').prop('required', true);
                 $('#kin_pp').prop('required', false);
                 $('#kin_pp_path').prop('required', false);
+                $('#kin_pp').prop('readonly', true);
+                $('#kin_pp_path').prop('disabled', true);
+                $('#kin_nric_path').prop('disabled', false);
 
-                if($('#kin_nric').val() == '')
-                {
-                    alert('Kin NIRC details required.');
-                    $('#kin_nric').focus();
-                    return false;
-                }
+              
             }
             else
             {
                 $('#kin_nric').prop('required', false);
+                $('#kin_nric').prop('readonly', true);
                 $('#kin_nric_path').prop('required', false);
+                $('#kin_nric_path').prop('disabled', true);
                 $('#kin_pp').prop('required', true);
                 $('#kin_pp_path').prop('required', true);
+                $('#kin_pp_path').prop('disabled', false);
+                $('#kin_pp').prop('readonly', false);
 
-                if($('#kin_pp').val() == '')
-                {
-                    alert('Kin Passport details required.');
-                    $('#kin_pp').focus();
-                    return false;
-                }
+              
             }
 
         })
@@ -783,29 +788,23 @@
             {
                 $('#nric_no').prop('required', true);
                 $('#nric_path').prop('required', true);
-                $('#apl_pp_no').prop('required', false);
-                $('#pp_no').prop('required', false);
+                $('#apl_pp_no').prop('readonly', true);
+                $('#pp_no').prop('disabled', true);
+                $('#nric_no').prop('readonly', false);
+                $('#nric_path').prop('disabled', false);
 
-                if($('#nric_no').val() == '')
-                {
-                    alert('NIRC details required.');
-                    $('#nric_no').focus();
-                    return false;
-                }
             }
-            else
-            {
-                $('#nric_no').prop('required', false);
-                $('#nric_path').prop('required', false);
+            else if(apl_ntl != 'Malaysia')
+            {  
+                
+                $('#nric_no').prop('readonly',true);
+                $('#nric_path').prop('disabled',true);
                 $('#apl_pp_no').prop('required', true);
                 $('#pp_no').prop('required', true);
+                $('#apl_pp_no').prop('readonly', false);
+                $('#pp_no').prop('disabled', false);
 
-                if($('#apl_pp_no').val() == '')
-                {
-                    alert('Passport details required.');
-                    $('#apl_pp_no').focus();
-                    return false;
-                }
+              
             }
 
         })
@@ -813,7 +812,7 @@
           
         $('.upload_img').bind('change', function() {
             var a=(this.files[0].size);
-            if(a > 2000000) {
+            if(a > 3000000) {
                 alert('Image size must be within 2MB');
                 return false;
             };

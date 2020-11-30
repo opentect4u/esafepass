@@ -263,9 +263,10 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Your Position / Title<font color= "red"> *</font></label>
+                                            <label class="control-label">Your Position / Title</label>
 
-                                            <input type='text' class="form-control" id="ypt" name="ypt" style='text-transform:uppercase'
+                                            <input type='text' class="form-control" id="ypt" name="ypt"  required
+                                            style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -441,7 +442,7 @@
                 $('#ycnct').prop('readonly', false);
 
                 $('#yf_name').prop('required', true);
-                $('#ym_name').prop('required', true);
+               // $('#ym_name').prop('required', true);
                 $('#yl_name').prop('required', true);
                 $('#ypt').prop('required', true);
                 $('#yemail').prop('required', true);
@@ -452,7 +453,7 @@
             {
 
                 $('#yf_name').prop('required', false);
-                $('#ym_name').prop('required', false);
+               // $('#ym_name').prop('required', false);
                 $('#yl_name').prop('required', false);
                 $('#ypt').prop('required', false);
                 $('#yemail').prop('required', false);

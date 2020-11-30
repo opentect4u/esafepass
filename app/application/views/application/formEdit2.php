@@ -37,6 +37,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+     <script src="<?php echo base_url();?>lib/jquery.formatter.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
     <!-- For date Range End-->
@@ -114,7 +115,9 @@
                                             <label class="control-label">First Name</label>
 
                                             <input type='text' class="form-control" id="apl_name" name="apl_name"
-                                            value="<?php echo $row->appl_name; ?>">
+                                            value="<?php echo $row->appl_name; ?>"
+                                            style='text-transform:uppercase'
+                                            >
                                             
                                         </div>
 
@@ -127,7 +130,9 @@
                                             <label class="control-label">Middle Name</label>
 
                                             <input type='text' class="form-control" id="apl_mid_name" name="apl_mid_name"
-                                            value="<?php echo $row->appl_mid_name; ?>">
+                                            value="<?php echo $row->appl_mid_name; ?>"
+                                            style='text-transform:uppercase'
+                                            > 
                                             
                                         </div>
 
@@ -143,7 +148,7 @@
 
                                             <label class="control-label">Last Name</label>
 
-                                            <input type='text' class="form-control" id="apl_lst_name" name="apl_lst_name"
+                                            <input type='text' class="form-control" id="apl_lst_name" name="apl_lst_name" style='text-transform:uppercase'
                                             value="<?php echo $row->appl_last_name; ?>">
                                             
                                         </div>
@@ -182,9 +187,10 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Position / Title</label>
+                                            <label class="control-label">Position / Title  <font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="pos_tit" name="pos_tit"
+                                            <input type='text' class="form-control" id="pos_tit" name="pos_tit" required
+                                            style='text-transform:uppercase'
                                             value="<?php echo $row->position_title; ?>">
                                             
                                         </div>
@@ -200,7 +206,7 @@
 
                                             <label class="control-label">NRIC No (Compulsory for Malaysians)</label>
 
-                                            <input type='text' class="form-control" id="nric_no" name="nric_no"
+                                            <input type='text' class="form-control" id="nric_no" name="nric_no" maxlength="14" placeholder="xxxxxx-xx-xxxx" 
                                             value="<?php echo $row->nric_no; ?>">
                                             
                                         </div>
@@ -236,7 +242,7 @@
 
                                             <label class="control-label">Passport No.(Compulsory for Non-Malaysians)</label>
 
-                                            <input type='text' class="form-control" id="apl_pp_no" name="apl_pp_no"
+                                            <input type='text' class="form-control" id="apl_pp_no" name="apl_pp_no" style='text-transform:uppercase'
                                             value="<?php echo $row->applcnt_pasprt_no; ?>">
                                             
                                         </div>
@@ -312,7 +318,7 @@
 
                                             <label class="control-label">Address</label>
 
-                                            <textarea class="form-control" id="apl_adr" name="apl_adr"
+                                            <textarea class="form-control" id="apl_adr" name="apl_adr" style='text-transform:uppercase'
                                             ><?php echo $row->applcnt_add ?></textarea>
                                             
                                         </div>
@@ -357,9 +363,9 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Job Position / Title</label>
+                                            <label class="control-label">Job Position / Title <font color= "red"> *</font></label>
 
-                                            <input type='text' class="form-control" id="job_pos" name="job_pos"
+                                            <input type='text' class="form-control" id="job_pos" name="job_pos" required style='text-transform:uppercase'
                                             value="<?php echo $row->job_pos_tit; ?>">
                                             
                                         </div>
@@ -434,11 +440,7 @@
 
                                     </div>
 
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col-md-6">
+                                      <div class="col-md-6">
 
                                         <div class="form-group">
 
@@ -450,6 +452,12 @@
                                         </div>
 
                                     </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                  
 
                                     <div class="col-md-6">
 
@@ -463,6 +471,43 @@
                                         </div>
 
                                     </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Nationality</label>
+
+                                            <select class="form-control" 
+                                                    id="kin_ntn"
+                                                    name="kin_ntn"
+                                                    
+                                                >
+
+                                                <option value="">Select</option>
+
+                                                <?php
+                                             //  echo $row->appl_nation;
+                                                    foreach($country as $row2){
+                                                ?>
+
+                                                <option <?php if($row2->country_name == $row->appl_nation) echo "selected" ?> value="<?php echo $row2->country_name;?>">
+
+                                                    <?php echo $row2->country_name; ?>
+                                                        
+                                                </option>
+
+                                                <?php 
+                                                    }
+                                                ?>
+
+                                            </select>
+                                            
+                                        </div>
+
+                                    </div>
+
 
                                 </div>
 
@@ -586,41 +631,6 @@
 
                                             <textarea class="form-control" id="kin_adr" name="kin_adr"
                                             ><?php echo $row->kin_add;?></textarea>
-                                            
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Nationality</label>
-
-                                            <select class="form-control" 
-                                                    id="kin_ntn"
-                                                    name="kin_ntn"
-                                                    
-                                                >
-
-                                                <option value="">Select</option>
-
-                                                <?php
-                                             //  echo $row->appl_nation;
-                                                    foreach($country as $row2){
-                                                ?>
-
-                                                <option <?php if($row2->country_name == $row->appl_nation) echo "selected" ?> value="<?php echo $row2->country_name;?>">
-
-                                                    <?php echo $row2->country_name; ?>
-                                                        
-                                                </option>
-
-                                                <?php 
-                                                    }
-                                                ?>
-
-                                            </select>
                                             
                                         </div>
 
@@ -771,42 +781,40 @@
 
         })
 
-        // For KIN NRIC -- 
+         // For KIN NRIC -- 
         $('#kin_ntn').on('change', function(){
 
             let kin_ntn = $(this).val();
             if(kin_ntn == 'Malaysia')
             {
                 $('#kin_nric').prop('required', true);
+                $('#kin_nric').prop('readonly', false);
                 $('#kin_nric_path').prop('required', true);
                 $('#kin_pp').prop('required', false);
                 $('#kin_pp_path').prop('required', false);
+                $('#kin_pp').prop('readonly', true);
+                $('#kin_pp_path').prop('disabled', true);
+                $('#kin_nric_path').prop('disabled', false);
 
-                if($('#kin_nric').val() == '')
-                {
-                    alert('Kin NIRC details required.');
-                    $('#kin_nric').focus();
-                    return false;
-                }
+              
             }
             else
             {
                 $('#kin_nric').prop('required', false);
+                $('#kin_nric').prop('readonly', true);
                 $('#kin_nric_path').prop('required', false);
+                 $('#kin_nric_path').prop('disabled', true);
                 $('#kin_pp').prop('required', true);
                 $('#kin_pp_path').prop('required', true);
+                $('#kin_pp_path').prop('disabled', false);
+                $('#kin_pp').prop('readonly', false);
 
-                if($('#kin_pp').val() == '')
-                {
-                    alert('Kin Passport details required.');
-                    $('#kin_pp').focus();
-                    return false;
-                }
+              
             }
 
         })
 
-        // For Applicant NIRC -- 
+      // For Applicant NIRC -- 
         $('#apl_ntl').on('change', function(){
 
             let apl_ntl = $(this).val();
@@ -814,36 +822,30 @@
             {
                 $('#nric_no').prop('required', true);
                 $('#nric_path').prop('required', true);
-                $('#apl_pp_no').prop('required', false);
-                $('#pp_no').prop('required', false);
+                $('#apl_pp_no').prop('readonly', true);
+                $('#pp_no').prop('disabled', true);
+                $('#nric_no').prop('readonly', false);
+                $('#nric_path').prop('disabled', false);
 
-                if($('#nric_no').val() == '')
-                {
-                    alert('NIRC details required.');
-                    $('#nric_no').focus();
-                    return false;
-                }
             }
-            else
-            {
-                $('#nric_no').prop('required', false);
-                $('#nric_path').prop('required', false);
+            else if(apl_ntl != 'Malaysia')
+            {  
+                
+                $('#nric_no').prop('readonly',true);
+                $('#nric_path').prop('disabled',true);
                 $('#apl_pp_no').prop('required', true);
                 $('#pp_no').prop('required', true);
+                $('#apl_pp_no').prop('readonly', false);
+                $('#pp_no').prop('disabled', false);
 
-                if($('#apl_pp_no').val() == '')
-                {
-                    alert('Passport details required.');
-                    $('#apl_pp_no').focus();
-                    return false;
-                }
+              
             }
 
         })
 
         $('.upload_img').bind('change', function() {
             var a=(this.files[0].size);
-            if(a > 2000000) {
+            if(a > 3000000) {
                 alert('Image size must be within 2MB');
                 return false;
             };
@@ -851,5 +853,10 @@
 
 
     })
+
+
+    $('#nric_no').formatter({
+      'pattern': '{{999999}}-{{99}}-{{9999}}'
+      });
 
 </script>

@@ -132,11 +132,11 @@
 
                                     'appl_dt'       =>  date('Y-m-d'),
 
-                                    'org_type'      =>  $org_type,
+                                    'org_type'      =>  strtoupper($org_type),
 
-                                    'org_name'      =>  $org_name,
+                                    'org_name'      =>  strtoupper($org_name),
 
-                                    'org_address'   =>  $org_adr,
+                                    'org_address'   =>  strtoupper($org_adr),
 
                                     //'org_email'     =>  $org_email,
 
@@ -144,23 +144,23 @@
 
                                     'org_ph_no'     =>  $org_cnct,
 
-                                    'appl_for'      =>  $apl_for,
+                                    'appl_for'      =>  strtoupper($apl_for),
 
-                                    'your_f_name'   =>  $yf_name,
+                                    'your_f_name'   =>  strtoupper($yf_name),
 
-                                    'your_m_name'   =>  $ym_name,
+                                    'your_m_name'   =>  strtoupper($ym_name),
 
-                                    'your_l_name'   =>  $yl_name,
+                                    'your_l_name'   =>  strtoupper($yl_name),
 
-                                    'your_position' =>  $y_ypt,
+                                    'your_position' =>  strtoupper($y_ypt),
 
                                     'your_email'    =>  $y_email,
 
                                     'your_cnct'     =>  $y_cnct,
 
-                                    'sponsor_name'  =>  $spn_name,
+                                    'sponsor_name'  =>  strtoupper($spn_name),
 
-                                    'sponsor_dept'  =>  $spn_dept
+                                    'sponsor_dept'  =>  strtoupper($spn_dept)
    
 
                 );
@@ -430,15 +430,15 @@
 
 
                 $value = array(
-                    'appl_name'         =>  $apl_name,
+                    'appl_name'         =>  strtoupper($apl_name),
 
-                    'appl_mid_name'     =>  $apl_mname,
+                    'appl_mid_name'     =>  strtoupper($apl_mname),
 
-                    'appl_last_name'    =>  $apl_lname,
+                    'appl_last_name'    =>  strtoupper($apl_lname),
 
                     'appl_photo_path'   =>  $apl_name_path,
 
-                    'position_title'    =>  $apl_pos_tit,
+                    'position_title'    =>  strtoupper($apl_pos_tit),
 
                     'nric_no'           =>  $apl_nric_no,
 
@@ -446,7 +446,7 @@
 
                     'applcnt_dob'       =>  $apl_dob,
 
-                    'applcnt_pasprt_no' =>  $pp_no,
+                    'applcnt_pasprt_no' =>  strtoupper($pp_no),
 
                     'appl_pp_path'      =>  $pp_no_path,
 
@@ -454,27 +454,27 @@
 
                     'appl_nation'       =>  $apl_ntn,
 
-                    'applcnt_add'       =>  $apl_adr,
+                    'applcnt_add'       =>  strtoupper($apl_adr),
 
                     'applcnt_email'     =>  $apl_email,
 
-                    'job_pos_tit'       =>  $apl_job_pos,
+                    'job_pos_tit'       =>  strtoupper($apl_job_pos),
 
                     'apl_cnt_fxd'       =>  $apl_cnct,
 
                     'apl_cnt_mob'       =>  $apl_mob,
 
-                    'kin_name'          =>  $kin_name,
+                    'kin_name'          =>  strtoupper($kin_name),
 
-                    'kin_mid_name'      =>  $kin_mid_name,
+                    'kin_mid_name'      =>  strtoupper($kin_mid_name),
 
-                    'kin_last_name'     =>  $kin_lst_name,
+                    'kin_last_name'     =>  strtoupper($kin_lst_name),
 
                     'kin_nric_no'       =>  $kin_nric,
 
                     'kin_nric_path'     =>  $kin_nric_path1,
 
-                    'kin_add'           =>  $kin_adr,
+                    'kin_add'           =>  strtoupper($kin_adr),
 
                     'kin_dob'           =>  $kin_dob,
 
@@ -488,11 +488,11 @@
 
                     'kin_nation'        =>  $kin_ntnl,
 
-                    'kin_psprt_no'      =>  $kin_pp,
+                    'kin_psprt_no'      =>  strtoupper($kin_pp),
 
                     'kin_pp_path'       =>  $kin_pp_path,
 
-                    'applcnt_kin_reltion' =>    $reln 
+                    'applcnt_kin_reltion' =>  strtoupper($reln) 
                 );
 
 
@@ -526,7 +526,6 @@
             }
 
         }
-
 
         // For III Form handling -> 
         public function addCertificate(){
@@ -590,7 +589,6 @@
 
                     $kin_med_cert_path = '';
                 }
-
                 
                 //Bosiet Details
 
@@ -677,13 +675,13 @@
 
 
                 $value = array(
-                                'med_center'          =>    $med_cntr,
+                                'med_center'          =>    strtoupper($med_cntr),
 
-                                'med_cert_no'         =>    $med_crt_no,
+                                'med_cert_no'         =>    strtoupper($med_crt_no),
 
-                                'ame_name'            =>    $ame_name,
+                                'ame_name'            =>    strtoupper($ame_name),
 
-                                'ame_no'              =>    $ame_no,
+                                'ame_no'              =>    strtoupper($ame_no),
 
                                 'exam_dt'             =>    $exam_dt,
 
@@ -691,19 +689,21 @@
 
                                 'alergies'            =>    $alergies,
 
-                                'alergy_dtls'         =>    $alg_dtl,
+                                'alergy_dtls'         =>    strtoupper($alg_dtl),
 
                                 'med_exp_dt'          =>    $med_exp_dt,
 
                                 'med_cert_path'       =>    $kin_med_cert_path,
 
-                                'inst_name'           =>    $inst_name,
+                                'medical_declar'      =>    $this->input->post('medical_declar'),
 
-                                'inst_adr'            =>    $inst_adr,
+                                'inst_name'           =>    strtoupper($inst_name),
 
-                                'course_title'        =>    $course_tit,
+                                'inst_adr'            =>    strtoupper($inst_adr),
 
-                                'tr_cert_no'          =>    $inst_cert_no,
+                                'course_title'        =>    strtoupper($course_tit),
+
+                                'tr_cert_no'          =>    strtoupper($inst_cert_no),
 
                                 'attend_dt_from'      =>    $trn_frm_dt,
 
@@ -717,20 +717,29 @@
 
                                 'trn_vrf_cert_path'   =>    $trn_vrf_path,
 
-                                'h2s_inst_name'       =>    $_POST['h2s_inst_name'],
+                                'h2s_inst_name'       =>    strtoupper($_POST['h2s_inst_name']),
 
-                                'h2s_inst_adr'        =>    $_POST['h2s_inst_adr'],
+                                'h2s_inst_adr'        =>    strtoupper($_POST['h2s_inst_adr']),
 
-                                'h2s_course'          =>    $_POST['h2s_course'],
+                                'h2s_course'          =>    strtoupper($_POST['h2s_course']),
 
-                                'h2s_cert_no'         =>    $_POST['h2s_cert_no'],
+                                'h2s_cert_no'         =>    strtoupper($_POST['h2s_cert_no']),
 
-                                'remarks'             =>    $_POST['remarks'],
+                                'remarks'             =>    strtoupper($_POST['remarks']),
 
                                 'declaration'         =>    $this->input->post('declaration')
                 );
 
                 $this->Applications->f_insert_nextFormDtls($value, $appl_no, $sl_no);
+
+                $this->email->from('safepass@esafepass.com', 'Esafepass');
+                $this->email->to('admin@esafepass.com');
+ 
+                $this->email->subject('Application Submitted');
+                //$this->email->message("Dear ".$name.",\r\nPlease click on below URL or paste into your browser to verify your Email Id\r\n\r\n". site_url("main/verify/").$verificationText."\r\n"."\r\n\r\nThanks\r\nAdmin Team");
+                $this->email->message('A New Application Submitted.');
+
+                $this->email->send();
             
                 //redirect to training from -> 
                 redirect('training/add?appl_no='.$appl_no.'&sl_no='.$sl_no.'');
@@ -1944,7 +1953,6 @@
                     </td>
                       </tr>
                         
-                    
                     </table>
                     
                     <table style="width: 579px;" border="0" cellpadding="0" cellspacing="0" width="579">
@@ -2015,21 +2023,60 @@
         public function getpass(){
 
             $appl_no = $this->input->get('appl_no');
-            
-           
-            $appl_name    = $this->Applications->f_get_appl_name($appl_no);
-           // $name = $appl_name->appl_name.','.$appl_name->h2s_exp_dt;
-           $name = $appl_name->appl_name;
-           $exp_dt =$appl_name->h2s_exp_dt;
-            $code='<center><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl='.$name."%0A".$exp_dt.'" title="Link to Google.com"></center>';
 
+            $appl_name    = $this->Applications->f_get_appl_name($appl_no);
+
+            $date1 = $appl_name->huit_exp_dt; 
+            $date2 = $appl_name->med_exp_dt;
+
+            $dateTimestamp1 = strtotime($date1); 
+            $dateTimestamp2 = strtotime($date2); 
+
+            if ($dateTimestamp1 > $dateTimestamp2) 
+                   $valid_date ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",$dateTimestamp1));
+            else
+                   $valid_date ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",$dateTimestamp2));
+           
+           $card   = 'Card No: '.$appl_name->appl_no;
+           if($appl_name->appl_nation == 'Malaysia'){
+
+                 $NRIC ='NRIC No: '.$appl_name->nric_no;
+
+            }else{
+
+                $NRIC ='';
+            }
+            if($appl_name->appl_nation != 'Malaysia'){
+
+                 $pp ='Passport No: '.$appl_name->applcnt_pasprt_no;
+
+            }else{
+
+                $pp ='';
+            }
+
+            $nationality = 'Nationality: '.$appl_name->appl_nation;
+            $org_name    = 'Company Name: '.$appl_name->org_name;
+            $Address     = 'Address: '.$appl_name->applcnt_add;
+            $telephone   = 'Telephone No: '.$appl_name->apl_cnt_mob;
+            $position    = 'Position / Title: '.$appl_name->position_title;
+
+          
+           $name   = $appl_name->appl_name;
+           $exp_dt = $appl_name->h2s_exp_dt;
+           if($appl_name->appl_nation == 'Malaysia'){
+
+            $code   = '<center><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl='.$name."%0A".$valid_date."%0A".$card."%0A".$NRIC."%0A".$nationality."%0A".$org_name."%0A".$Address."%0A".$telephone."%0A".$position.' " title="Link to Google.com"></center>';
+           }else{
+
+            $code   = '<center><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl='.$name."%0A".$valid_date."%0A".$card."%0A".$pp."%0A".$nationality."%0A".$org_name."%0A".$Address."%0A".$telephone."%0A".$position.' " title="Link to Google.com"></center>';
+
+           }
             //die();
             
-        $passData['img_url']="";
-       
+            $passData['img_url']="";
         
-        $passData['img_url']=$code;
-        
+            $passData['img_url']=$code;
 
             $passData['dates'] = $this->Applications->f_get_application_valid_card($appl_no);
 
@@ -2044,22 +2091,15 @@
 
        public function testemail(){
 
-
         $this->email->from('safepass@esafepass.com', 'Esafepass');
         $this->email->to('admin@esafepass.com');
  
-        $this->email->subject('Email Test');
-        $this->email->message('Testing the email class.');
+        $this->email->subject('Application Submitted');
+        //$this->email->message("Dear ".$name.",\r\nPlease click on below URL or paste into your browser to verify your Email Id\r\n\r\n". site_url("main/verify/").$verificationText."\r\n"."\r\n\r\nThanks\r\nAdmin Team");
+        $this->email->message('A New Application Submitted.');
 
-         if($this->email->send()) 
-        // $this->session->set_flashdata("email_sent","Email sent successfully."); 
-
-            echo "email_sent";
-
-         else 
-         //$this->session->set_flashdata("email_sent","Error in sending Email."); 
-
-            echo "email_not_sent";
+        $this->email->send();
+       
        }
 
     }

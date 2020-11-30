@@ -272,7 +272,7 @@
 
                                             <label class="control-label">Application For</label>
 
-                                        <select class="form-control" 
+                                        <select class="form-control"  disabled
                                                     id="apl_for"
                                                     name="apl_for"
                                                     required
@@ -345,9 +345,10 @@
 
                                         <div class="form-group">
 
-                                            <label class="control-label">Your Position / Title</label>
+                                            <label class="control-label">Your Position / Title </label>
 
-                                            <input type='text' class="form-control" id="ypt" name="ypt"
+                                            <input type='text' class="form-control" id="ypt" name="ypt" required 
+                                            style='text-transform:uppercase'
                                             value="<?php echo $row->your_position; ?>">
                                             
                                         </div>
@@ -425,6 +426,50 @@
 
                                 </div>
 
+
+                                <div class="row">
+
+                                    <?php 
+
+                                    if($row->org_type == "V"){
+
+                                        $org_namess ='Vestigo';
+
+                                    }else if($row->org_type == "P"){
+
+                                        $org_namess ='Petronas';
+
+                                    }else if($row->org_type == "C"){
+
+                                        $org_namess ='Contractor';
+
+                                    }else{
+
+                                        $org_namess ='Other';
+                                    }
+
+
+
+
+                                    ?>
+                                   
+                                    <div class="col-md-6">
+                                          <div class="form-group">
+                                         Note: Name of the Person In Charge from <span id="org_namess"><?=$org_namess?></span>
+
+                                         </div>   
+
+                                    </div>
+                                    <div class="col-md-6">
+                                          <div class="form-group">
+                                         Note: The Department of the Person In Charge from <span id="org_deptss"><?=$org_namess?></span>
+
+                                         </div>   
+
+                                    </div>
+
+                                </div>
+
                             </div>
                              
                             
@@ -486,9 +531,9 @@
 
     $(document).ready(function(){
 
-        $('#apl_for').on('change', function(){
+      //  $('#apl_for').on('load', function(){
 
-            var apl_for = $(this).val();
+            var apl_for = '<?php echo $row->appl_for?>';
 
             if(apl_for == 'O')
             {
@@ -500,7 +545,7 @@
                 $('#ycnct').prop('readonly', false);
 
                 $('#yf_name').prop('required', true);
-                $('#ym_name').prop('required', true);
+               // $('#ym_name').prop('required', true);
                 $('#yl_name').prop('required', true);
                 $('#ypt').prop('required', true);
                 $('#yemail').prop('required', true);
@@ -511,7 +556,7 @@
             {
 
                 $('#yf_name').prop('required', false);
-                $('#ym_name').prop('required', false);
+               // $('#ym_name').prop('required', false);
                 $('#yl_name').prop('required', false);
                 $('#ypt').prop('required', false);
                 $('#yemail').prop('required', false);
@@ -534,8 +579,41 @@
                 $('#ycnct').prop('readonly', false);
             }
 
-        })
+       // })
 
     })
+
+      $('#org_type').on('change', function(){
+
+            var org_type = $(this).val();
+
+            console.log(org_type);
+
+            if( org_type == 'V'){
+
+             $('#org_namess').html('Vestigo');
+             $('#org_deptss').html('Vestigo');
+
+            
+            }
+            else if( org_type == 'P'){
+
+                $('#org_namess').html('Petronas');
+                $('#org_deptss').html('Petronas');
+
+            }else if( org_type == 'C'){
+
+                $('#org_namess').html('Contractor');
+                $('#org_deptss').html('Contractor');
+
+            }else{
+
+                $('#org_namess').html('Others');
+                $('#org_deptss').html('Others');
+
+            }
+
+
+        })   
 
 </script>
