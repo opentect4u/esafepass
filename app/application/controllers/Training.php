@@ -134,15 +134,19 @@
 
 
                 // * config* //
-                $config['upload_path']   = FCPATH.'assets/userDocs/training';
-                $config['allowed_types'] = 'png|jpg|jpeg|pdf';
-                $config['overwrite']     = TRUE;
-                $this->load->library('upload', $config);
+
+                $certificate_data1         = 'certi1'.time().$_FILES["certificate1"]["name"];
+                $config1['upload_path']    = FCPATH.'assets/userDocs/training';
+                $config1['allowed_types']  = 'png|jpg|jpeg|pdf';
+                $config1['overwrite']      = TRUE;
+                $config1['file_name']      = $certificate_data1;
+                
+                $this->upload->initialize($config1); 
                 // * config* //
                 $certificate1_path = '';
                 if(!empty($_FILES["certificate1"]["name"])&& $_FILES['certificate1']['size']< 3000000)
                 {
-                    $certificate_data = $_FILES["certificate1"]["name"];
+                    
 
                     if(! $this->upload->do_upload("certificate1"))
                     {
@@ -155,7 +159,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate1_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate1_path  =   'assets/userDocs/training/'.$certificate_data1;
                     }
                 }else{
 
@@ -163,9 +167,16 @@
                 }
 
                 $certificate2_path = '';
+                $certificate_data2         = 'certi2'.time().$_FILES["certificate2"]["name"];
+                $config2['upload_path']    = FCPATH.'assets/userDocs/training';
+                $config2['allowed_types']  = 'png|jpg|jpeg|pdf';
+                $config2['overwrite']      = TRUE;
+                $config2['file_name']      = $certificate_data2;
+                 $this->upload->initialize($config2);
+
                 if(!empty($_FILES["certificate2"]["name"])&& $_FILES['certificate2']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate2"]["name"];
+                   
 
                     if(! $this->upload->do_upload("certificate2"))
                     {
@@ -178,7 +189,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate2_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate2_path  =   'assets/userDocs/training/'.$certificate_data2;
                     }
                 }else{
 
@@ -186,9 +197,16 @@
                 }
 
                 $certificate3_path = '';
+                $certificate_data3         = 'certi3'.time().$_FILES["certificate3"]["name"];
+                $config3['upload_path']    = FCPATH.'assets/userDocs/training';
+                $config3['allowed_types']  = 'png|jpg|jpeg|pdf';
+                $config3['overwrite']      = TRUE;
+                $config3['file_name']      = $certificate_data3;
+                $this->upload->initialize($config3);
+
                 if(!empty($_FILES["certificate3"]["name"])&& $_FILES['certificate3']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate3"]["name"];
+                    
 
                     if(! $this->upload->do_upload("certificate3"))
                     {
@@ -201,17 +219,24 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate3_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate3_path  =   'assets/userDocs/training/'.$certificate_data3;
                     }
                 }else{
                     $certificate3_path  = '';
 
                 }
 
-                $certificate4_path = '';
+                $certificate4_path         = '';
+                $certificate_data4         = 'certi4'.time().$_FILES["certificate4"]["name"];
+                $config4['upload_path']    = FCPATH.'assets/userDocs/training';
+                $config4['allowed_types']  = 'png|jpg|jpeg|pdf';
+                $config4['overwrite']      = TRUE;
+                $config4['file_name']      = $certificate_data4;
+                 $this->upload->initialize($config4);
+
                 if(!empty($_FILES["certificate4"]["name"])&& $_FILES['certificate4']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate4"]["name"];
+                 
 
                     if(! $this->upload->do_upload("certificate4"))
                     {
@@ -224,7 +249,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate4_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate4_path  =   'assets/userDocs/training/'.$certificate_data4;
                     }
                 }else{
 
@@ -232,9 +257,16 @@
                 }
 
                 $certificate5_path = '';
+                $certificate_data5         = 'certi5'.time().$_FILES["certificate5"]["name"];
+                $config5['upload_path']    = FCPATH.'assets/userDocs/training';
+                $config5['allowed_types']  = 'png|jpg|jpeg|pdf';
+                $config5['overwrite']      = TRUE;
+                $config5['file_name']      = $certificate_data5;
+                 $this->upload->initialize($config5);
+
                 if(!empty($_FILES["certificate5"]["name"])&& $_FILES['certificate5']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate5"]["name"];
+                  
 
                     if(! $this->upload->do_upload("certificate5"))
                     {
@@ -247,7 +279,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate5_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate5_path  =   'assets/userDocs/training/'.$certificate_data5;
                     }
                 }else{
 
@@ -299,7 +331,7 @@
                                     'from_dt5' => $from_dt5,
                                     'to_dt5' => $to_dt5,
                                     'validity5' => $validity5,
-                                    'certificate5_path' => $certificate5_path );
+                                    'certificate5_path' => $certificate5_path);
 
 
                 $this->Trainings->f_insert_trainingDtls($insertValue);
@@ -367,16 +399,24 @@
                 // $certificate5_path  =   $_POST['certificate5'];
 
                 // * config* //
-                $config['upload_path']  = FCPATH.'assets/userDocs/training';
-                $config['allowed_types'] = 'gif|jpg|jpeg';
-                $config['overwrite'] = TRUE;
-                $this->load->library('upload', $config);
+                // $config['upload_path']  = FCPATH.'assets/userDocs/training';
+                // $config['allowed_types'] = 'gif|jpg|jpeg';
+                // $config['overwrite'] = TRUE;
+                // $this->load->library('upload', $config);
+
+
                 // * config* //
 
                 $certificate1_path = '';
-                if(!empty($_FILES["certificate1"]["name"])&& $_FILES['certificate1']['size']<2000000)
+                if(!empty($_FILES["certificate1"]["name"])&& $_FILES['certificate1']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate1"]["name"];
+                    $certificate_data1         = 'certi1'.time().$_FILES["certificate1"]["name"];
+                    $config1['upload_path']    = FCPATH.'assets/userDocs/training';
+                    $config1['allowed_types']  = 'png|jpg|jpeg|pdf';
+                    $config1['overwrite']      = TRUE;
+                    $config1['file_name']      = $certificate_data1;
+                
+                   $this->upload->initialize($config1); 
 
                     if(! $this->upload->do_upload("certificate1"))
                     {
@@ -389,7 +429,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate1_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate1_path  =   'assets/userDocs/training/'.$certificate_data1;
                     }
                 }
                 else
@@ -398,9 +438,15 @@
                 }
 
                 $certificate2_path = '';
-                if(!empty($_FILES["certificate2"]["name"])&& $_FILES['certificate2']['size']<2000000)
+                if(!empty($_FILES["certificate2"]["name"])&& $_FILES['certificate2']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate2"]["name"];
+                    $certificate_data2         = 'certi2'.time().$_FILES["certificate2"]["name"];
+                    $config2['upload_path']    = FCPATH.'assets/userDocs/training';
+                    $config2['allowed_types']  = 'png|jpg|jpeg|pdf';
+                    $config2['overwrite']      = TRUE;
+                    $config2['file_name']      = $certificate_data2;
+
+                    $this->upload->initialize($config2); 
 
                     if(! $this->upload->do_upload("certificate2"))
                     {
@@ -413,7 +459,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate2_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate2_path  =   'assets/userDocs/training/'.$certificate_data2;
                     }
                 }
                 else
@@ -422,9 +468,16 @@
                 }
 
                 $certificate3_path = '';
-                if(!empty($_FILES["certificate3"]["name"])&& $_FILES['certificate3']['size']<2000000)
+                if(!empty($_FILES["certificate3"]["name"])&& $_FILES['certificate3']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate3"]["name"];
+                   
+                    $certificate_data3         = 'certi3'.time().$_FILES["certificate3"]["name"];
+                    $config3['upload_path']    = FCPATH.'assets/userDocs/training';
+                    $config3['allowed_types']  = 'png|jpg|jpeg|pdf';
+                    $config3['overwrite']      = TRUE;
+                    $config3['file_name']      = $certificate_data3;
+
+                    $this->upload->initialize($config3); 
 
                     if(! $this->upload->do_upload("certificate3"))
                     {
@@ -437,7 +490,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate3_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate3_path  =   'assets/userDocs/training/'.$certificate_data3;
                     }
                 }
                 else
@@ -446,9 +499,17 @@
                 }
 
                 $certificate4_path = '';
-                if(!empty($_FILES["certificate4"]["name"])&& $_FILES['certificate4']['size']<2000000)
+                if(!empty($_FILES["certificate4"]["name"])&& $_FILES['certificate4']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate4"]["name"];
+                  
+
+                    $certificate_data4         = 'certi4'.time().$_FILES["certificate4"]["name"];
+                    $config4['upload_path']    = FCPATH.'assets/userDocs/training';
+                    $config4['allowed_types']  = 'png|jpg|jpeg|pdf';
+                    $config4['overwrite']      = TRUE;
+                    $config4['file_name']      = $certificate_data4;
+
+                    $this->upload->initialize($config4);
 
                     if(! $this->upload->do_upload("certificate4"))
                     {
@@ -461,7 +522,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate4_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate4_path  =   'assets/userDocs/training/'.$certificate_data4;
                     }
                 }
                 else
@@ -470,9 +531,17 @@
                 }
 
                 $certificate5_path = '';
-                if(!empty($_FILES["certificate5"]["name"])&& $_FILES['certificate4']['size']<2000000)
+                if(!empty($_FILES["certificate5"]["name"])&& $_FILES['certificate5']['size'] < 3000000)
                 {
-                    $certificate_data = $_FILES["certificate5"]["name"];
+                   
+
+                    $certificate_data5         = 'certi5'.time().$_FILES["certificate5"]["name"];
+                    $config5['upload_path']    = FCPATH.'assets/userDocs/training';
+                    $config5['allowed_types']  = 'png|jpg|jpeg|pdf';
+                    $config5['overwrite']      = TRUE;
+                    $config5['file_name']      = $certificate_data5;
+
+                    $this->upload->initialize($config5);
 
                     if(! $this->upload->do_upload("certificate5"))
                     {
@@ -485,7 +554,7 @@
                     else
                     {
                         $this->upload->data();
-                        $certificate5_path  =   'assets/userDocs/training/'.$certificate_data;
+                        $certificate5_path  =   'assets/userDocs/training/'.$certificate_data5;
                     }
                 }
                 else

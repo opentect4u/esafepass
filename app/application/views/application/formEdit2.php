@@ -196,7 +196,40 @@
                                         </div>
 
                                     </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Nationality </label>
+
+                                            <select class="form-control" 
+                                                    id="apl_ntl"
+                                                    name="apl_ntl">
+
+                                                <option value="">Select</option>
+
+                                                <?php
+                                                    foreach($country as $row1){
+                                                ?>
+
+                                                <option value="<?php echo $row1->country_name;?>" <?php if($row1->country_name == $row->appl_nation) { echo "selected"; } ?> > <?php echo $row1->country_name; ?>
+                                                        
+                                                </option>
+
+                                                <?php 
+                                                    }
+                                                ?>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
                                 </div> 
+
+                               <?php if($row->appl_nation == 'Malaysia'){   ?>
 
                                 <div class="row">
 
@@ -232,7 +265,12 @@
                                     </div>
 
                                 </div>   
+                                    <?php }
 
+
+                                        if($row->appl_nation != 'Malaysia'){  
+
+                                     ?>
 
                                 <div class="row">
 
@@ -268,6 +306,7 @@
 
                                 </div>
 
+                                    <?php } ?>
 
                                 <div class="row">
 
@@ -325,35 +364,6 @@
 
                                     </div>
 
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Nationality </label>
-
-                                            <select class="form-control" 
-                                                    id="apl_ntl"
-                                                    name="apl_ntl">
-
-                                                <option value="">Select</option>
-
-                                                <?php
-                                                    foreach($country as $row1){
-                                                ?>
-
-                                                <option value="<?php echo $row1->country_name;?>" <?php if($row1->country_name == $row->appl_nation) { echo "selected"; } ?> > <?php echo $row1->country_name; ?>
-                                                        
-                                                </option>
-
-                                                <?php 
-                                                    }
-                                                ?>
-
-                                            </select>
-
-                                        </div>
-
-                                    </div>
 
                                 </div>
 
@@ -492,7 +502,7 @@
                                                     foreach($country as $row2){
                                                 ?>
 
-                                                <option <?php if($row2->country_name == $row->appl_nation) echo "selected" ?> value="<?php echo $row2->country_name;?>">
+                                                <option <?php if($row2->country_name == $row->kin_nation) echo "selected" ?> value="<?php echo $row2->country_name;?>">
 
                                                     <?php echo $row2->country_name; ?>
                                                         
@@ -510,6 +520,8 @@
 
 
                                 </div>
+
+                                      <?php if($row->kin_nation == 'Malaysia'){   ?>
 
                                 <div class="row">
 
@@ -545,6 +557,14 @@
 
                                 </div>
 
+                                 <?php }
+
+
+                                        if($row->kin_nation != 'Malaysia'){  
+
+                                     ?>
+
+
                                 <div class="row">
 
                                     <div class="col-md-6">
@@ -578,6 +598,8 @@
                                     </div>
 
                                 </div>
+
+                            <?php } ?>
 
                                 <div class="row">
 

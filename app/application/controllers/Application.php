@@ -350,13 +350,11 @@
 
                     $config3['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config3['allowed_types'] = 'png|jpg|jpeg|pdf';
-
                     $config3['overwrite']     = TRUE;
                     $config3['file_name']     = $kin_nric_data;
-                    $this->load->library('upload', $config3);
-                    // * config* //
 
-                    
+                    $this->upload->initialize($config3); 
+                    // * config* //
 
                     if(! $this->upload->do_upload("kin_nric_path"))
                     {
@@ -695,7 +693,7 @@
 
                                 'med_cert_path'       =>    $kin_med_cert_path,
 
-                                'medical_declar'      =>    $this->input->post('medical_declar'),
+                                // 'medical_declar'      =>    $this->input->post('medical_declar'),
 
                                 'inst_name'           =>    strtoupper($inst_name),
 
@@ -994,7 +992,7 @@
                     $config1['allowed_types'] = 'png|jpg|jpeg';
                     $config1['overwrite']     = TRUE;
                     $config['file_name']      = $apl_name_data;
-                    $this->load->library('upload', $config1);
+                    $this->upload->initialize($config1); 
                     // * config* //
 
                     if(! $this->upload->do_upload("apl_name_path"))
@@ -1029,7 +1027,7 @@
                     $config2['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config2['overwrite']     = TRUE;
                     $config2['file_name']     = $apl_nric_data;
-                    $this->load->library('upload', $config2);
+                    $this->upload->initialize($config2);
                     // * config* //
 
                     //$apl_nric_data = $_FILES["nric_path"]["name"];
@@ -1055,7 +1053,7 @@
 
                 $pp_no          =       $_POST['apl_pp_no'];
 
-                if(!empty($_FILES["pp_no"]["name"])&& $_FILES['pp_no']['size']<2000000)
+                if(!empty($_FILES["pp_no"]["name"])&& $_FILES['pp_no']['size'] < 3000000)
                 {
                     // * config* //
                     $pp_no_data               = 'p'.time().$_FILES["pp_no"]["name"];
@@ -1065,7 +1063,8 @@
                     //$config3['max_size']      = '2048';
                     $config3['overwrite']     = TRUE;
                     $config3['file_name']     = $pp_no_data;
-                    $this->load->library('upload', $config3);
+                    //$this->load->library('upload', $config3);
+                    $this->upload->initialize($config3);
                     // * config* //
 
                     //$pp_no_data = $_FILES["pp_no"]["name"];
@@ -1131,7 +1130,7 @@
                     $config4['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config4['overwrite']     = TRUE;
                     $config4['file_name']     = $kin_nric_data;
-                    $this->load->library('upload', $config4);
+                    $this->upload->initialize($config4);
                     // * config* //
 
                     if(! $this->upload->do_upload("kin_nric_path"))
@@ -1161,14 +1160,11 @@
                     // * config* //
                     $kin_pp_data             = 'kp'.time().$_FILES["kin_pp"]["name"];
                     $config5['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
-                    if(!is_dir($config5['upload_path'])) 
-                    {
-                        mkdir($config5['upload_path'],0777,TRUE);
-                    }
+                  
                     $config5['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config5['overwrite']     = TRUE;
                     $config5['file_name']     = $kin_pp_data;
-                    $this->load->library('upload', $config5);
+                    $this->upload->initialize($config5);
                     // * config* //
 
                     if(! $this->upload->do_upload("kin_pp"))
@@ -1191,11 +1187,6 @@
                     $kin_pp_path = $_POST['kin_pp_path_prev'];
                 }
 
-                $kin_dob       =       $_POST['kin_dob'];
-
-                $kin_gen       =       $_POST['kin_gen'];
-
-                $reln          =       $_POST['reln'];
 
                 $kin_cnct      =       $_POST['kin_cnct'];
 
@@ -1254,7 +1245,7 @@
 
                                     'kin_add'           =>  $kin_adr,
 
-                                    'kin_dob'           =>  $kin_dob,
+                                    'kin_dob'           =>  $_POST['kin_dob'],
 
                                     'kin_ph'            =>  $kin_cnct,
 
@@ -1262,7 +1253,7 @@
 
                                     'kin_email'         =>  $kin_email,
 
-                                    'kin_gender'        =>  $kin_gen,
+                                    'kin_gender'        =>  $_POST['kin_gen'],
 
                                     'kin_nation'        =>  $kin_ntnl,
 
@@ -1270,7 +1261,7 @@
 
                                     'kin_pp_path'       =>  $kin_pp_path,
 
-                                    'applcnt_kin_reltion' =>    $reln
+                                    'applcnt_kin_reltion' =>    $_POST['reln']
 
                                     );
 
@@ -1345,7 +1336,8 @@
                     $config6['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config6['overwrite']     = TRUE;
                     $config6['file_name']     = $kin_med_cert_data;
-                    $this->load->library('upload', $config6);
+                   // $this->load->library('upload', $config6);
+                     $this->upload->initialize($config6);
                     // * config* //
 
                     
@@ -1394,7 +1386,8 @@
                     $config7['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config7['overwrite']     = TRUE;
                     $config7['file_name']     =  $kin_huet_cert_data;
-                    $this->load->library('upload', $config7);
+                    //$this->load->library('upload', $config7);
+                     $this->upload->initialize($config7);
                     // * config* //
 
                    
@@ -1427,7 +1420,8 @@
                     $config8['allowed_types']  = 'png|jpg|jpeg|pdf';
                     $config8['overwrite']      = TRUE;
                     $config8['file_name']      = $trn_vrf_cert_data;
-                    $this->load->library('upload', $config8);
+                    //$this->load->library('upload', $config8);
+                     $this->upload->initialize($config8);
                     // * config* //
 
                     if(! $this->upload->do_upload("trn_vrf_cert_path"))

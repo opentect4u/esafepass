@@ -170,7 +170,7 @@
 
                                     <input type='file' class="form-control upload_img" id="certificate1" name="certificate1"
                                     >
-                                    <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                    <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                 </div>
 
                             </div>
@@ -302,7 +302,7 @@
 
                                     <input type='file' class="form-control upload_img" id="certificate2" name="certificate2"
                                     >
-                                    <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                    <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                 </div>
 
                             </div>
@@ -435,7 +435,7 @@
 
                                     <input type='file' class="form-control upload_img" id="certificate3" name="certificate3"
                                     >
-                                    <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                    <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                 </div>
 
                             </div>
@@ -568,7 +568,7 @@
 
                                     <input type='file' class="form-control upload_img" id="certificate4" name="certificate4"
                                     >
-                                    <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                    <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                 </div>
 
                             </div>
@@ -700,7 +700,7 @@
 
                                     <input type='file' class="form-control upload_img" id="certificate5" name="certificate5"
                                     >
-                                    <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                    <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                 </div>
 
                             </div>

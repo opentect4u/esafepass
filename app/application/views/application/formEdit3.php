@@ -291,19 +291,19 @@
                                 </div>
 
 
-                            <div class="row">
+                            <!-- <div class="row">
                        
                                <div class="col-md-12">
-                             <div class="form-group">
+                               <div class="form-group">
                                   <input type="checkbox" id="medical_declar" name="medical_declar" value="Y" required 
-                                  <?php if(isset($row->medical_declar) && $row->medical_declar == 'Y'){echo "checked"; }?> 
+                                  <?php //if(isset($row->medical_declar) && $row->medical_declar == 'Y'){echo "checked"; }?> 
 
                                   >&nbsp;&nbsp;&nbsp;
                                I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease. (can be added under vestigo address, the place where the earlier qr code was positioned.)
                                 </div> 
 
                                </div> 
-                            </div>
+                            </div>-->
 
                             </div>
 
@@ -758,19 +758,25 @@
     $(document).ready(function(){
 
         // For alergies -- 
-        $('#alergies').on('change', function(){
+       $('#alergies').on('change', function(){
 
-            let alergies = $(this).val();
+           let alergies = $(this).val();
+              //let alergies = '<?=$row->alergies?>';
+
             if(alergies == 'Y')
             {
                 $('#alg_dtl').prop('required', true);
+                $('#alg_dtl').prop('readonly', false);
             }
             else if(alergies == 'N')
             {
                 $('#alg_dtl').prop('required', false);
+                $('#alg_dtl').prop('readonly', true);
             }
 
         })
+
+     
 
         // For KIN NRIC -- 
         $('#kin_ntn').on('change', function(){

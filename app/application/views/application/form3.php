@@ -55,8 +55,7 @@
                         id="form"
                         method="post" 
                         action="<?php echo site_url('application/addCertificate');?>"
-                        enctype="multipart/form-data"
-                    >
+                        enctype="multipart/form-data">
 
                         <input type='hidden' class="form-control" id="appl_no" name="appl_no" value= "<?php echo $appl_no; ?>" readonly>
                         <input type='hidden' class="form-control" id="sl_no" name="sl_no" value= "<?php echo $sl_no; ?>" readonly>
@@ -265,25 +264,26 @@
 
                                             <input type='file' class="form-control upload_img" id="kin_med_cert" name="kin_med_cert" required
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
 
                                 </div>
 
-                                <div class="row">
+                              <!--   <div class="row">
 
-                                <div class="col-md-12">
-                                <div class="form-group">
-                                  <input type="checkbox" id="medical_declar" name="medical_declar" value="Y" required>&nbsp;&nbsp;&nbsp;
-                               I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease. (can be added under vestigo address, the place where the earlier qr code was positioned.)
-                                </div> 
+                                    <div class="col-md-12">
+                                    <div class="form-group">
+                                      <input type="checkbox" id="medical_declar" name="medical_declar" value="Y" required>&nbsp;&nbsp;&nbsp;
+                                   I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease. (can be added under vestigo address, the place where the earlier qr code was positioned.)
+                                    </div> 
 
-                               </div>
+                                   </div>
 
-                                  
-                                </div>
+                                </div> -->
+
+
 
                             </div>
 
@@ -410,7 +410,7 @@
 
                                             <input type='file' class="form-control upload_img" id="kin_huet_cert" name="kin_huet_cert" required
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -449,7 +449,7 @@
 
                                             <input type='file' class="form-control upload_img" id="trn_vrf_cert_path" name="trn_vrf_cert_path"
                                             >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                            <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                         </div>
 
                                     </div>
@@ -515,7 +515,7 @@
 
                                             <label class="control-label">Certificate No</label>
 
-                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no" required style='text-transform:uppercase'
+                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no"  style='text-transform:uppercase'
                                             >
                                             
                                         </div>
@@ -523,107 +523,6 @@
                                     </div>
 
                                 </div>
-
-                              <!--   <div class="row">
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Training Attended From</label>
-
-                                            <input type="date"class="form-control" id="h2s_frm_dt" name="h2s_frm_dt"
-                                            /> 
-                                            
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Training Attended To</label>
-
-                                            <input type="date"class="form-control" id="h2s_to_dt" name="h2s_to_dt"
-                                            /> 
-                                            
-                                        </div>
-
-                                    </div>
-
-                                </div> -->
-
-                               <!--  <div class="row">
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Training Validity</label>
-
-                                            <input type="date" class="form-control" id="h2s_exp_dt" name="h2s_exp_dt"
-                                            /> 
-                                            
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Upload Training Certificate</label>
-
-                                            <input type='file' class="form-control upload_img" id="h2s_cert_path" name="h2s_cert_path"
-                                            >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
-                                        </div>
-
-                                    </div>
-
-                                </div> -->
-
-                                <!-- <div class="row">
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Training Certificate Verification</label>
-
-                                            <select class="form-control" 
-                                                    id="h2s_trn_flg"
-                                                    name="h2s_trn_flg"
-                                                    
-                                                >
-
-                                                <option value="">Select</option>
-
-                                                <option value="Y">Yes</option>
-
-                                                <option value="N">No</option>
-
-                                            </select>
-                                            
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-
-                                            <label class="control-label">Upload Training Certificate Verification</label>
-
-                                            <input type='file' class="form-control upload_img" id="h2s_vrf_path" name="h2s_vrf_path"
-                                            >
-                                            <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
-                                        </div>
-
-                                    </div>
-
-                                </div> -->
 
                                
                             </div>
@@ -727,10 +626,12 @@
             if(alergies == 'Y')
             {
                 $('#alg_dtl').prop('required', true);
+                $('#alg_dtl').prop('readonly', false);
             }
             else if(alergies == 'N')
             {
                 $('#alg_dtl').prop('required', false);
+                $('#alg_dtl').prop('readonly', true);
             }
 
         })
