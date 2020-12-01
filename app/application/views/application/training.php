@@ -65,7 +65,7 @@
 
                                     <label class="control-label">Institution's Name</label>
 
-                                    <input type="text" name= "inst_name1" id= "inst_name1" class= "form-control" >
+                                    <input type="text" name= "inst_name1" id= "inst_name1" class= "form-control" style='text-transform:uppercase'>
 
                                 </div>
 
@@ -77,7 +77,7 @@
 
                                     <label class="control-label">Address</label>
 
-                                    <textarea class="form-control" id="adr1" name="adr1" col= "30" row= "2"
+                                    <textarea class="form-control" id="adr1" name="adr1" col= "30" row= "2" style='text-transform:uppercase'
                                     ></textarea>
                                     
                                 </div>
@@ -95,7 +95,7 @@
 
                                     <label class="control-label">Course Title</label>
 
-                                    <input type='text' class="form-control" id="course1" name="course1"
+                                    <input type='text' class="form-control" id="course1" name="course1" style='text-transform:uppercase'
                                     />
                                         
                                 </div>
@@ -108,7 +108,7 @@
 
                                     <label class="control-label">Certificate No.</label>
 
-                                    <input type='text' class="form-control" id="cert_no1" name="cert_no1"
+                                    <input type='text' class="form-control" id="cert_no1" name="cert_no1" style='text-transform:uppercase'
                                     >
                                     
                                 </div>
@@ -197,7 +197,7 @@
 
                                     <label class="control-label">Institution's Name</label>
 
-                                    <input type="text" name= "inst_name2" id= "inst_name2" class= "form-control" >
+                                    <input type="text" name= "inst_name2" id= "inst_name2" class= "form-control" style='text-transform:uppercase'>
 
                                 </div>
 
@@ -209,7 +209,7 @@
 
                                     <label class="control-label">Address</label>
 
-                                    <textarea class="form-control" id="adr2" name="adr2" col= "30" row= "2"
+                                    <textarea class="form-control" id="adr2" name="adr2" col= "30" row= "2" style='text-transform:uppercase'
                                     ></textarea>
                                     
                                 </div>
@@ -227,7 +227,7 @@
 
                                     <label class="control-label">Course Title</label>
 
-                                    <input type='text' class="form-control" id="course2" name="course2"
+                                    <input type='text' class="form-control" id="course2" name="course2" style='text-transform:uppercase'
                                     />
                                         
                                 </div>
@@ -240,7 +240,7 @@
 
                                     <label class="control-label">Certificate No.</label>
 
-                                    <input type='text' class="form-control" id="cert_no2" name="cert_no2"
+                                    <input type='text' class="form-control" id="cert_no2" name="cert_no2" style='text-transform:uppercase'
                                     >
                                     
                                 </div>
@@ -330,7 +330,7 @@
 
                                     <label class="control-label">Institution's Name</label>
 
-                                    <input type="text" name= "inst_name3" id= "inst_name3" class= "form-control" >
+                                    <input type="text" name= "inst_name3" id= "inst_name3" class= "form-control" style='text-transform:uppercase'>
 
                                 </div>
 
@@ -342,7 +342,7 @@
 
                                     <label class="control-label">Address</label>
 
-                                    <textarea class="form-control" id="adr3" name="adr3" col= "30" row= "2"
+                                    <textarea class="form-control" id="adr3" name="adr3" col= "30" row= "2" style='text-transform:uppercase'
                                     ></textarea>
                                     
                                 </div>
@@ -360,7 +360,7 @@
 
                                     <label class="control-label">Course Title</label>
 
-                                    <input type='text' class="form-control" id="course3" name="course3"
+                                    <input type='text' class="form-control" id="course3" name="course3" style='text-transform:uppercase'
                                     />
                                         
                                 </div>
@@ -373,7 +373,7 @@
 
                                     <label class="control-label">Certificate No.</label>
 
-                                    <input type='text' class="form-control" id="cert_no3" name="cert_no3"
+                                    <input type='text' class="form-control" id="cert_no3" name="cert_no3" style='text-transform:uppercase'
                                     >
                                     
                                 </div>
@@ -463,7 +463,7 @@
 
                                     <label class="control-label">Institution's Name</label>
 
-                                    <input type="text" name= "inst_name4" id= "inst_name4" class= "form-control" >
+                                    <input type="text" name= "inst_name4" id= "inst_name4" class= "form-control" style='text-transform:uppercase'>
 
                                 </div>
 
@@ -475,7 +475,7 @@
 
                                     <label class="control-label">Address</label>
 
-                                    <textarea class="form-control" id="adr4" name="adr4" col= "30" row= "2"
+                                    <textarea class="form-control" id="adr4" name="adr4" col= "30" row= "2" style='text-transform:uppercase'
                                     ></textarea>
                                     
                                 </div>
@@ -493,7 +493,7 @@
 
                                     <label class="control-label">Course Title</label>
 
-                                    <input type='text' class="form-control" id="course4" name="course4"
+                                    <input type='text' class="form-control" id="course4" name="course4" style='text-transform:uppercase'
                                     />
                                         
                                 </div>
@@ -506,7 +506,7 @@
 
                                     <label class="control-label">Certificate No.</label>
 
-                                    <input type='text' class="form-control" id="cert_no4" name="cert_no4"
+                                    <input type='text' class="form-control" id="cert_no4" name="cert_no4" style='text-transform:uppercase'
                                     >
                                     
                                 </div>
@@ -596,7 +596,7 @@
 
                                     <label class="control-label">Institution's Name</label>
 
-                                    <input type="text" name= "inst_name5" id= "inst_name5" class= "form-control" >
+                                    <input type="text" name= "inst_name5" id= "inst_name5" class= "form-control" style='text-transform:uppercase' >
 
                                 </div>
 
@@ -608,7 +608,7 @@
 
                                     <label class="control-label">Address</label>
 
-                                    <textarea class="form-control" id="adr5" name="adr5" col= "30" row= "2"
+                                    <textarea class="form-control" id="adr5" name="adr5" col= "30" row= "2" style='text-transform:uppercase'
                                     ></textarea>
                                     
                                 </div>
@@ -625,7 +625,7 @@
 
                                     <label class="control-label">Course Title</label>
 
-                                    <input type='text' class="form-control" id="course5" name="course5"
+                                    <input type='text' class="form-control" id="course5" name="course5" style='text-transform:uppercase'
                                     />
                                         
                                 </div>
@@ -638,7 +638,7 @@
 
                                     <label class="control-label">Certificate No.</label>
 
-                                    <input type='text' class="form-control" id="cert_no5" name="cert_no5"
+                                    <input type='text' class="form-control" id="cert_no5" name="cert_no5" style='text-transform:uppercase'
                                     >
                                     
                                 </div>

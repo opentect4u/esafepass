@@ -75,7 +75,7 @@
 
                                         <label class="control-label">Institution's Name</label>
 
-                                        <input type="text" name= "inst_name1" value= "<?php echo $key->inst_name1; ?>" id= "inst_name1" class= "form-control" >
+                                        <input type="text" name= "inst_name1" value= "<?php echo $key->inst_name1; ?>" id= "inst_name1" class= "form-control" style='text-transform:uppercase'>
 
                                     </div>
 
@@ -87,7 +87,7 @@
 
                                         <label class="control-label">Address</label>
 
-                                        <textarea class="form-control" id="adr1" name="adr1" col= "30" row= "2"
+                                        <textarea class="form-control" id="adr1" name="adr1" col= "30" row= "2" style='text-transform:uppercase'
                                         ><?php echo $key->adr1; ?></textarea>
                                         
                                     </div>
@@ -105,7 +105,9 @@
 
                                         <label class="control-label">Course Title</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->course1; ?>" id="course1" name="course1"
+                                        <input type='text' class="form-control" value= "<?php echo $key->course1; ?>" id="course1" 
+                                        style='text-transform:uppercase'
+                                        name="course1"
                                         />
                                             
                                     </div>
@@ -118,7 +120,8 @@
 
                                         <label class="control-label">Certificate No.</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no1; ?>" id="cert_no1" name="cert_no1"
+                                        <input type='text' class="form-control" style='text-transform:uppercase'
+                                        value= "<?php echo $key->cert_no1; ?>" id="cert_no1" name="cert_no1"
                                         >
                                         
                                     </div>
@@ -228,7 +231,7 @@
 
                                         <label class="control-label">Institution's Name</label>
 
-                                        <input type="text" name= "inst_name2" value= "<?php echo $key->inst_name2; ?>" id= "inst_name2" class= "form-control" >
+                                        <input type="text" name= "inst_name2" value= "<?php echo $key->inst_name2; ?>" id= "inst_name2" class= "form-control" style='text-transform:uppercase' >
 
                                     </div>
 
@@ -240,7 +243,7 @@
 
                                         <label class="control-label">Address</label>
 
-                                        <textarea class="form-control" id="adr2" name="adr2" col= "30" row= "2"
+                                        <textarea class="form-control" id="adr2" name="adr2" col= "30" row= "2" style='text-transform:uppercase'
                                         ><?php echo $key->adr2; ?></textarea>
                                         
                                     </div>
@@ -258,7 +261,7 @@
 
                                         <label class="control-label">Course Title</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->course2; ?>" id="course2" name="course2"
+                                        <input type='text' class="form-control" value= "<?php echo $key->course2; ?>" id="course2" name="course2" style='text-transform:uppercase'
                                         />
                                             
                                     </div>
@@ -271,7 +274,7 @@
 
                                         <label class="control-label">Certificate No.</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no2; ?>" id="cert_no2" name="cert_no2"
+                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no2; ?>" id="cert_no2" name="cert_no2" style='text-transform:uppercase'
                                         >
                                         
                                     </div>
@@ -383,7 +386,7 @@
 
                                         <label class="control-label">Institution's Name</label>
 
-                                        <input type="text" name= "inst_name3" value= "<?php echo $key->inst_name3; ?>" id= "inst_name3" class= "form-control" >
+                                        <input type="text" name= "inst_name3" value= "<?php echo $key->inst_name3; ?>" id= "inst_name3" class= "form-control" style='text-transform:uppercase' >
 
                                     </div>
 
@@ -395,7 +398,7 @@
 
                                         <label class="control-label">Address</label>
 
-                                        <textarea class="form-control" id="adr3" name="adr3" col= "30" row= "2"
+                                        <textarea class="form-control" id="adr3" name="adr3" col= "30" row= "2" style='text-transform:uppercase'
                                         ><?php echo $key->inst_name3; ?></textarea>
                                         
                                     </div>
@@ -413,7 +416,7 @@
 
                                         <label class="control-label">Course Title</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->course3; ?>" id="course3" name="course3"
+                                        <input type='text' class="form-control" value= "<?php echo $key->course3; ?>" id="course3" name="course3" style='text-transform:uppercase'
                                         />
                                             
                                     </div>
@@ -426,7 +429,7 @@
 
                                         <label class="control-label">Certificate No.</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no3; ?>" id="cert_no3" name="cert_no3"
+                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no3; ?>" id="cert_no3" name="cert_no3" style='text-transform:uppercase'
                                         >
                                         
                                     </div>
@@ -538,7 +541,7 @@
 
                                         <label class="control-label">Institution's Name</label>
 
-                                        <input type="text" name= "inst_name4" value= "<?php echo $key->inst_name4; ?>" id= "inst_name4" class= "form-control" >
+                                        <input type="text" name= "inst_name4" value= "<?php echo $key->inst_name4; ?>" id= "inst_name4" class= "form-control" style='text-transform:uppercase'>
 
                                     </div>
 
@@ -550,7 +553,7 @@
 
                                         <label class="control-label">Address</label>
 
-                                        <textarea class="form-control" id="adr4" name="adr4" col= "30" row= "2"
+                                        <textarea class="form-control" id="adr4" name="adr4" col= "30" row= "2" style='text-transform:uppercase'
                                         ><?php echo $key->adr4; ?></textarea>
                                         
                                     </div>
@@ -568,7 +571,8 @@
 
                                         <label class="control-label">Course Title</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->course4; ?>" id="course4" name="course4"
+                                        <input type='text' class="form-control" value= "<?php echo $key->course4; ?>" 
+                                        id="course4" name="course4" style='text-transform:uppercase'
                                         />
                                             
                                     </div>
@@ -581,7 +585,7 @@
 
                                         <label class="control-label">Certificate No.</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no4; ?>" id="cert_no4" name="cert_no4"
+                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no4; ?>" id="cert_no4" name="cert_no4" style='text-transform:uppercase'
                                         >
                                         
                                     </div>
