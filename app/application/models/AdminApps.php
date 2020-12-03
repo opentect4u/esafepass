@@ -6,7 +6,7 @@
         public function f_get_admin_application_tableDtls()
         {
 
-            $sql = $this->db->query(" SELECT * FROM td_application ");
+            $sql = $this->db->query(" SELECT * FROM td_application where declaration ='Y' ");
             return $sql->result();
 
         }

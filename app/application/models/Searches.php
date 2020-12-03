@@ -110,6 +110,43 @@
                                     return $sql->result();
         }
 
+        //   Created On 02/12/2020  By Lokesh kumar jha     ///
+
+
+        public function f_get_applications_byfname($fname)
+        {
+
+            $sql = $this->db->query(" SELECT * FROM td_application WHERE appl_name = '$fname' ");
+            return $sql->result();
+
+        }
+
+        public function f_get_applications_bylname($lname)
+        {
+
+            $sql = $this->db->query(" SELECT * FROM td_application WHERE appl_last_name = '$lname' ");
+            return $sql->result();
+
+        }
+
+        public function f_get_applications_bynric($nric)
+        {
+
+            $sql = $this->db->query(" SELECT * FROM td_application WHERE nric_no = '$nric' ");
+            return $sql->result();
+
+        }
+
+        public function f_get_applications_bypassport($passport)
+        {
+
+            $sql = $this->db->query(" SELECT * FROM td_application WHERE applcnt_pasprt_no = '$passport' ");
+            return $sql->result();
+
+        }
+
+        
+
 
     }
    

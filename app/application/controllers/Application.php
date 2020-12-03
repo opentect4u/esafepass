@@ -784,7 +784,6 @@
 
             $editData['country'] = $this->Applications->f_get_country();
 
-            //$this->load->view('application/formEdit', $editData);
 
             $this->load->view('application/formEdit1', $editData);
 
@@ -2102,39 +2101,25 @@
 
        public function download_zip(){
 
-         $sourcePath = 'http://localhost/esafepass/images/3.png';
+             try{
 
-
-       
-       // $targetPath = base_url().'archive';
-           if (file_exists($sourcePath)){
-
-            echo "file exist";
-
+                $this->load->library('zip');    
+                $this->load->helper('file');
+                $path = 'images' ;
+                $finallink = ($_SERVER['DOCUMENT_ROOT'] . "/esafepass/" . $path);
            
-             
-                // if(!copy($sourcePath, $targetPath)){ //Copy file source to destination directory
-                //       return ['status' => false, 'msg' => 'File missing'];  
-                //   }else{
-                //     echo "file copy Sucessfully";
-                //   }
-            }else{
+                $this->zip->read_dir(($finallink), false);
+                $this->zip->download(date('m-d-Y'));
 
-                echo "file not exit";
-            }
-  
-        // if (file_exists($targetPath)){ // check target directory
-        //        $this->zip->read_dir($targetPath,False); // read target directory
-        //        if(!$this->zip->archive($targetPath.'.zip')){ // zip target directory
-        //             return ['status' => false, 'msg' => 'Zip file creation Failed!'];
-        //        }else{
-        //             return ['status' => false, 'msg' => 'Zip file Created'];
-        //        }
-        // }
+                }catch(Exception $e){
 
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
 
-         }
+                }
 
+    
+        }
+         
 
 
     }

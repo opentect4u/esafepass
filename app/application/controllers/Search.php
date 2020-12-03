@@ -536,6 +536,201 @@
 
         }
 
+        public function byfname()
+        {
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST')
+            {
+
+                $fname            =   $this->input->post('fname');
+
+                $viewData['data'] = $this->Searches->f_get_applications_byfname($fname);
+            
+
+                $this->load->view('search/fnametable', $viewData);
+
+                $script['script'] = [
+        
+                    '/assets/plugins/footable/js/footable.all.min.js',
+        
+                    '/assets/plugins/bootstrap-select/bootstrap-select.min.js',
+        
+                    'js/footable-init.js',
+        
+                    '/assets/plugins/datatables/jquery.dataTables.min.js'
+                
+                ];
+    
+                $this->load->view('dashboard/footer', $script);
+
+            }else{
+
+
+              $this->load->view('search/byfname');
+            
+            $script['script'] = [
+
+                "/assets/plugins/moment/moment.js",
+
+                "/assets/plugins/daterangepicker/daterangepicker.js",
+
+                "/js/moduleValidations.js"
+
+            ];
+
+            $this->load->view('dashboard/footer', $script);
+
+
+            }
+
+        }
+
+        public function bylname()
+        {
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST')
+            {
+
+                $lname            =   $this->input->post('lname');
+
+                $viewData['data'] = $this->Searches->f_get_applications_bylname($lname);
+            
+
+                $this->load->view('search/lnametable', $viewData);
+
+                $script['script'] = [
+        
+                    '/assets/plugins/footable/js/footable.all.min.js',
+        
+                    '/assets/plugins/bootstrap-select/bootstrap-select.min.js',
+        
+                    'js/footable-init.js',
+        
+                    '/assets/plugins/datatables/jquery.dataTables.min.js'
+                
+                ];
+    
+                $this->load->view('dashboard/footer', $script);
+
+            }else{
+
+
+              $this->load->view('search/bylname');
+            
+            $script['script'] = [
+
+                "/assets/plugins/moment/moment.js",
+
+                "/assets/plugins/daterangepicker/daterangepicker.js",
+
+                "/js/moduleValidations.js"
+
+            ];
+
+            $this->load->view('dashboard/footer', $script);
+
+
+            }
+
+        }
+
+        public function bynric()
+        {
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST')
+            {
+
+                $nric            =   $this->input->post('nric');
+
+                $viewData['data'] = $this->Searches->f_get_applications_bynric($nric);
+            
+
+                $this->load->view('search/nrictable', $viewData);
+
+                $script['script'] = [
+        
+                    '/assets/plugins/footable/js/footable.all.min.js',
+        
+                    '/assets/plugins/bootstrap-select/bootstrap-select.min.js',
+        
+                    'js/footable-init.js',
+        
+                    '/assets/plugins/datatables/jquery.dataTables.min.js'
+                
+                ];
+    
+                $this->load->view('dashboard/footer', $script);
+
+            }else{
+
+
+              $this->load->view('search/bynric');
+            
+            $script['script'] = [
+
+                "/assets/plugins/moment/moment.js",
+
+                "/assets/plugins/daterangepicker/daterangepicker.js",
+
+                "/js/moduleValidations.js"
+
+            ];
+
+            $this->load->view('dashboard/footer', $script);
+
+
+            }
+
+        }
+
+        public function bypassort()
+        {
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST')
+            {
+
+                $passport         =   $this->input->post('passport');
+
+                $viewData['data'] = $this->Searches->f_get_applications_bypassport($passport);
+
+                $this->load->view('search/passporttable', $viewData);
+
+                $script['script'] = [
+        
+                    '/assets/plugins/footable/js/footable.all.min.js',
+        
+                    '/assets/plugins/bootstrap-select/bootstrap-select.min.js',
+        
+                    'js/footable-init.js',
+        
+                    '/assets/plugins/datatables/jquery.dataTables.min.js'
+                
+                     ];
+    
+                $this->load->view('dashboard/footer', $script);
+
+            }else{
+
+
+              $this->load->view('search/bypassport');
+            
+               $script['script'] = [
+
+                "/assets/plugins/moment/moment.js",
+
+                "/assets/plugins/daterangepicker/daterangepicker.js",
+
+                "/js/moduleValidations.js"
+
+            ];
+
+            $this->load->view('dashboard/footer', $script);
+
+
+            }
+
+        }
+
 
 
 

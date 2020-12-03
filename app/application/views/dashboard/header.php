@@ -193,6 +193,10 @@
 
                                     <li><a href="<?php echo site_url('search/byDate'); ?>">Search by date</a></li>
                                     <li><a href="<?php echo site_url('search/byAppNo'); ?>">Search by application</a></li>
+                                    <li><a href="<?php echo site_url('search/byfname'); ?>">Search by First Name</a></li>
+                                    <li><a href="<?php echo site_url('search/bylname'); ?>">Search by Last Name</a></li>
+                                    <li><a href="<?php echo site_url('search/bynric'); ?>">Search by NRIC Number</a></li>
+                                    <li><a href="<?php echo site_url('search/bypassort'); ?>">Search by Passport</a></li>
 
                                 </ul>
                             </li>

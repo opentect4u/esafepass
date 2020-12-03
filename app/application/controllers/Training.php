@@ -10,6 +10,7 @@
             parent:: __construct();
 
             $this->load->model('Trainings');
+            $this->load->model('Applications');
 
             $this->load->model('Process');
             $this->load->library('upload');
@@ -46,6 +47,10 @@
 
             $data['appl_no'] = $this->input->get('appl_no');
             //$data['sl_no'] = $this->input->get('sl_no');
+      
+           
+
+          
 
             $checkEntry = $this->Trainings->f_check_previous_trainingEntry($data['appl_no']);
             $prevEntry_rows = $checkEntry->num_row;
@@ -62,6 +67,7 @@
             
             if($prevEntry_rows == 1)
             {
+                $editData['data1']  =   $this->Applications->f_get_application_editData($this->input->get('appl_no'));
 
                 $editData['appl_no'] = $this->input->get('appl_no');
                 $editData['sl_no'] = $this->input->get('sl_no');
@@ -73,6 +79,7 @@
             }
             else
             {
+                $data['data1']  =   $this->Applications->f_get_application_editData($this->input->get('appl_no'));
 
                 $this->load->view('application/training', $data);
                 $this->load->view('dashboard/footer', $script);

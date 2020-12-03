@@ -835,6 +835,8 @@
 
                         <div class="row">
 
+                                <?php  if($data1[0]->status != 'A'){ ?>  
+
                             <div class="col-md-6">
 
                                 <div class="row">
@@ -848,6 +850,8 @@
                                 </div>
 
                             </div>
+
+                               <?php } ?>
 
                             <div class="col-md-6"> </div>
 
