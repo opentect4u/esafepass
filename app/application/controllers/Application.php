@@ -21,6 +21,10 @@
 
             $this->load->library('email');
 
+            $this->load->library('zip');
+
+            $this->load->helper('file');
+
             // For pdf converter -- 
             //$this->load->library('Pdf');
 
@@ -2095,6 +2099,43 @@
         $this->email->send();
        
        }
+
+       public function download_zip(){
+
+         $sourcePath = 'http://localhost/esafepass/images/3.png';
+
+
+       
+       // $targetPath = base_url().'archive';
+           if (file_exists($sourcePath)){
+
+            echo "file exist";
+
+           
+             
+                // if(!copy($sourcePath, $targetPath)){ //Copy file source to destination directory
+                //       return ['status' => false, 'msg' => 'File missing'];  
+                //   }else{
+                //     echo "file copy Sucessfully";
+                //   }
+            }else{
+
+                echo "file not exit";
+            }
+  
+        // if (file_exists($targetPath)){ // check target directory
+        //        $this->zip->read_dir($targetPath,False); // read target directory
+        //        if(!$this->zip->archive($targetPath.'.zip')){ // zip target directory
+        //             return ['status' => false, 'msg' => 'Zip file creation Failed!'];
+        //        }else{
+        //             return ['status' => false, 'msg' => 'Zip file Created'];
+        //        }
+        // }
+
+
+         }
+
+
 
     }
 

@@ -392,19 +392,6 @@
                 $to_dt5             =       $_POST['to_dt5'];
                 $validity5          =       $_POST['validity5'];
 
-                //$certificate1_path  =   $_POST['certificate1'];
-                // $certificate2_path  =   $_POST['certificate2'];
-                // $certificate3_path  =   $_POST['certificate3'];
-                // $certificate4_path  =   $_POST['certificate4'];
-                // $certificate5_path  =   $_POST['certificate5'];
-
-                // * config* //
-                // $config['upload_path']  = FCPATH.'assets/userDocs/training';
-                // $config['allowed_types'] = 'gif|jpg|jpeg';
-                // $config['overwrite'] = TRUE;
-                // $this->load->library('upload', $config);
-
-
                 // * config* //
 
                 $certificate1_path = '';

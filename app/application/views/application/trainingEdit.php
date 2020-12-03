@@ -182,7 +182,7 @@
                                         <label class="control-label">Upload Certificate</label>
 
                                         <input type='file' class="form-control upload_img" id="certificate1" name="certificate1">
-                                        <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                        <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                     </div>
 
                                 </div>
@@ -336,7 +336,7 @@
 
                                         <input type='file' class="form-control upload_img" id="certificate2" name="certificate2"
                                         >
-                                        <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                        <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                     </div>
 
                                 </div>
@@ -491,7 +491,7 @@
 
                                         <input type='file' class="form-control upload_img" id="certificate3" name="certificate3"
                                         >
-                                        <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                        <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                     </div>
 
                                 </div>
@@ -647,7 +647,7 @@
 
                                         <input type='file' class="form-control upload_img" id="certificate4" name="certificate4"
                                         >
-                                        <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                        <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                     </div>
 
                                 </div>
@@ -697,7 +697,7 @@
 
                                         <label class="control-label">Institution's Name</label>
 
-                                        <input type="text" name= "inst_name5" value= "<?php echo $key->inst_name5; ?>" id= "inst_name5" class= "form-control" >
+                                        <input type="text" name= "inst_name5" value= "<?php echo $key->inst_name5; ?>" id= "inst_name5" class= "form-control" style='text-transform:uppercase'>
 
                                     </div>
 
@@ -709,7 +709,7 @@
 
                                         <label class="control-label">Address</label>
 
-                                        <textarea class="form-control" id="adr5" name="adr5" col= "30" row= "2"
+                                        <textarea class="form-control" id="adr5" name="adr5" col= "30" row= "2" style='text-transform:uppercase'
                                         ><?php echo $key->adr5; ?></textarea>
                                         
                                     </div>
@@ -727,7 +727,7 @@
 
                                         <label class="control-label">Course Title</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->course5; ?>" id="course5" name="course5"
+                                        <input type='text' class="form-control" value= "<?php echo $key->course5; ?>" id="course5" name="course5" style='text-transform:uppercase'
                                         />
                                             
                                     </div>
@@ -740,7 +740,7 @@
 
                                         <label class="control-label">Certificate No.</label>
 
-                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no5; ?>" id="cert_no5" name="cert_no5"
+                                        <input type='text' class="form-control" value= "<?php echo $key->cert_no5; ?>" id="cert_no5" style='text-transform:uppercase' name="cert_no5"
                                         >
                                         
                                     </div>
@@ -802,7 +802,7 @@
 
                                         <input type='file' class="form-control upload_img" id="certificate5" name="certificate5"
                                         >
-                                        <label class="control-label"><font color= "red" size="1px">File types must be gif,jpg,jpeg & maximum size 2MB</font></label>
+                                        <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
                                     </div>
 
                                 </div>
@@ -1138,7 +1138,7 @@
 
         $('.upload_img').bind('change', function() {
             var a=(this.files[0].size);
-            if(a > 2000000) {
+            if(a > 3000000) {
                 alert('Image size must be within 2MB');
                 return false;
             };
