@@ -46,11 +46,7 @@
         {
 
             $data['appl_no'] = $this->input->get('appl_no');
-            //$data['sl_no'] = $this->input->get('sl_no');
-      
-           
-
-          
+            //$data['sl_no'] = $this->input->get('sl_no');        
 
             $checkEntry = $this->Trainings->f_check_previous_trainingEntry($data['appl_no']);
             $prevEntry_rows = $checkEntry->num_row;
@@ -86,9 +82,7 @@
 
             }
 
-
         }
-
 
         // For other training entry -- 
         public function newtrainings()

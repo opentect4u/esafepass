@@ -1441,14 +1441,15 @@
                         //$data_array = array("kin_huet_cert_path"  => 'assets/userDocs/'.$kin_huet_cert_data);
                         $trn_vrf_path  =   'assets/userDocs/certificate/'.$trn_vrf_cert_data;
                     }
-                }else{
+                    }else{
 
-                        $trn_vrf_path  =  $_POST['trn_vrf_cert_path_prev'];
-                }
+                            $trn_vrf_path  =  $_POST['trn_vrf_cert_path_prev'];
+                    }
 
                 //H2S Details
 
                 $updateValue    = array(
+                    
                                 'med_center'          =>    $med_cntr,
 
                                 'med_cert_no'         =>    $med_crt_no,
@@ -2098,27 +2099,6 @@
         $this->email->send();
        
        }
-
-       public function download_zip(){
-
-             try{
-
-                $this->load->library('zip');    
-                $this->load->helper('file');
-                $path = 'images' ;
-                $finallink = ($_SERVER['DOCUMENT_ROOT'] . "/esafepass/" . $path);
-           
-                $this->zip->read_dir(($finallink), false);
-                $this->zip->download(date('m-d-Y'));
-
-                }catch(Exception $e){
-
-                echo 'Caught exception: ',  $e->getMessage(), "\n";
-
-                }
-
-    
-        }
          
 
 

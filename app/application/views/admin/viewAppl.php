@@ -22,8 +22,6 @@
 
 </div>
 
-
-
 <!-- JS // For selecting date range Start-->
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -183,7 +181,6 @@
 
                     </div>
 
-
                     <div class="row">
 
                         <div class="col-md-6">
@@ -215,19 +212,6 @@
                     </div>
 
                     <div class="row">
-
-                        <!--<div class="col-md-6">
-
-                            <div class="form-group">
-
-                                <label class="control-label">Email</label>
-
-                                <input type='email' class="form-control" id="org_email" name="org_email"
-                                >
-            
-                            </div>
-
-                        </div>-->
 
                         <div class="col-md-6">
 
@@ -453,7 +437,7 @@
 
                         <div class="col-lg-4">
                         
-                            <label class="control-label">Upload Photo</label>
+                            <label class="control-label"> Photo</label>
                             <div class="card">
 
                                 <div class="card-body">
@@ -523,7 +507,7 @@
 
                             <div class="form-group">
 
-                                <label class="control-label">Upload NRIC</label>
+                                <label class="control-label"> NRIC</label>
 
                                 <!-- <input type='file' class="form-control" id="nric_path" name="nric_path"> -->
 
@@ -559,7 +543,7 @@
 
                             <div class="form-group">
 
-                                <label class="control-label">Upload Passport</label>
+                                <label class="control-label"> Passport</label>
 
                                 <!-- <input type='file' class="form-control" id="pp_no" name="pp_no"> -->
                                 
@@ -804,7 +788,7 @@
 
                             <div class="form-group">
 
-                                <label class="control-label">Upload NRIC</label>
+                                <label class="control-label"> NRIC</label>
 
                                 <!-- <input type='file' class="form-control" id="kin_nric_path" name="kin_nric_path"> -->
                                 
@@ -839,7 +823,7 @@
 
                             <div class="form-group">
 
-                                <label class="control-label">Upload Passport</label>
+                                <label class="control-label"> Passport</label>
 
                                 <!-- <input type='file' class="form-control" id="kin_pp" name="kin_pp"> -->
                                 
@@ -1186,7 +1170,7 @@
 
                             <div class="form-group">
 
-                                <label class="control-label">Upload Medical Examination Certificate</label>
+                                <label class="control-label"> Medical Examination Certificate</label>
 
                                 <!-- <input type='file' class="form-control" id="kin_med_cert" name="kin_med_cert"> -->
                                 
@@ -1315,9 +1299,9 @@
 
                             <div class="form-group">
 
-                                <label class="control-label">Upload Training Certificate</label>
+                                <label class="control-label"> Training Certificate</label>
 
-                                <!-- <input type='file' class="form-control" id="kin_huet_cert" name="kin_huet_cert"> -->
+                             
                                 
                                 <input type='hidden' value="<?php echo base_url($row->huit_cert_path); ?>" id="huit_cert_path_prev" name="huit_cert_path_prev">
                                 <div>
@@ -1371,40 +1355,804 @@
 
                             </div>
 
+                   <h3 class="box-title">DETAILS OF H2S Training</h3>
+                   <hr class="m-t-0 m-b-40">
+                     <div class="row">
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Training Institution Name</label>
+
+                                            <input type="text"class="form-control" id="h2s_inst_name" name="h2s_inst_name" value="<?php echo $row->h2s_inst_name; ?>" readonly
+                                            /> 
+                                            
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Training Institution Address</label>
+
+                                            <textarea class="form-control" id="h2s_inst_adr" name="h2s_inst_adr" readonly
+                                            ><?php echo $row->h2s_inst_adr; ?></textarea>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                        <div class="row">
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Course Title</label>
+
+                                            <input type="text"class="form-control" id="h2s_course" name="h2s_course" value="<?php echo $row->h2s_course; ?>" readonly
+                                            /> 
+                                            
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+
+                                            <label class="control-label">Certificate No</label>
+
+                                            <input type="text" class="form-control" id="h2s_cert_no" name="h2s_cert_no" value="<?php echo $row->h2s_cert_no; ?>" readonly
+                                            >
+                                            
+                                        </div>
+
+                                    </div>
+
+                        </div>
+          
+
+                            <div class="row">
+                       
+                               <div class="col-md-12">
+                             <div class="form-group">
+                                  <input type="checkbox" id="declaration" name="declaration" value="Y" disabled  
+                                 <?php if(isset($row->declaration) && $row->declaration == 'Y'){echo "checked"; }?> 
+
+                                  >&nbsp;&nbsp;&nbsp;
+                               I hereby confirm that the information provided herein is accurate, correct and complete and that the documents submitted along with this application form are genuine. I hereby undertake to provide to Vestigo Petroleum Sdn. Bhd. 
+                                And / or its representatives with any additional documentation requested in order to support the applicant and its approval as deemed necessary.
+                                </div> 
+
+                               </div> 
+                            </div>
+
+                    <h3 class="box-title">DETAILS OF TRANING</h3>
+
+                    <hr class="m-t-0 m-b-40">
+
+
+                        <div class="form-body">
+
+                            <h3 class="box-title">Training Details 1 :
+                                <?php if(isset($key->certificate1_path) &&  $key->certificate1_path != ''){ ?>
+                                    <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
+                                <?php } ?>
+                            </h3>
                             
 
+
+                            <hr class="m-t-0 m-b-40">
+                            <div id= "section1">
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Institution's Name</label>
+
+                     <input type="text" name= "inst_name1" value= "<?php if(isset($key->inst_name1)){echo $key->inst_name1;} ?>" id= "inst_name1" class= "form-control" readonly>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Address</label>
+
+                                        <textarea class="form-control" id="adr1" name="adr1" col= "30" row= "2" readonly
+                                        ><?php if(isset($key->adr1)){echo $key->adr1;} ?></textarea>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                            
+                                    <div class="form-group">
+
+                                        <label class="control-label">Course Title</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->course1)){echo $key->course1;} ?>" id="course1" 
+                                        readonly
+                                        name="course1"
+                                        />
+                                            
+                                </div>
+
+                            </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Certificate No.</label>
+
+                                        <input type='text' class="form-control" readonly
+                                        value= "<?php if(isset($key->cert_no1)){echo $key->cert_no1;} ?>" id="cert_no1" name="cert_no1"
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date(From)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->from_dt1)){echo $key->from_dt1;} ?>" id="from_dt1" name="from_dt1" readonly
+                                        >
                     
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date (To)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->to_dt1)){echo $key->to_dt1;} ?>" id="to_dt1" name="to_dt1" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Valid Upto</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset( $key->validity1)){echo  $key->validity1;} ?>" id="validity1" name="validity1" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                           
+
+                                <?php if(isset($key->certificate1_path) && $key->certificate1_path != ''){ ?>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label"> Certificate</label>
+
+                                        <div><a href="<?php if(isset($key->certificate1_path)) { echo base_url($key->certificate1_path);} ?>" target= "blank">View Certificate</a></div>
+                                        <input type="hidden" name= "certificate1_path" value= "<?php if(isset($key->certificate1_path)){ echo $key->certificate1_path; } ?>" id="certificate1_path" >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <?php } ?>
+
+                            </div>
+                            </div>
+
+                            <br>
+                            <h3 class="box-title">Training Details 2 :
+                                <?php if(isset($key->certificate2_path) && $key->certificate2_path != ''){ ?>
+                                    <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
+                                <?php } ?>
+                            </h3>
+                    
+                            
+                            <hr class="m-t-0 m-b-40">
+
+                            <div id= "section2">
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Institution's Name</label>
+
+                                        <input type="text" name= "inst_name2" value= "<?php if(isset($key->inst_name2)){echo $key->inst_name2;} ?>" id= "inst_name2" class= "form-control" readonly >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Address</label>
+
+                                        <textarea class="form-control" id="adr2" name="adr2" col= "30" row= "2" readonly
+                                        ><?php if(isset($key->adr2)){echo $key->adr2;} ?></textarea>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
 
 
-                <!--    <div class="row">
+                            <div class="row">
 
-                        <div class="col-md-6">
+                                <div class="col-md-6">
+                            
+                                    <div class="form-group">
 
-                            <div class="form-group">
+                                        <label class="control-label">Course Title</label>
 
-                                <label class="control-label">H2S Expiry Date</label>
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->course2)){echo $key->course2;} ?>" id="course2" name="course2" readonly
+                                        />
+                                            
+                                    </div>
 
-                                <input type="date"class="form-control" id="h2sExp_dt" name="h2sExp_dt"
-                                /> 
-                                
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Certificate No.</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->cert_no2)){echo $key->cert_no2;} ?>" id="cert_no2" name="cert_no2" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date(From)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->from_dt2)){echo $key->from_dt2;} ?>" id="from_dt2" name="from_dt2" readonly
+                                        >
+                    
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date (To)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->to_dt2)){echo $key->to_dt2;} ?>" id="to_dt2" name="to_dt2" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Valid Upto</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->validity2)){echo $key->validity2;} ?>" id="validity2" name="validity2" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                              
+
+                                <?php if(isset($key->certificate2_path) && $key->certificate2_path != ''){ ?>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label"> Certificate</label>
+
+                                        <div><a href="<?php echo base_url($key->certificate2_path); ?>" target= "blank">View Certificate</a></div>
+                                        <input type="hidden" name= "certificate2_path" value= "<?php if(isset($key->certificate2_path)){echo $key->certificate2_path;} ?>" id= "certificate1_path" >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <?php } ?>
+
+                            </div>
+                            </div>
+
+
+                            <br>
+                            <h3 class="box-title">Training Details 3 :
+                                <?php if(isset($key->certificate3_path) && $key->certificate3_path != ''){ ?>
+                                    <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
+                                <?php } ?>
+                            </h3>
+                       
+
+                            <hr class="m-t-0 m-b-40">
+
+                            <div id= "section3">
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Institution's Name</label>
+
+                                        <input type="text" name= "inst_name3" value= "<?php if(isset($key->inst_name3)){echo $key->inst_name3;} ?>" id= "inst_name3" class= "form-control" readonly>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Address</label>
+
+                                        <textarea class="form-control" id="adr3" name="adr3" col= "30" row= "2" readonly><?php if(isset($key->inst_name3)){echo $key->inst_name3;} ?>
+                                            
+                                        </textarea>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                            
+                                    <div class="form-group">
+
+                                        <label class="control-label">Course Title</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->course3)){echo $key->course3;} ?>" id="course3" name="course3" readonly
+                                        />
+                                            
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Certificate No.</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->cert_no3)){echo $key->cert_no3;} ?>" id="cert_no3" name="cert_no3" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date(From)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->from_dt3)){echo $key->from_dt3;} ?>" id="from_dt3" name="from_dt3" readonly
+                                        >
+                    
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date (To)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->to_dt3)){echo $key->to_dt3;} ?>" id="to_dt3" name="to_dt3" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Valid Upto</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->validity3)){echo $key->validity3;} ?>" id="validity3" name="validity3" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                               
+
+                                <?php if(isset($key->certificate3_path) && $key->certificate3_path != ''){ ?>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Uploaded Certificate</label>
+
+                                        <div><a href="<?php echo base_url($key->certificate3_path); ?>" target= "blank">View Certificate</a></div>
+                                        <input type="hidden" name= "certificate3_path" value= "<?php if(isset($key->certificate3_path)){echo $key->certificate3_path;} ?>" id= "certificate1_path" >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <?php } ?>
+
+                            </div>
+                            </div>
+
+
+                            <br>
+                            <h3 class="box-title">Training Details 4 :
+                                <?php if(isset($key->certificate4_path) && $key->certificate4_path != ''){ ?>
+                                    <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
+                                <?php } ?>
+                            </h3>
+                        
+
+                            <hr class="m-t-0 m-b-40">
+
+                            <div id= "section4">
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Institution's Name</label>
+
+                                        <input type="text" name= "inst_name4" value= "<?php if(isset($key->inst_name4)){echo $key->inst_name4;} ?>" id= "inst_name4" class= "form-control" readonly>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Address</label>
+
+                                        <textarea class="form-control" id="adr4" name="adr4" col= "30" row= "2" readonly
+                                        ><?php if(isset($key->adr4)){echo $key->adr4;} ?></textarea>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                            
+                                    <div class="form-group">
+
+                                        <label class="control-label">Course Title</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->course4)){echo $key->course4;} ?>" 
+                                        id="course4" name="course4" readonly
+                                        />
+                                            
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Certificate No.</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->cert_no4)){echo $key->cert_no4;} ?>" id="cert_no4" name="cert_no4" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date(From)</label>
+
+                                        <input type='date' class="form-control" value="<?php if(isset($key->from_dt4)){echo $key->from_dt4;} ?>" id="from_dt4" name="from_dt4" readonly
+                                        >
+                    
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date (To)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->to_dt4)){echo $key->to_dt4;} ?>" id="to_dt4" name="to_dt4" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Valid Upto</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->validity4)){echo $key->validity4;} ?>" id="validity4" name="validity4" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                               <!--  <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Upload Certificate</label>
+
+                                        <input type='file' class="form-control upload_img" id="certificate4" name="certificate4"
+                                        >
+                                        <label class="control-label"><font color= "red" size="1px">File types must be png,jpg,jpeg,pdf & maximum size 3MB</font></label>
+                                    </div>
+
+                                </div> -->
+
+                                <?php if(isset($key->certificate4_path) && $key->certificate4_path != ''){ ?>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Uploaded Certificate</label>
+
+                                        <div><a href="<?php echo base_url($key->certificate4_path); ?>" target= "blank">View Certificate</a></div>
+                                        <input type="hidden" name= "certificate4_path" value= "<?php if(isset($key->certificate4_path)){echo $key->certificate4_path;} ?>" id= "certificate1_path" >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <?php } ?>
+
+                            </div>
+                            </div>
+
+
+                            <br>
+                            <h3 class="box-title">Training Details 5 :
+                                <?php if(isset($key->certificate5_path) && $key->certificate5_path != ''){ ?>
+                                    <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
+                                <?php } ?>
+                            </h3>
+                          <!--   <span id= "addSection5">
+                                <font id="addMessage5" color= "blue">Click to add </font>
+                                <font id="removeMessage5" color= "blue">Click to Hide </font>
+                                <button class="btn btn-danger" type= "button" title="remove" id="removeSection5"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                <button class="btn btn-success" type= "button" title="Add" id="addSection5"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            </span> -->
+
+                            <hr class="m-t-0 m-b-40">
+
+                            <div id= "section5">
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Institution's Name</label>
+
+                                        <input type="text" name= "inst_name5" value= "<?php if(isset($key->inst_name5)){echo $key->inst_name5;} ?>" id= "inst_name5" class= "form-control" readonly>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Address</label>
+
+                                        <textarea class="form-control" id="adr5" name="adr5" col= "30" row= "2" readonly
+                                        ><?php if(isset($key->adr5)){echo $key->adr5;} ?></textarea>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                            
+                                    <div class="form-group">
+
+                                        <label class="control-label">Course Title</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->course5)){echo $key->course5;} ?>" id="course5" name="course5" readonly
+                                        />
+                                            
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Certificate No.</label>
+
+                                        <input type='text' class="form-control" value= "<?php if(isset($key->cert_no5)){echo $key->cert_no5;} ?>" id="cert_no5" readonly name="cert_no5"
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date(From)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->from_dt5)){echo $key->from_dt5;} ?>" id="from_dt5" name="from_dt5" readonly
+                                        >
+                    
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Date (To)</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->to_dt5)){echo $key->to_dt5;} ?>" id="to_dt5" name="to_dt5" readonly
+                                        >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Training Valid Upto</label>
+
+                                        <input type='date' class="form-control" value= "<?php if(isset($key->validity5)){echo $key->validity5;} ?>" id="validity5" name="validity5" readonly
+                                        > 
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                        
+                                <?php if(isset($key->certificate5_path) && $key->certificate5_path != ''){ ?>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+
+                                        <label class="control-label">Uploaded Certificate</label>
+
+                                        <div><a href="<?php echo base_url($key->certificate5_path); ?>" target= "blank">View Certificate</a></div>
+                                        <input type="hidden" name= "certificate5_path" value="<?php if(isset($key->certificate5_path)){echo $key->certificate5_path;} ?>" id= "certificate1_path" >
+                                        
+                                    </div>
+
+                                </div>
+
+                                <?php } ?>
+
+                            </div>
                             </div>
 
                         </div>
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-
-                                <label class="control-label">Upload H2S Expiry Certificate</label>
-
-                                <input type='file' class="form-control" id="kin_h2s_cert" name="kin_h2s_cert"
-                                >
-                                
-                            </div>
-
-                        </div>
-
-                    </div>--->
                         
                     <div class="row">
 
@@ -1423,7 +2171,7 @@
                     </div>
 
                     <div class="modal-footer">
-
+                  
                         <button class="btn btn-success" type="button" id= "approve" >Approve</button>
                         <button class="btn btn-warning" type="button" id= "hold" >In Process</button>
                         <button class="btn btn-danger" type="button" id= "reject" >Reject</button>

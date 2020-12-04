@@ -685,7 +685,7 @@
                                <div class="col-md-12">
                              <div class="form-group">
                                   <input type="checkbox" id="declaration" name="declaration" value="Y" required 
-                                 <?php if(isset($row->medical_declar) && $row->medical_declar == 'Y'){echo "checked"; }?> 
+                                 <?php if(isset($row->declaration) && $row->declaration == 'Y'){echo "checked"; }?> 
 
                                   >&nbsp;&nbsp;&nbsp;
                                I hereby confirm that the information provided herein is accurate, correct and complete and that the documents submitted along with this application form are genuine. I hereby undertake to provide to Vestigo Petroleum Sdn. Bhd. 

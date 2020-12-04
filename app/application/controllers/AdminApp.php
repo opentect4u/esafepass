@@ -69,8 +69,9 @@
             $appl_no    =       $this->input->get('appl_no');
             //$sl_no      =       $this->input->get('sl_no');
 
-            $viewData['data1'] = $this->AdminApps->f_get_view_applicationDtls($appl_no);
+            $viewData['data1']   = $this->AdminApps->f_get_view_applicationDtls($appl_no);
             $viewData['country'] = $this->Applications->f_get_country();
+            $viewData['key']   = $this->AdminApps->f_get_view_applicationtraning($appl_no);
 
             $this->load->view('admin/viewAppl', $viewData);
             //$this->load->view('admin/applReport', $viewData);
@@ -696,6 +697,101 @@
             
             redirect('AdminApp/application');
 
+        }
+
+        public function download_zip(){
+
+                 $appl_no             = $this->input->get('appl_no'); 
+                 $data1  = $this->AdminApps->f_get_view_applicationDtl($appl_no);
+
+                 $key    = $this->AdminApps->f_get_view_applicationtraning($appl_no);
+
+             try{
+                $this->load->library('zip');    
+                $this->load->helper('file');
+              
+                if(isset($data1->appl_photo_path)){
+
+                    $filepath[] = FCPATH.$data1->appl_photo_path;
+                }
+
+                if(!empty($data1->nric_path)){
+
+                    $filepath[] = FCPATH.$data1->nric_path;
+                }
+
+                 if(!empty($data1->appl_pp_path)){
+
+                    $filepath[] = FCPATH.$data1->appl_pp_path;
+                }
+
+                 if(!empty($data1->kin_nric_path)){
+
+                    $filepath[] = FCPATH.$data1->kin_nric_path;
+                }
+
+                if(!empty($data1->kin_pp_path)){
+
+                    $filepath[] = FCPATH.$data1->kin_pp_path;
+                }
+
+                if(!empty($data1->kin_med_cert_path)){
+
+                    $filepath[] = FCPATH.$data1->kin_med_cert_path;
+                }
+
+                 if(!empty($data1->kin_huet_cert_path)){
+
+                    $filepath[] = FCPATH.$data1->kin_huet_cert_path;
+                }
+                 if(!empty($data1->trn_vrf_path)){
+
+                    $filepath[] = FCPATH.$data1->trn_vrf_path;
+                }
+
+                 if(!empty($data1->certificate1_path)){
+
+                    $filepath[] = FCPATH.$key->certificate1_path;
+                }
+
+                 if(!empty($data1->certificate2_path)){
+
+                    $filepath[] = FCPATH.$key->certificate2_path;
+                }
+
+
+                 if(!empty($data1->certificate3_path)){
+
+                    $filepath[] = FCPATH.$key->certificate3_path;
+                }
+
+                 if(!empty($data1->certificate4_path)){
+
+                    $filepath[] = FCPATH.$key->certificate4_path;
+                }
+
+                if(!empty($data1->certificate5_path)){
+
+                    $filepath[] = FCPATH.$key->certificate5_path;
+                }
+
+             
+                    foreach($filepath as $file) {
+
+                        $this->zip->read_file($file);
+
+                    }
+                // Download
+                 $filename = $data1->appl_name.'_'.$appl_no.".zip";
+                 $this->zip->download($filename);
+
+                }catch(Exception $e){
+
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
+
+                }
+
+    
         }
 
 

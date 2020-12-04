@@ -18,6 +18,21 @@
             return $sql->result();
 
         }
+        public function f_get_view_applicationDtl($appl_no)
+        {
+
+            $sql = $this->db->query(" SELECT * FROM td_application WHERE appl_no = '$appl_no' ");
+            return $sql->row();
+
+        }
+
+         public function f_get_view_applicationtraning($appl_no)
+        {
+
+            $sql = $this->db->query(" SELECT * FROM td_application_training WHERE appl_no = '$appl_no' ");
+            return $sql->row();
+
+        }
 
 
         public function adminStatusUpdation($updateValue, $appl_no)

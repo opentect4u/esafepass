@@ -39,7 +39,9 @@
                                     <!-- <th style= "text-align: center;">Applicant Id</th> -->
                                     <th style= "text-align: center;">Organisation</th>
                                     <th style= "text-align: center;">Satus</th>
+                                   
                                     <th style= "text-align: center;">View</th>
+                                    <th style= "text-align: center;">Downloads</th>
                                     <th style= "text-align: center;" class="del">Delete</th>
                                     <!-- <th style= "text-align: center;">Download</th> -->
                                    
@@ -117,6 +119,16 @@
                                                 title="View" target= "blank">
                                             
                                                     <i class="fas fa-eye m-r-10" aria-hidden="true" style="color: #64c3a3"></i>
+                                                
+                                                </a>
+
+                                            </td>
+                                            <td class="text-nowrap" style= "text-align: center;">
+                                                
+                                                <a href="<?php echo site_url('adminApp/download_zip?appl_no='.$a_dtls->appl_no.'&sl_no='.$a_dtls->sl_no.''); ?>"
+                                                title="View">
+                                            
+                                                    <i class="fas fa-download m-r-10" aria-hidden="true" style="color: #64c3a3"></i>
                                                 
                                                 </a>
 
