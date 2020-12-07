@@ -7,23 +7,46 @@
 		
 		<title>Untitled Document</title>
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet"> 
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	</head>
 
 	<body>
+	    
 				  <?php //foreach($pass as $key)
 				  $logoPath       = base_url('assets/images/pass/logo.png');
 				  $signature      = base_url('assets/images/signature.png');
 				  $photoPath      = base_url($key->appl_photo_path);
-				  $medExpDt       = date('d-F-Y',strtotime($key->med_exp_dt));
-				  $huit_exp_dt    = date('d-F-Y',strtotime($key->huit_exp_dt));
-				  $valid          = min($dates);
-				  $today = $valid['VAL_DT'];
-                  $newdate = date('d-F-Y', strtotime('-1 months', strtotime($today))); 
- 
-				 
+				  $qrimage        = base_url('uploads/qr_image/'.$img_url);
+				   
+                //   echo $img_url;
+                //   die();
+				  $medExpDt       = $key->med_exp_dt;
+				  if(isset($medExpDt) && $medExpDt!=""){
+					$medExpDt     = date('d-F-Y',strtotime($key->med_exp_dt));
+				  }else{
+					$medExpDt  	  = "";   
+				  }
+				  
+				  $huit_exp_dt	  = $key->huit_exp_dt;
+				  if(isset($huit_exp_dt) && $huit_exp_dt!=""){
+					$huit_exp_dt  = date('d-F-Y',strtotime($key->huit_exp_dt));
+				  }else{
+					$huit_exp_dt  = "";   
+				  }
+				  
 
-				 // $medExpDt       = "2-Oct-21";
+				  $h2s_exp_dt     = $key->h2s_exp_dt;
+				  if(isset($h2s_exp_dt) && $h2s_exp_dt !=""){
+					$h2s_exp_dt   = date('d-F-Y',strtotime($key->h2s_exp_dt));
+				  }else{
+					$h2s_exp_dt   ="";
+				  }
+
+				  $valid          = strtotime($dates->min_valid);
+
+				  $newdate 		  = date("d-F-Y", strtotime("-1 months",$valid));
+
 				 if($key->h2s_cert_path != "")
 				 {
 					 $trainingStatus = "Not Attended";
@@ -42,6 +65,7 @@
 						<td style="border-bottom: #86c2bf solid 5px; padding: 15px 0 0 15px; box-sizing: border-box;" width="476">
 						<div style="width: 100%;"><img src="<?php echo $logoPath ;?>" width="400" height="63" alt=""/></div>
 						<div style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; padding-left:80px;"><strong style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; margin-left:80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:<?php echo $key->appl_name; ?> <?php echo $key->appl_mid_name; ?> <?php echo $key->appl_last_name; ?></strong></div>
+						
 					</td>
 
 					<td style="border-bottom: #86c2bf solid 5px;" valign="top" align="left" width="103"><img src="<?php echo $photoPath ;?>" width="103" height="105" alt="No image" style="display: block;" />
@@ -100,15 +124,16 @@
 									
 								</tr>
 								<tr>
-								    <td width="50%" style="padding-bottom: 8px;color: #fff;">H2S : <?=$trainingStatus;?></td>
-									<td width="50%" style="padding-bottom: 8px;color: #fff;">Card Valid Till : <?=$newdate?></td>
-									
-									
-									<td>&nbsp;</td>
+								    <!--<td width="50%" style="padding-bottom: 8px;color: #fff;">H2S : <?=$trainingStatus;?></td>-->
+									<td width="50%" style="padding-bottom: 8px;color: #fff;">H2S Expiry Date : <?=$h2s_exp_dt?></td>
+								    <td width="50%" style="padding-bottom: 8px;color: #fff;">Card Valid Till : <?=$newdate?></td>
 								</tr>
+								<!--<tr>
+								<td width="50%" style="padding-bottom: 8px;color: #fff;">&nbsp;</td>
+								
+								</tr>-->
 							</tbody>
 						</table>
-
 					</td>
 				</tr>
 		</table>
@@ -155,11 +180,14 @@
 								<tr>
 									<td width="33%" style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">50450 Kuala Lumpur.</p></td>
 								</tr>
-							
+						<br>
+						
+							    <div align="right" id="result"  cols="50" rows="5" ><?php echo $qrimage ;?></div>
+						
 							</tbody>
 						</table>
 							</td>
-							<td align="left" valign="bottom" width="182"><img src="<?=$signature?>" width="182" height="153" alt="" style="float: right;"/></td>
+							<!--<td align="left" valign="bottom" width="182"><img src="#" width="182" height="153" alt="" style="float: right;"/></td>-->
 						</tr>
 						
 						<tr><td><h3><br>Telephone: 603 27769999 (Office)</h3></td></tr>
@@ -179,3 +207,19 @@
 	</body>
 
 </html>
+<script>
+//function generate_qrcode(sample){
+    $( document ).ready(function() {
+        console.log("kdjfksdfks");
+     alert("raja");
+    $.ajax({
+        type:'post',
+        url:'generator.php',
+        data:{sample:<?php echo $key->appl_name; ?>},
+        success:function(code){
+         $('#result').html(code);
+        }
+    });
+
+}
+</script>

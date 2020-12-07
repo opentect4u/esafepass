@@ -7,15 +7,20 @@
 		
 		<title>Untitled Document</title>
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet"> 
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	</head>
 
 	<body>
+	    
 				  <?php //foreach($pass as $key)
 				  $logoPath       = base_url('assets/images/pass/logo.png');
 				  $signature      = base_url('assets/images/signature.png');
 				  $photoPath      = base_url($key->appl_photo_path);
-
+				  $qrimage        = base_url('uploads/qr_image/'.$img_url);
+				   
+                //   echo $img_url;
+                //   die();
 				  $medExpDt       = $key->med_exp_dt;
 				  if(isset($medExpDt) && $medExpDt!=""){
 					$medExpDt     = date('d-F-Y',strtotime($key->med_exp_dt));
@@ -52,7 +57,7 @@
 				 }
 				 
 				 ?>
-			<table style="width: 579px; margin-bottom: 25px;" border="0" cellpadding="0" cellspacing="0" width="579">
+			<table style="margin-bottom: 25px;" border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr style="background: #92dad6;" valign="top" align="left">
 					<td>
 						<table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -60,6 +65,7 @@
 						<td style="border-bottom: #86c2bf solid 5px; padding: 15px 0 0 15px; box-sizing: border-box;" width="476">
 						<div style="width: 100%;"><img src="<?php echo $logoPath ;?>" width="400" height="63" alt=""/></div>
 						<div style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; padding-left:80px;"><strong style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; margin-left:80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:<?php echo $key->appl_name; ?> <?php echo $key->appl_mid_name; ?> <?php echo $key->appl_last_name; ?></strong></div>
+						
 					</td>
 
 					<td style="border-bottom: #86c2bf solid 5px;" valign="top" align="left" width="103"><img src="<?php echo $photoPath ;?>" width="103" height="105" alt="No image" style="display: block;" />
@@ -70,40 +76,54 @@
 				</tr>
 
 				<tr>
+					
 					<td style="background: #d6efec; padding: 10px 15px; font-family: 'PT Sans', sans-serif; font-size: 14px; color: #231f20;">
+						
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td width="60%" valign="top" align="left">
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tbody>
 							<tr>
 								<td width="21%" style="padding-bottom: 6px;" valign="top" align="left">Card No:</td>
 								<td width="79%" style="padding-bottom: 6px;" valign="top" align="left">:<?=$key->appl_no?></td>
 								</tr>
 							<tr>
-								<td valign="top" align="left" style="padding-bottom: 7px;">IC/Passport#: </td>
-								<td valign="top" align="left" style="padding-bottom: 7px;">:<?=$key->applcnt_pasprt_no?></td>
+								<td valign="top" align="left" style="padding-bottom: 7px;">IC/Passport# </td>
+								<td valign="top" align="left" style="padding-bottom: 7px;">: <?=$key->applcnt_pasprt_no?></td>
 								</tr>
 							<tr>
 								<td valign="top" align="left" style="padding-bottom: 7px;">Nationality: </td>
-								<td valign="top" align="left" style="padding-bottom: 7px;">:<?=$key->appl_nation?></td>
+								<td valign="top" align="left" style="padding-bottom: 7px;">: <?=$key->appl_nation?></td>
 								</tr>
 
 								<tr>
                                 <td valign="top" align="left" style="padding-bottom: 7px;">NRIC: </td>
-                                <td valign="top" align="left" style="padding-bottom: 7px;">:<?=$key->nric_no?></td>
+                                <td valign="top" align="left" style="padding-bottom: 7px;">: <?=$key->nric_no?></td>
                               </tr>
 							<tr>
 								<td valign="top" align="left" style="padding-bottom: 7px;">Company Name: </td>
-								<td valign="top" align="left">:<?=$key->org_name?></td>
+								<td valign="top" align="left">: <?=$key->org_name?></td>
 								</tr>
 							<tr>
 								<td valign="top" align="left" style="padding-bottom: 7px;">Address: </td>
-								<td valign="top" align="left" style="padding-bottom: 7px;">:<?=$key->org_address?></td>
+								<td valign="top" align="left" style="padding-bottom: 7px;">: <?=$key->org_address?></td>
 								</tr>
 							<tr>
 								<td valign="top" align="left" style="padding-bottom: 7px;">Telephone: </td>
-								<td valign="top" align="left" style="padding-bottom: 7px;">:<?=$key->org_ph_no?></td>
+								<td valign="top" align="left" style="padding-bottom: 7px;">: <?=$key->org_ph_no?></td>
 								</tr>
 							</tbody>
 						</table></td>
+      <td width="40%" valign="top" align="left"><div align="right" id="result" rows="5" ><?php echo $img_url ;?></div></td>
+    </tr>
+  </tbody>
+</table>
+
+							
+							</td>
+					
 				</tr>
 
 				<tr>
@@ -118,13 +138,14 @@
 									
 								</tr>
 								<tr>
-								    <td width="50%" style="padding-bottom: 8px;color: #fff;">H2S : <?=$trainingStatus;?></td>
+								    <!--<td width="50%" style="padding-bottom: 8px;color: #fff;">H2S : <?=$trainingStatus;?></td>-->
 									<td width="50%" style="padding-bottom: 8px;color: #fff;">H2S Expiry Date : <?=$h2s_exp_dt?></td>
+								    <td width="50%" style="padding-bottom: 8px;color: #fff;">Card Valid Till : <?=$newdate?></td>
 								</tr>
-								<tr>
+								<!--<tr>
 								<td width="50%" style="padding-bottom: 8px;color: #fff;">&nbsp;</td>
-								<td width="50%" style="padding-bottom: 8px;color: #fff;">Card Valid Till : <?=$newdate?></td>
-								</tr>
+								
+								</tr>-->
 							</tbody>
 						</table>
 					</td>
@@ -133,7 +154,7 @@
 			
 
 		
-		<table style="width: 579px;" border="0" cellpadding="0" cellspacing="0" width="579">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
 
 			<tbody>
 				<tr>
@@ -145,35 +166,45 @@
 				<tr>
 					<td align="left" valign="top" style="background: #d6efec; padding: 0 15px 30px 15px; font-family: 'PT Sans', sans-serif; font-size: 14px; color: #231f20; line-height: 22px;">
 					
-				<table width="100%" border="0" cellspacing="1" cellpadding="2">
+				<table width="100%" border="0">
 					<tbody>
 						<tr>
-							<td align="left" valign="top"><p style="color: #231f20; line-height: 40px; font-size: 14px; padding: 0; margin: 0;">
+							<td align="left" valign="top">
 						
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tbody>
 							<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">This Offshore Safty Card is not transferable.</p></td>
+									<td style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">This Offshore Safty Card is not transferable.</p></td>
 								</tr>
 								<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	If found please return to:</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	If found please return to: </p></td>
 								</tr>
 								<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">Vestigo petroleum Sdn. Bhd.</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">Vestigo petroleum Sdn. Bhd.</p></td>
 								</tr>
 								<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	level 13, Menara Binjai,</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	level 13, Menara Binjai,</p></td>
 								</tr>
 								<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">	No. 2, Jalan Binjai,</p></td>
+									<td style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">	No. 2, Jalan Binjai,</p></td>
 								</tr>
 								<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">	Off Jalan Ampang,</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">	Off Jalan Ampang,</p></td>
 								</tr>
 								<tr>
-									<td width="33%" style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">50450 Kuala Lumpur.</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0 0 25px 0;">50450 Kuala Lumpur.</p>
+										<br>
+
+									<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin:  0 0 25px 0;;">Declaration 1: I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease.</p>
+										<br>
+
+									<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0 0 25px 0;">Declaration 2: I declare and ensure that I have obtained and I am in possession of a valid visa / work permit / other applicable requirements as deemed necessary to carry out work activities in Malaysia and its respective states / federal territories.</p>	
+									</td>
 								</tr>
-							
+						<?php /*?><br>
+						<div align="right" id="result" "generate_qrcode('test')" cols="50" rows="5" ><?php echo $qrimage ;?></div><?php */?>
+							   
+						
 							</tbody>
 						</table>
 							</td>
@@ -182,7 +213,7 @@
 						
 						<tr><td><h3><br>Telephone: 603 27769999 (Office)</h3></td></tr>
 						
-						<tr>	<td colspan="2"><p><br>This is Computer generated document and no signature is required</p></td></tr>
+						<tr>	<td><p><br>This is Computer generated document and no signature is required</p></td></tr>
 					</tbody>
 				</table>
 			
@@ -197,3 +228,19 @@
 	</body>
 
 </html>
+<script>
+//function generate_qrcode(sample){
+    $( document ).ready(function() {
+        console.log("kdjfksdfks");
+     alert("raja");
+    $.ajax({
+        type:'post',
+        url:'generator.php',
+        data:{sample:<?php echo $key->appl_name; ?>},
+        success:function(code){
+         $('#result').html(code);
+        }
+    });
+
+}
+</script>

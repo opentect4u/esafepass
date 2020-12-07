@@ -2083,7 +2083,9 @@
             $mpdf = new \Mpdf\Mpdf();
             $html = $this->load->view('demo',$passData,true);
             $mpdf->WriteHTML($html);
-            $mpdf->Output(); // opens in browser
+            $file_name = substr($name,5).'_'.$appl_no.'.pdf';
+            $mpdf->Output($file_name,'I');
+           // $mpdf->Output(); // opens in browser
             
         }
 
