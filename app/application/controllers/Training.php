@@ -136,7 +136,8 @@
 
                 // * config* //
 
-                $certificate_data1         = 'certi1'.time().$_FILES["certificate1"]["name"];
+             
+                $certificate_data1         = str_replace(array(':','/','-','*',' '),'_','certi1'.time().$_FILES["certificate1"]["name"]);
                 $config1['upload_path']    = FCPATH.'assets/userDocs/training';
                 $config1['allowed_types']  = 'png|jpg|jpeg|pdf';
                 $config1['overwrite']      = TRUE;
@@ -168,7 +169,8 @@
                 }
 
                 $certificate2_path = '';
-                $certificate_data2         = 'certi2'.time().$_FILES["certificate2"]["name"];
+             
+                $certificate_data2        = str_replace(array(':','/','-','*',' '),'_','certi2'.time().$_FILES["certificate2"]["name"]);
                 $config2['upload_path']    = FCPATH.'assets/userDocs/training';
                 $config2['allowed_types']  = 'png|jpg|jpeg|pdf';
                 $config2['overwrite']      = TRUE;
@@ -198,7 +200,8 @@
                 }
 
                 $certificate3_path = '';
-                $certificate_data3         = 'certi3'.time().$_FILES["certificate3"]["name"];
+            
+                $certificate_data3         = str_replace(array(':','/','-','*',' '),'_','certi3'.time().$_FILES["certificate3"]["name"]);
                 $config3['upload_path']    = FCPATH.'assets/userDocs/training';
                 $config3['allowed_types']  = 'png|jpg|jpeg|pdf';
                 $config3['overwrite']      = TRUE;
@@ -228,7 +231,8 @@
                 }
 
                 $certificate4_path         = '';
-                $certificate_data4         = 'certi4'.time().$_FILES["certificate4"]["name"];
+           
+                $certificate_data4         = str_replace(array(':','/','-','*',' '),'_','certi4'.time().$_FILES["certificate4"]["name"]);
                 $config4['upload_path']    = FCPATH.'assets/userDocs/training';
                 $config4['allowed_types']  = 'png|jpg|jpeg|pdf';
                 $config4['overwrite']      = TRUE;
@@ -258,7 +262,8 @@
                 }
 
                 $certificate5_path = '';
-                $certificate_data5         = 'certi5'.time().$_FILES["certificate5"]["name"];
+          
+                $certificate_data5         = str_replace(array(':','/','-','*',' '),'_','certi5'.time().$_FILES["certificate5"]["name"]);
                 $config5['upload_path']    = FCPATH.'assets/userDocs/training';
                 $config5['allowed_types']  = 'png|jpg|jpeg|pdf';
                 $config5['overwrite']      = TRUE;

@@ -349,14 +349,14 @@
                                    
                                     <div class="col-md-6">
                                           <div class="form-group">
-                                         Note: Name of the Person In Charge from <span id="org_namess"></span>
+                                         Note: Name of the Person In Charge from Vestigo <!-- <span id="org_namess"></span> -->
 
                                          </div>   
 
                                     </div>
                                     <div class="col-md-6">
                                           <div class="form-group">
-                                         Note: The Department of the Person In Charge from <span id="org_deptss"></span>
+                                         Note: The Department of the Person In Charge from Vestigo<!-- <span id="org_deptss"></span> -->
 
                                          </div>   
 

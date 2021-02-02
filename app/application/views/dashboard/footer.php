@@ -1,6 +1,6 @@
                 </div>
                 
-                <footer class="footer"> © 2019 Synergic Softek Solutions Pvt. Ltd. </footer>
+                <footer class="footer"> © <?php echo date("Y");?> Synergic Softek Solutions Pvt. Ltd. </footer>
                 
             </div>
             

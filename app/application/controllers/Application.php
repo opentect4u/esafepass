@@ -221,14 +221,14 @@
                 if(!empty($_FILES["apl_name_path"]["name"])&& $_FILES['apl_name_path']['size'] < 3000000)
                 { 
                     // * config* //
-                    $apl_name_data = 'i'.time().$_FILES["apl_name_path"]["name"];
+                    $apl_name_data = str_replace(array(':','/','-','*',' '),'_','i'.time().$_FILES["apl_name_path"]["name"]);
 
                     $config['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
                     $config['allowed_types'] = 'png|jpg|jpeg';
+                    // $config['remove_spaces'] = TRUE;
                     $config['overwrite'] = TRUE;
                     $config['file_name'] = $apl_name_data;
-
-                    
+                  
                      $this->upload->initialize($config); 
                     
                     if(! $this->upload->do_upload("apl_name_path"))
@@ -259,7 +259,7 @@
                 if(!empty($_FILES["nric_path"]["name"])&& $_FILES['nric_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $apl_nric_data = 'n'.time().$_FILES["nric_path"]["name"];
+                    $apl_nric_data = str_replace(array(':','/','-','*',' '),'_','n'.time().$_FILES["nric_path"]["name"]);
                     $config1['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
                     $config1['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config1['overwrite'] = TRUE;
@@ -293,7 +293,7 @@
                 {
                     // * config* //
 
-                    $pp_no_data = 'p'.time().$_FILES["pp_no"]["name"];
+                    $pp_no_data = str_replace(array(':','/','-','*',' '),'_','p'.time().$_FILES["pp_no"]["name"]);
                     $config2['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
                     $config2['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config2['overwrite'] = TRUE;
@@ -349,8 +349,7 @@
                 if(!empty($_FILES["kin_nric_path"]["name"])&& $_FILES['kin_nric_path']['size'] < 3000000)
                 {
                 //     // * config* //
-
-                    $kin_nric_data = 'kn'.time().$_FILES["kin_nric_path"]["name"];
+                    $kin_nric_data = str_replace(array(':','/','-','*',' '),'_','kn'.time().$_FILES["kin_nric_path"]["name"]);
 
                     $config3['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config3['allowed_types'] = 'png|jpg|jpeg|pdf';
@@ -385,7 +384,7 @@
                 {
                     // * config* //
 
-                    $kin_pp_data = 'kp'.time().$_FILES["kin_pp"]["name"];
+                    $kin_pp_data = str_replace(array(':','/','-','*',' '),'_','kp'.time().$_FILES["kin_pp"]["name"]);
 
                     $config4['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config4['allowed_types'] = 'png|jpg|jpeg|pdf';
@@ -564,7 +563,7 @@
                 if(!empty($_FILES["kin_med_cert"]["name"])&& $_FILES['kin_med_cert']['size'] < 3000000)
                 {
                     // * config* //
-                    $kin_med_cert_data =      'kin_med_cert'.time().$_FILES["kin_med_cert"]["name"];
+                    $kin_med_cert_data = str_replace(array(':','/','-','*',' '),'_','kin_med_cert'.time().$_FILES["kin_med_cert"]["name"]);
                     $config['upload_path']    = FCPATH.'assets/userDocs/certificate';
                     $config['allowed_types']  = 'png|jpg|jpeg|pdf';
                     $config['overwrite']      = TRUE;
@@ -612,7 +611,7 @@
                 {
                     // * config* //
 
-                    $kin_huet_cert_data     = 'kin_huet_cert'.time().$_FILES["kin_huet_cert"]["name"];
+                    $kin_huet_cert_data = str_replace(array(':','/','-','*',' '),'_','kin_huet_cert'.time().$_FILES["kin_huet_cert"]["name"]);
                     $config1['upload_path']  = FCPATH.'assets/userDocs/certificate';
                     $config1['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config1['overwrite'] = TRUE;
@@ -645,7 +644,8 @@
                 if(!empty($_FILES["trn_vrf_cert_path"]["name"])&& $_FILES['trn_vrf_cert_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $trn_vrf_cert_data        = 'trn_vrf_cert'.time().$_FILES["trn_vrf_cert_path"]["name"];
+
+                    $trn_vrf_cert_data = str_replace(array(':','/','-','*',' '),'_','trn_vrf_cert'.time().$_FILES["trn_vrf_cert_path"]["name"]);
                     $config2['upload_path']    = FCPATH.'assets/userDocs/certificate';
                     $config2['allowed_types']  = 'png|jpg|jpeg|pdf';
                     $config2['overwrite']      = TRUE;
@@ -736,10 +736,11 @@
 
                 $this->email->from('safepass@esafepass.com', 'Esafepass');
                 $this->email->to('admin@esafepass.com');
+                
  
-                $this->email->subject('Application Submitted');
-                //$this->email->message("Dear ".$name.",\r\nPlease click on below URL or paste into your browser to verify your Email Id\r\n\r\n". site_url("main/verify/").$verificationText."\r\n"."\r\n\r\nThanks\r\nAdmin Team");
-                $this->email->message('A New Application Submitted.');
+                $this->email->subject('Notification of New SafePass Application');
+                $this->email->message("Dear ADMIN,\r\n\r\nA new SafePass application has been registered in the system. Please log on to http://esafepass.com/ for details.\r\n\r\n\r\n\r\n\r\nThanks\r\nSafePass Team");
+                //$this->email->message('A New Application Submitted.');
 
                 $this->email->send();
             
@@ -877,32 +878,6 @@
                 // $from_dt2           =       $_POST['from_dt2'];
                 // $to_dt2             =       $_POST['to_dt2'];
                 // $validity2          =       $_POST['validity2'];
-
-                // $inst_name3         =       $_POST['inst_name3'];
-                // $adr3               =       $_POST['adr3'];
-                // $course3            =       $_POST['course3'];
-                // $cert_no3           =       $_POST['cert_no3'];
-                // $from_dt3           =       $_POST['from_dt3'];
-                // $to_dt3             =       $_POST['to_dt3'];
-                // $validity3          =       $_POST['validity3'];
-
-                // $inst_name4         =       $_POST['inst_name4'];
-                // $adr4               =       $_POST['adr4'];
-                // $course4            =       $_POST['course4'];
-                // $cert_no4           =       $_POST['cert_no4'];
-                // $from_dt4           =       $_POST['from_dt4'];
-                // $to_dt4             =       $_POST['to_dt4'];
-                // $validity4          =       $_POST['validity4'];
-
-                // $inst_name5         =       $_POST['inst_name5'];
-                // $adr5               =       $_POST['adr5'];
-                // $course5            =       $_POST['course5'];
-                // $cert_no5           =       $_POST['cert_no5'];
-                // $from_dt5           =       $_POST['from_dt5'];
-                // $to_dt5             =       $_POST['to_dt5'];
-                // $validity5          =       $_POST['validity5'];
-               
-                
                 
                 
                 $updateValue    = array('modified_by'    =>  $modified_by,
@@ -990,7 +965,7 @@
                 if(!empty($_FILES["apl_name_path"]["name"])&& $_FILES['apl_name_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $apl_name_data            = 'i'.time().$_FILES["apl_name_path"]["name"];
+                    $apl_name_data = str_replace(array(':','/','-','*',' '),'_','i'.time().$_FILES["apl_name_path"]["name"]);
                     $config1['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config1['allowed_types'] = 'png|jpg|jpeg';
                     $config1['overwrite']     = TRUE;
@@ -1025,7 +1000,8 @@
                 if(!empty($_FILES["nric_path"]["name"])&& $_FILES['nric_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $apl_nric_data            = 'n'.time().$_FILES["nric_path"]["name"];
+                    $apl_nric_data = str_replace(array(':','/','-','*',' '),'_','n'.time().$_FILES["nric_path"]["name"]);
+             
                     $config2['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config2['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config2['overwrite']     = TRUE;
@@ -1059,8 +1035,7 @@
                 if(!empty($_FILES["pp_no"]["name"])&& $_FILES['pp_no']['size'] < 3000000)
                 {
                     // * config* //
-                    $pp_no_data               = 'p'.time().$_FILES["pp_no"]["name"];
-
+                    $pp_no_data = str_replace(array(':','/','-','*',' '),'_','p'.time().$_FILES["pp_no"]["name"]);
                     $config3['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
                     $config3['allowed_types'] = 'png|jpg|jpeg|pdf';
                     //$config3['max_size']      = '2048';
@@ -1127,7 +1102,8 @@
                 {
                     // * config* //
 
-                    $kin_nric_data = 'kn'.time().$_FILES["kin_nric_path"]["name"];
+                    $kin_nric_data = str_replace(array(':','/','-','*',' '),'_','kn'.time().$_FILES["kin_nric_path"]["name"]);
+
                     $config4['upload_path']   = FCPATH.'assets/userDocs/appl_photo';
 
                     $config4['allowed_types'] = 'png|jpg|jpeg|pdf';
@@ -1161,7 +1137,9 @@
                 if(!empty($_FILES["kin_pp"]["name"])&& $_FILES['kin_pp']['size'] < 3000000)
                 {
                     // * config* //
-                    $kin_pp_data             = 'kp'.time().$_FILES["kin_pp"]["name"];
+
+                    $kin_pp_data = str_replace(array(':','/','-','*',' '),'_','kp'.time().$_FILES["kin_pp"]["name"]);
+
                     $config5['upload_path']  = FCPATH.'assets/userDocs/appl_photo';
                   
                     $config5['allowed_types'] = 'png|jpg|jpeg|pdf';
@@ -1331,7 +1309,7 @@
                 {
                     // * config* //
 
-                    $kin_med_cert_data =   'kin_med_cert'.time().$_FILES["kin_med_cert"]["name"];
+                    $kin_med_cert_data = str_replace(array(':','/','-','*',' '),'_','kin_med_cert'.time().$_FILES["kin_med_cert"]["name"]);
 
                     $config6['upload_path']  = FCPATH.'assets/userDocs/certificate';
 
@@ -1384,7 +1362,8 @@
                 if(!empty($_FILES["kin_huet_cert"]["name"])&& $_FILES['kin_huet_cert']['size'] < 3000000)
                 {
                     // * config* //
-                    $kin_huet_cert_data       = 'kin_huet_cert'.time().$_FILES["kin_huet_cert"]["name"];
+
+                    $kin_huet_cert_data = str_replace(array(':','/','-','*',' '),'_','kin_huet_cert'.time().$_FILES["kin_huet_cert"]["name"]);
                     $config7['upload_path']   = FCPATH.'assets/userDocs/certificate';
                     $config7['allowed_types'] = 'png|jpg|jpeg|pdf';
                     $config7['overwrite']     = TRUE;
@@ -1418,7 +1397,8 @@
                 if(!empty($_FILES["trn_vrf_cert_path"]["name"])&& $_FILES['trn_vrf_cert_path']['size'] < 3000000)
                 {
                     // * config* //
-                    $trn_vrf_cert_data         = 'trn_vrf_cert'.time().$_FILES["trn_vrf_cert_path"]["name"];
+
+                    $trn_vrf_cert_data = str_replace(array(':','/','-','*',' '),'_','trn_vrf_cert'.time().$_FILES["trn_vrf_cert_path"]["name"]);
                     $config8['upload_path']    = FCPATH.'assets/userDocs/certificate';
                     $config8['allowed_types']  = 'png|jpg|jpeg|pdf';
                     $config8['overwrite']      = TRUE;
@@ -1584,8 +1564,11 @@
                 {
                     mkdir($config1['upload_path'],0777,TRUE);
                 }
+                $apl_name_data1 = str_replace(array(':','/','-','*',' '),'_',time().$_FILES["oth_sup_doc1"]["name"]);
+                $config1['file_name']     = $apl_name_data1;
                 $config1['allowed_types'] = 'gif|jpg|jpegf';
-                $config1['overwrite'] = TRUE;
+                $config1['overwrite']     = TRUE;
+               
                 $this->load->library('upload', $config1);
                 // * config* //
 
@@ -1593,7 +1576,7 @@
                 if(!empty($_FILES["oth_sup_doc1"]["name"])&& $_FILES['oth_sup_doc1']['size']<2000000)
                 {
 
-                    $apl_name_data1 = $_FILES["oth_sup_doc1"]["name"];
+                    
 
                     if(! $this->upload->do_upload("oth_sup_doc1"))
                     {
