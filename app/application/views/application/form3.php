@@ -460,7 +460,7 @@
                             </div>
 
 <!------------------------------------------------------------------------------------------->
-                            <h3 class="box-title">DETAILS OF H2S Training </h3>(H2S is required for Larut, xxx and xxx.)
+                            <h3 class="box-title">DETAILS OF H2S Training </h3>(Please ensure that the applicant has the required H2S training / competency (*applicable for some offshore facilities))
                             <hr class="m-t-0 m-b-40">
                             <div id= "section7">
 

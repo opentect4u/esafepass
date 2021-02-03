@@ -2013,10 +2013,14 @@
             $dateTimestamp1 = strtotime($date1); 
             $dateTimestamp2 = strtotime($date2); 
 
-            if ($dateTimestamp1 > $dateTimestamp2) 
-                   $valid_date ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",$dateTimestamp1));
-            else
-                   $valid_date ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",$dateTimestamp2));
+            $mvalid_date = $this->Applications->f_get_application_valid_card($appl_no);
+             
+            $valid_date  ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",strtotime($mvalid_date->min_valid)));
+
+            // if ($dateTimestamp1 > $dateTimestamp2) 
+            //        $valid_date ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",$dateTimestamp1));
+            // else
+            //        $valid_date ='Expiry Date: '.date("d-m-Y", strtotime("-1 months",$dateTimestamp2));
            
            $card   = 'Card No: '.$appl_name->appl_no;
            if($appl_name->appl_nation == 'Malaysia'){

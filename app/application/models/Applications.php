@@ -101,7 +101,7 @@ public function f_get_appl_name($appl_no)
 		public function f_get_application_valid_card($appl_no)
 		{
 
-			$sql = $this->db->query("select min(valid_dt)min_valid
+			$sql = $this->db->query("select min(valid_dt) min_valid
 									 from(select huit_exp_dt valid_dt
 									      from   td_application
 									      where  appl_no = '$appl_no'

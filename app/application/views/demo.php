@@ -137,7 +137,7 @@
 								</tr>
 								<tr>
 								    <!--<td width="50%" style="padding-bottom: 8px;color: #fff;">H2S : <?=$trainingStatus;?></td>-->
-									<td width="50%" style="padding-bottom: 8px;color: #fff;">H2S Expiry Date : <?=$h2s_exp_dt?></td>
+									<td width="50%" style="padding-bottom: 8px;color: #fff;">BOSIET-HUET Expiry Date : <?=$h2s_exp_dt?></td>
 								    <td width="50%" style="padding-bottom: 8px;color: #fff;">Card Valid Till : <?=$newdate?></td>
 								</tr>
 								<!--<tr>
@@ -172,16 +172,16 @@
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tbody>
 							<tr>
-									<td style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">This Offshore Safty Card is not transferable.</p></td>
+									<td style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">This Offshore Safety Card is not transferable.</p></td>
 								</tr>
 								<tr>
 									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	If found please return to: </p></td>
 								</tr>
 								<tr>
-									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">Vestigo petroleum Sdn. Bhd.</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">Vestigo Petroleum Sdn. Bhd.</p></td>
 								</tr>
 								<tr>
-									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	level 13, Menara Binjai,</p></td>
+									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin-bottom: 15px;">	Level 13, Menara Binjai,</p></td>
 								</tr>
 								<tr>
 									<td style="padding-bottom: 8px;color: #fff;">	<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0;">	No. 2, Jalan Binjai,</p></td>
@@ -193,7 +193,7 @@
 									<td style="padding-bottom: 8px;color: #fff;"><p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0 0 25px 0;">50450 Kuala Lumpur.</p>
 										<br>
 
-									<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin:  0 0 25px 0;;">Health Declaration: I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease.</p>
+									<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin:  0 0 25px 0;">Health Declaration: I declare that I am of good health and I do not have any physical defect, deformity or disability. I further declare that I perform all my routine activities independently and I do not expect to receive any treatment, nor do I expect to be hospitalized for any ailment or disease.</p>
 										<br>
 
 									<p style="color: #231f20; line-height: 40px; font-size: 14px;  padding-bottom: 12px; margin: 0 0 25px 0;">Permit Declaration: I declare and ensure that I have obtained and I am in possession of a valid visa / work permit / other applicable requirements as deemed necessary to carry out work activities in Malaysia and its respective states / federal territories.</p>	
@@ -211,7 +211,7 @@
 						
 						<tr><td><h3><br>Telephone: 603 27769999 (Office)</h3></td></tr>
 						
-						<tr>	<td><p><br>This is Computer generated document and no signature is required.</p></td></tr>
+						<tr>	<td><p><br>This is a computer generated document and no signature is required.</p></td></tr>
 					</tbody>
 				</table>
 			
