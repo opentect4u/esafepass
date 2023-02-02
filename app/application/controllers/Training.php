@@ -361,7 +361,7 @@
                 $inst_name1         =       $_POST['inst_name1'];
                 $adr1               =       $_POST['adr1'];
                 $course1            =       $_POST['course1'];
-                $cert_no1           =       $_POST['cert_no1'];
+                $cert_no1           =       $_POST['certificat1_path'];
                 $from_dt1           =       $_POST['from_dt1'];
                 $to_dt1             =       $_POST['to_dt1'];
                 $validity1          =       $_POST['validity1'];
@@ -369,7 +369,7 @@
                 $inst_name2         =       $_POST['inst_name2'];
                 $adr2               =       $_POST['adr2'];
                 $course2            =       $_POST['course2'];
-                $cert_no2           =       $_POST['cert_no2'];
+                $cert_no2           =       $_POST['certificat2_path'];
                 $from_dt2           =       $_POST['from_dt2'];
                 $to_dt2             =       $_POST['to_dt2'];
                 $validity2          =       $_POST['validity2'];
@@ -377,7 +377,7 @@
                 $inst_name3         =       $_POST['inst_name3'];
                 $adr3               =       $_POST['adr3'];
                 $course3            =       $_POST['course3'];
-                $cert_no3           =       $_POST['cert_no3'];
+                $cert_no3           =       $_POST['certificat3_path'];
                 $from_dt3           =       $_POST['from_dt3'];
                 $to_dt3             =       $_POST['to_dt3'];
                 $validity3          =       $_POST['validity3'];
@@ -385,7 +385,7 @@
                 $inst_name4         =       $_POST['inst_name4'];
                 $adr4               =       $_POST['adr4'];
                 $course4            =       $_POST['course4'];
-                $cert_no4           =       $_POST['cert_no4'];
+                $cert_no4           =       $_POST['certificat4_path'];
                 $from_dt4           =       $_POST['from_dt4'];
                 $to_dt4             =       $_POST['to_dt4'];
                 $validity4          =       $_POST['validity4'];
@@ -393,7 +393,7 @@
                 $inst_name5         =       $_POST['inst_name5'];
                 $adr5               =       $_POST['adr5'];
                 $course5            =       $_POST['course5'];
-                $cert_no5           =       $_POST['cert_no5'];
+                $cert_no5           =       $_POST['certificat5_path'];
                 $from_dt5           =       $_POST['from_dt5'];
                 $to_dt5             =       $_POST['to_dt5'];
                 $validity5          =       $_POST['validity5'];
@@ -613,5 +613,3 @@
 
 
     }
-
-?>

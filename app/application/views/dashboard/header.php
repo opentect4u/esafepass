@@ -55,9 +55,9 @@
                         <a class="navbar-brand" href="<?php echo site_url('main/login'); ?>">
                             <b>
                                 
-                                <img src="<?php echo base_url('/assets/images/safepass_logo.png'); ?>" alt="Logo" class="dark-logo" />
+                                <img src="<?php echo base_url('/assets/images/safepass_logo.png'); ?>" alt="Logo" class="dark-logo" width="100%" />
                                 
-                                <img src="<?php echo base_url('/assets/images/safepass_logo.png'); ?>" alt="Name" class="light-logo" height="80px" />
+                                <img src="<?php echo base_url('/assets/images/safepass_logo.png'); ?>" alt="Name" class="light-logo"  width="100%" />
                             </b>
                     </div>
                     

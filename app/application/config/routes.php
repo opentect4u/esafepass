@@ -54,3 +54,4 @@ $route['default_controller'] = 'Main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 $route['Upload'] = 'Upload';
+// $route['main/(:any)']='Main/$1';

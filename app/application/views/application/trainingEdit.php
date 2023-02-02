@@ -51,19 +51,29 @@
 
                         <div class="form-body">
 
+                        <div class="row">
+                            <div class="col-md-8">
                             <h3 class="box-title">Training Details 1 :
                                 <?php if($key->certificate1_path != ''){ ?>
                                     <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
                                 <?php } ?>
                             </h3>
-                            
-
                             <span>
                                 <font id="addMessage1" color= "blue">Click to add </font>
                                 <font id="removeMessage1" color= "blue">Click to Hide </font>
                                 <button class="btn btn-success" type= "button" title="Add" id="addSection1"><i class="fa fa-plus" aria-hidden="true"></i></button>
                                 <button class="btn btn-danger" type= "button" title="remove" id="removeSection1"><i class="fa fa-minus" aria-hidden="true"></i></button>
                             </span>
+                            </div>
+                            <div class="col-md-4">
+                            <img src="<?php echo base_url($key->certificate1_path); ?>" alt="" srcset="" width="30%">
+                            </div>
+                        </div>
+
+                           
+                            
+
+                            
 
                             <hr class="m-t-0 m-b-40">
                             <div id= "section1">
@@ -195,8 +205,8 @@
 
                                         <label class="control-label">Uploaded Certificate</label>
 
-                                        <div><a href="<?php echo base_url($key->certificate1_path); ?>" target= "blank">View Certificate</a></div>
-                                        <input type="hidden" name= "certificate1_path" value= "<?php echo $key->certificate1_path; ?>" id= "certificate1_path" >
+                                        <div><a href="<?php echo base_url($key->certificate1_path); ?>" target= "blank">Download Certificate</a></div>
+                                        <input type="hidden" name= "certificat1_path" value= "<?php echo $key->certificate1_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
 
@@ -208,17 +218,28 @@
                             </div>
 
                             <br>
+
+
+                            <div class="row">
+                            <div class="col-md-8">
                             <h3 class="box-title">Training Details 2 :
                                 <?php if($key->certificate2_path != ''){ ?>
                                     <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
                                 <?php } ?>
                             </h3>
+
+
                             <span id= "addSection2">
                                 <font id="addMessage2" color= "blue">Click to add </font>
                                 <font id="removeMessage2" color= "blue">Click to Hide </font>
                                 <button class="btn btn-success" type= "button" title="Add" id="addSection2"><i class="fa fa-plus" aria-hidden="true"></i></button>
                                 <button class="btn btn-danger" type= "button" title="remove" id="removeSection2"><i class="fa fa-minus" aria-hidden="true"></i></button>
                             </span>
+                            </div>
+                            <div class="col-md-4">
+                            <img src="<?php echo base_url($key->certificate2_path); ?>" alt="" srcset="" width="30%">
+                            </div>
+                        </div>
                             
                             <hr class="m-t-0 m-b-40">
 
@@ -349,7 +370,7 @@
 
                                         <label class="control-label">Uploaded Certificate</label>
 
-                                        <div><a href="<?php echo base_url($key->certificate2_path); ?>" target= "blank">View Certificate</a></div>
+                                        <div><a href="<?php echo base_url($key->certificate2_path); ?>" target= "blank">Download Certificate</a></div>
                                         <input type="hidden" name= "certificate2_path" value= "<?php echo $key->certificate2_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
@@ -363,6 +384,9 @@
 
 
                             <br>
+
+                            <div class="row">
+                            <div class="col-md-8">
                             <h3 class="box-title">Training Details 3 :
                                 <?php if($key->certificate3_path != ''){ ?>
                                     <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
@@ -374,6 +398,11 @@
                                 <button class="btn btn-success" type= "button" title="Add" id="addSection3"><i class="fa fa-plus" aria-hidden="true"></i></button>
                                 <button class="btn btn-danger" type= "button" title="remove" id="removeSection3"><i class="fa fa-minus" aria-hidden="true"></i></button>
                             </span>
+                            </div>
+                            <div class="col-md-4">
+                            <img src="<?php echo base_url($key->certificate3_path); ?>" alt="" srcset="" width="30%">
+                            </div>
+                        </div>
 
                             <hr class="m-t-0 m-b-40">
 
@@ -504,7 +533,7 @@
 
                                         <label class="control-label">Uploaded Certificate</label>
 
-                                        <div><a href="<?php echo base_url($key->certificate3_path); ?>" target= "blank">View Certificate</a></div>
+                                        <div><a href="<?php echo base_url($key->certificate3_path); ?>" target= "blank">Download Certificate</a></div>
                                         <input type="hidden" name= "certificate3_path" value= "<?php echo $key->certificate3_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
@@ -518,6 +547,9 @@
 
 
                             <br>
+
+                            <div class="row">
+                            <div class="col-md-8">
                             <h3 class="box-title">Training Details 4 :
                                 <?php if($key->certificate4_path != ''){ ?>
                                     <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
@@ -529,7 +561,11 @@
                                 <button class="btn btn-success" type= "button" title="Add" id="addSection4"><i class="fa fa-plus" aria-hidden="true"></i></button>
                                 <button class="btn btn-danger" type= "button" title="remove" id="removeSection4"><i class="fa fa-minus" aria-hidden="true"></i></button>
                             </span>
-
+                            </div>
+                            <div class="col-md-4">
+                            <img src="<?php echo base_url($key->certificate4_path); ?>" alt="" srcset="" width="30%">
+                            </div>
+                        </div>
                             <hr class="m-t-0 m-b-40">
 
                             <div id= "section4">
@@ -660,7 +696,7 @@
 
                                         <label class="control-label">Uploaded Certificate</label>
 
-                                        <div><a href="<?php echo base_url($key->certificate4_path); ?>" target= "blank">View Certificate</a></div>
+                                        <div><a href="<?php echo base_url($key->certificate4_path); ?>" target= "blank">Download Certificate</a></div>
                                         <input type="hidden" name= "certificate4_path" value= "<?php echo $key->certificate4_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
@@ -674,6 +710,8 @@
 
 
                             <br>
+                            <div class="row">
+                            <div class="col-md-8">
                             <h3 class="box-title">Training Details 5 :
                                 <?php if($key->certificate5_path != ''){ ?>
                                     <span style= "font-size: 15px;"><font color="green">Document Uploaded</font></span>
@@ -685,7 +723,11 @@
                                 <button class="btn btn-danger" type= "button" title="remove" id="removeSection5"><i class="fa fa-minus" aria-hidden="true"></i></button>
                                 <button class="btn btn-success" type= "button" title="Add" id="addSection5"><i class="fa fa-plus" aria-hidden="true"></i></button>
                             </span>
-
+                        </div>
+                            <div class="col-md-4">
+                            <img src="<?php echo base_url($key->certificate5_path); ?>" alt="" srcset="" width="30%">
+                            </div>
+                        </div>
                             <hr class="m-t-0 m-b-40">
 
                             <div id= "section5">
@@ -815,7 +857,7 @@
 
                                         <label class="control-label">Uploaded Certificate</label>
 
-                                        <div><a href="<?php echo base_url($key->certificate5_path); ?>" target= "blank">View Certificate</a></div>
+                                        <div><a href="<?php echo base_url($key->certificate5_path); ?>" target= "blank">Download Certificate</a></div>
                                         <input type="hidden" name= "certificate5_path" value= "<?php echo $key->certificate5_path; ?>" id= "certificate1_path" >
                                         
                                     </div>

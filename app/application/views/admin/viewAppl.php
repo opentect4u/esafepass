@@ -2170,6 +2170,8 @@
                         
                     </div>
 
+                    <?php if($data1['0']->status =='U'||$data1['0']->status =='H'){ ?>
+
                     <div class="modal-footer">
                   
                         <button class="btn btn-success" type="button" id= "approve" >Approve</button>
@@ -2177,6 +2179,7 @@
                         <button class="btn btn-danger" type="button" id= "reject" >Reject</button>
 
                     </div>
+                    <?php } ?>
 
                     <div class="row" id= "statusForm">
 
