@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2023 at 11:24 AM
+-- Generation Time: Feb 02, 2023 at 01:29 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -575,7 +575,7 @@ INSERT INTO `td_application_training` (`appl_no`, `inst_name1`, `adr1`, `course1
 ('00017', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', ''),
 ('00018', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', ''),
 ('00020', 'no Institution\'s Name', 'Karak,  Kalyanpur,  NandaKumar,  Purba Medinipur,  West Bengal, 721632', 'no Course Title', 'no Certificate No.', '2023-02-02', '2023-02-02', '2023-02-02', '', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', '2023-02-02', '2023-02-02', '2023-02-02', 'assets/userDocs/training/certi21675328245college_student_g8e9380184_1920.jpg', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', '2023-02-02', '2023-02-02', '2023-02-02', 'assets/userDocs/training/certi31675328245college_student_g8e9380184_1920.jpg', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', 'NO INSTITUTION\'S NAME', '2023-02-02', '2023-02-02', '2023-02-02', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', ''),
-('00021', 'NO INSTITUTION\'S NAME', 'NO ADDRESS', 'NO COURSE TITLE', 'ASSETS/USERDOCS/TRAINING/CERTI11676543026ZERGBR.PDF', '2023-02-02', '2023-02-02', '2023-02-02', 'assets/userDocs/training/certi11676543026zergbr.pdf', 'FDVGRE', 'TRSHBGFT', 'ETRB', '', '2023-02-23', '2023-01-30', '2023-02-01', 'assets/userDocs/training/certi21676543049Untitled.pdf', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL, '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL, '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL);
+('00021', 'NO INSTITUTION\'S NAME', 'NO ADDRESS', 'NO COURSE TITLE', 'ASSETS/USERDOCS/TRAINING/CERTI11675331960PURCHASE ERR.PNG', '2023-02-02', '2023-02-02', '2023-02-02', 'assets/userDocs/training/certi11675332897fantasy-2049567_1920.jpg', 'FDVGRE', 'TRSHBGFT', 'ETRB', '', '2023-02-23', '2023-01-30', '2023-02-01', NULL, '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL, '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL, '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
