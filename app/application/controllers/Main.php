@@ -95,7 +95,20 @@
 				$config['charset'] 	 = 'iso-8859-1';
 				$config['mailtype']  = 'html';*/
 
-				//$this->email->initialize($config);
+
+				$config = Array(
+					'protocol' => 'smtp',
+					'smtp_host' => 'mail.esafepass.com',
+					'smtp_port' => 587,
+					'smtp_user' => 'admin@esafepass.com', // change it to yours
+					'smtp_pass' => 'eSafe#Pass@2023', // change it to yours
+					'mailtype' => 'html',
+					'charset' => 'iso-8859-1',
+					'wordwrap' => TRUE
+				  );
+				  
+
+				$this->email->initialize($config);
 				
 				$mail = $userId;
 				
@@ -108,6 +121,7 @@
 				$this->email->message("Dear ".$name.",\r\nPlease click on below URL or paste into your browser to verify your Email Id\r\n\r\n". site_url("main/verify/").$verificationText."\r\n"."\r\n\r\nThanks\r\nAdmin Team");
 
 				$this->email->send();
+				exit();
 
 		}
 
