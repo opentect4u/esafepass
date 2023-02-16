@@ -627,6 +627,19 @@
 		public function send_cnf_mail($userId,$appl_no,$status,$name){
 
             $this->load->library('email');
+            $config = Array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'mail.esafepass.com',
+                'smtp_port' => 587,
+                'smtp_user' => 'admin@esafepass.com', // change it to yours
+                'smtp_pass' => 'eSafe#Pass@2023', // change it to yours
+                'mailtype' => 'html',
+                'charset' => 'iso-8859-1',
+                'wordwrap' => TRUE
+              );
+              
+
+            $this->email->initialize($config);
             
             $mail = $userId;
             

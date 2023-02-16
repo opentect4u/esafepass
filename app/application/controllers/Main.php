@@ -83,7 +83,7 @@
 		//for sending mail -- 
 		public function send_mail($userId,$verificationText,$name){
 
-				$this->load->library('email');
+				
 
 				/*$config = array();
 				$config['protocol']  = 'smtp';
@@ -95,7 +95,7 @@
 				$config['charset'] 	 = 'iso-8859-1';
 				$config['mailtype']  = 'html';*/
 
-
+				$this->load->library('email');
 				$config = Array(
 					'protocol' => 'smtp',
 					'smtp_host' => 'mail.esafepass.com',
@@ -121,7 +121,6 @@
 				$this->email->message("Dear ".$name.",\r\nPlease click on below URL or paste into your browser to verify your Email Id\r\n\r\n". site_url("main/verify/").$verificationText."\r\n"."\r\n\r\nThanks\r\nAdmin Team");
 
 				$this->email->send();
-				exit();
 
 		}
 

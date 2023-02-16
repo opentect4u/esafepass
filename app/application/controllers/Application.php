@@ -734,6 +734,23 @@
 
                 $this->Applications->f_insert_nextFormDtls($value, $appl_no, $sl_no);
 
+
+                $this->load->library('email');
+				$config = Array(
+					'protocol' => 'smtp',
+					'smtp_host' => 'mail.esafepass.com',
+					'smtp_port' => 587,
+					'smtp_user' => 'admin@esafepass.com', // change it to yours
+					'smtp_pass' => 'eSafe#Pass@2023', // change it to yours
+					'mailtype' => 'html',
+					'charset' => 'iso-8859-1',
+					'wordwrap' => TRUE
+				  );
+				  
+
+				$this->email->initialize($config);
+                // ==============================================
+
                 $this->email->from('safepass@esafepass.com', 'Esafepass');
                 $this->email->to('admin@esafepass.com');
                 
@@ -2077,6 +2094,24 @@
         }
 
        public function testemail(){
+
+        $this->load->library('email');
+				$config = Array(
+					'protocol' => 'smtp',
+					'smtp_host' => 'mail.esafepass.com',
+					'smtp_port' => 587,
+					'smtp_user' => 'admin@esafepass.com', // change it to yours
+					'smtp_pass' => 'eSafe#Pass@2023', // change it to yours
+					'mailtype' => 'html',
+					'charset' => 'iso-8859-1',
+					'wordwrap' => TRUE
+				  );
+				  
+
+				$this->email->initialize($config);
+
+
+                
 
         $this->email->from('safepass@esafepass.com', 'Esafepass');
         $this->email->to('admin@esafepass.com');
