@@ -1,0 +1,87 @@
+Client:
+
+I need to develop an application to work system for contractors where individuals from various contractors /service providers can apply to work. The individual contractor / service provider should be able to create his own log in and password and upload all his details (full name, id number, address, contact details, photograph, medical certificate, training / competency certificate, next of kin details etc amongst others) during the application stage. Each applicant should get a unique application nnmber which can be tracked by the applicant / client and is searchable.
+
+Once the applicant has uploaded the details, the client (we) should be able to review the documentation (processing stage) in an organised manner and provide a status of the application to the applicant. (Each applicant should be able to log in and check the status of his / her application - example - processing / approved / rejected etc)
+
+If the application is approved, the system should be able to provide a pass (something like a boarding pass to the applicant) which can be sent / downloaded by the applicant in pdf format and should have a unique pass number.
+
+If the application is rejected the system should be able to provide a reason for rejection (example - documentation incomplete, details missing etc) and provide the option to a fresh application / or edit the existing application.
+
+The entries should be searchable by the client (dashboard) and should be able to track user logs.
+The system should have different level of access (example super admin, applicant, verifier - during processing stage etc)
+
+The system should be accessible online ( accessible via user id / password over the internet on pc and on phone) 
+
+--------------
+
+Here are the details that should be included in the application form when the application is applying (new application):
+Status: By default should be new application
+Application Number (System Generated)
+Organisation Type (Vestigo / Petronas / Contractor)
+Organisation Name
+Organisation address
+Organisation Contact Number
+Organisation email address
+Organisation website
+Applicant Full Name (As in IC or Passport)
+Upload Applicant Photo (file upload example jpeg)
+Applicant IC / Passport Number
+Upload applicant IC / Passport (file upload example pdf / jpeg)
+Applicant Date of Birth (dd/mm/yyyy)
+Applicant Gender (Male / Female / prefer not to say)
+Applicant Contact Number
+Applicant address
+Applicant email address
+Next of Kin Full Name
+Next of Kin IC / Passport Number
+Upload Next of Kin IC / Passport (file upload example pdf / jpeg)
+Next of Kin Date of Birth (dd/mm/yyyy)
+Next of Kin Gender (Male / Female / prefer not to say)
+Relationship with applicant
+Next of Kin Contact Number
+Next of Kin address (can copy if same as applicant address)
+Next of Kin email address
+BOSIET/HUET expiry date (dd/mm/yyyy)
+Upload BOSIET/HUET Certificate (file upload example pdf / jpeg)
+Medical Examination Expiry date (dd/mm/yyyy)
+Upload Medical Examination Certificate (file upload example pdf / jpeg)
+H2S Expiry (dd/mm/yyyy)
+Upload H2S Certificate (file upload example pdf / jpeg)
+Other certificates / competency expiry (dd/mm/yyyy) (able to add multiple records)
+Upload other Certificates / competency (file upload example pdf / jpeg)
+Remarks / Notes
+
+----------------- 
+On approval of application, the applicant should be able to print the PASS. The details included on the pass are:
+
+Header (company name and logo)
+
+Application Number
+Applicant Photo
+Applicant Full Name
+Organisation Name
+BOSIET/HUET expiry date
+Medical Examination Expiry date
+
+All the above fields are captured from the application form & that will be downloadable as PDF
+
+-------------------
+
+Yes there would be three levels of users:
+The applicant
+The admin (who basically receives the application and does the offline verification before approving the application). The admin can also create other admin users as required
+Super admin (the back end who has ultimate control) 
+
+The admin role should be able to search and filter via the dashboard
+The admin role should be able to change the status of application (example processing / approved / reject - reason etc
+The admin role should be able to download (excel file) database of applicants
+
+The applicant role should be able to modify and resubmit the application on rejection
+
+On approval can the system send a standard email ( with the pdf pass) to the applicant email id?
+
+On rejection / processing stage can the system send a standard email / notification to the applicant email id?
+
+Yes, there will be an separate admin from where Admin will do these stuffs. Then can also download Applicants DB via Excel or CSV format. We will keep both the options. For both Approval & Rejection the process will be identical. Only difference upon "Approval" will get an "Approval Pass" via an email plus can be shown into their Dashboard. And that "Approval Pass" can be download in PDF format
+ 
