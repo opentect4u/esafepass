@@ -3,6 +3,7 @@
 
 <head>
 	<title>Safe Pass</title>
+	<link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>assets/images/safepass_logo.ico">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -52,7 +53,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1><a class="navbar-brand" href="index.html"><img src="<?php echo base_url() ?>/home_assets/images/safepass.jpg"><span>One Goal,one
+					<h1><a class="navbar-brand" href="<?= base_url(); ?>"><img src="<?php echo base_url() ?>/home_assets/images/safepass.jpg"><span>One Goal,one
 								Passion-SafePass</span> </a></h1>
 				</div>
 
@@ -507,17 +508,7 @@
 									<form action="<?= base_url() ?>index.php/main/signaddUser" method="post">
 									<input type="text" name="fname" placeholder="First Name" required="">
 									<input type="text" name="lname" placeholder="Last Name" required="">
-									<input type="number" name="mno" placeholder="Contact No." style="background: none;display: block;width: 100%;
-    padding: 1em 1em 1em 1em;
-    font-size: 0.8em;
-    margin: 0.5em 0;
-    outline: none;
-    color: #212121;
-    border: none;
-    border: 1px solid #ccc;
-    letter-spacing: 1px;
-    text-align: center;
-">
+									<input type="text" name="mno" placeholder="Contact No." onkeypress="return isNumberKey(event)">
 									<input type="email" name="email" id="email" placeholder="Email" required="" autocomplete="off">
 									<input type="password" name="password" id="pwd" placeholder="Password" required="">
 									<input type="password" name="cpassword" id="cpwd" placeholder="Confirm Password"
@@ -898,6 +889,14 @@
 					}
 				});
 			});
+
+
+			function isNumberKey(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+    return false;
+  return true;
+}
 		</script>
 </body>
 

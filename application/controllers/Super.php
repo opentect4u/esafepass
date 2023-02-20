@@ -208,14 +208,15 @@
 		{
 
 			$userId = $this->input->get('user_id');
-			$rand = rand(100,10000);
+			$rand = rand(10000000,99999999);
 			$newpass = password_hash($rand,PASSWORD_DEFAULT);
 			
 			// updating user table with new pass 
 			$this->Supers->f_update_userPass($userId, $newpass);
 
 			$userName = $this->Supers->f_get_userName($userId);
-			$name = $userName->user_name;
+
+			$name = $userName[0]->user_name;
 			
 			//$this->send_mail($userId, $rand, $name)
 			
@@ -233,15 +234,15 @@
 			$this->email->from('admin@esafepass.com', 'Safepass');
 			$this->email->subject($subject);
 			$this->email->message($message);
-			// $this->email->send();
+			$this->email->send();
 
 
 			
 
-			if($this->email->send())
+			if(true)
 			{
 				echo "<script> alert('Your password has been successfully regenerated.Please login to your registered email account.');
-				document.location= 'users' </script>";
+				document.location= '".base_url()."index.php/super/users' </script>";
 				//redirect('super/users');
 			}
 			

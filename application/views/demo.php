@@ -63,7 +63,7 @@
 						<tr>
 						<td style="border-bottom: #86c2bf solid 5px; padding: 15px 0 0 15px; box-sizing: border-box;" width="476">
 						<div style="width: 100%;"><img src="<?php echo $logoPath ;?>" width="400" height="63" alt=""/></div>
-						<div style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; padding-left:80px;"><strong style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; margin-left:80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:<?php echo $key->appl_name; ?> <?php echo $key->appl_mid_name; ?> <?php echo $key->appl_last_name; ?></strong></div>
+						<div style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; padding-left:80px;"><strong style="font-family: 'PT Sans', sans-serif; font-size: 16px; color: #014c89; margin-left:80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $key->appl_name; ?> <?php echo $key->appl_mid_name; ?> <?php echo $key->appl_last_name; ?></strong></div>
 						
 					</td>
 
@@ -106,7 +106,7 @@
 								<td valign="top" align="left">: <?=$key->org_name?></td>
 								</tr>
 							<tr>
-								<td valign="top" align="left" style="padding-bottom: 7px;">Address: </td>
+								<td valign="top" align="left" style="padding-bottom: 7px;">Address:</td>
 								<td valign="top" align="left" style="padding-bottom: 7px;">: <?=$key->org_address?></td>
 								</tr>
 							<tr>

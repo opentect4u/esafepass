@@ -363,7 +363,7 @@
                                             <label class="control-label">Contact No (Fixed Line)<font color= "red"> *</font></label>
 
                                             <input type='number' class="form-control" id="cnt_fxd" name="cnt_fxd" required
-                                            >
+                                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -376,7 +376,7 @@
                                             <label class="control-label">Contact No (Mobile)<font color= "red"> *</font></label>
 
                                             <input type='number' class="form-control" id="cnt_mob" name="cnt_mob" required
-                                            >
+                                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -646,7 +646,7 @@
                                             <label class="control-label">Contact No.(Fixed Line)<font color= "red"> *</font></label>
 
                                             <input type='number' class="form-control" id="kin_cnct" name="kin_cnct" required
-                                            >
+                                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -659,7 +659,7 @@
                                             <label class="control-label">Contact No.(Mobile)<font color= "red"> *</font></label>
 
                                             <input type='number' class="form-control" id="kin_mob" name="kin_mob" required
-                                            >
+                                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 

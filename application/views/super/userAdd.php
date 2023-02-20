@@ -95,7 +95,7 @@
                                         <label class="control-label">Contact No.</label>
 
                                         <input type='text' class="form-control" id="mno" name="mno"
-                                        >
+                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                         
                                     </div>
 

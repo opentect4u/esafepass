@@ -50,7 +50,7 @@
 
             $this->load->view('dashboard/header',$link);
 
-            if($this->session->userdata("login")->user_type!='O'){
+            if($this->session->userdata("login")->user_type!='O'&&$this->session->userdata("login")->user_type!='S'){
                 return redirect(base_url()."index.php/main/login");
             }
 

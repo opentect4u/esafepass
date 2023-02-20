@@ -407,7 +407,7 @@
                                             <label class="control-label">Contact No (Fixed Line)</label>
 
                                             <input type='text' class="form-control" id="cnt_fxd" name="cnt_fxd"
-                                            value="<?php echo $row->apl_cnt_fxd; ?>">
+                                            value="<?php echo $row->apl_cnt_fxd; ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -420,7 +420,7 @@
                                             <label class="control-label">Contact No (Mobile)</label>
 
                                             <input type='text' class="form-control" id="cnt_mob" name="cnt_mob"
-                                            value="<?php echo $row->apl_cnt_mob; ?>">
+                                            value="<?php echo $row->apl_cnt_mob; ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -702,7 +702,7 @@
                                             <label class="control-label">Contact No.(Fixed Line)</label>
 
                                             <input type='text' class="form-control" id="kin_cnct" name="kin_cnct"
-                                            value="<?php echo $row->kin_ph; ?>">
+                                            value="<?php echo $row->kin_ph; ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -715,7 +715,7 @@
                                             <label class="control-label">Contact No.(Mobile)</label>
 
                                             <input type='text' class="form-control" id="kin_mob" name="kin_mob"
-                                            value="<?php echo $row->kin_mob; ?>">
+                                            value="<?php echo $row->kin_mob; ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 

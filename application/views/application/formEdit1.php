@@ -239,7 +239,7 @@
                                             <label class="control-label">Contact No (Fixed Line)</label>
 
                                             <input type='text' class="form-control" id="org_cnct" name="org_cnct"
-                                            value="<?php echo $row->org_ph_no; ?>" >
+                                            value="<?php echo $row->org_ph_no; ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 
@@ -379,7 +379,7 @@
                                             <label class="control-label">Your Contact No (Mobile)</label>
 
                                             <input type='text' class="form-control" id="ycnct" name="ycnct"
-                                            value="<?php echo $row->your_cnct; ?>">
+                                            value="<?php echo $row->your_cnct; ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
                                             
                                         </div>
 

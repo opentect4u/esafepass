@@ -98,7 +98,7 @@
 
                                         <label class="control-label">Contact No.</label>
 
-                                        <input type='text' value= "<?php echo $row->mob_no; ?>" class="form-control" id="mno" name="mno" readonly
+                                        <input type='text' value= "<?php echo $row->mob_no; ?>" class="form-control" id="mno" name="mno" readonly onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
                                         >
                                         
                                     </div>
