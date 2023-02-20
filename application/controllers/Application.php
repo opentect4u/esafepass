@@ -250,8 +250,17 @@
                     }
                     else
                     {
-                        $this->upload->data();
-                        $apl_name_path  =   'assets/userDocs/appl_photo/'.$apl_name_data;
+                        // $this->upload->data();
+
+                        $upload_data = $this->upload->data();
+
+
+                        // print_r();
+                        //get the uploaded file name
+                        $pic_file = $upload_data['file_name'];
+
+                        // $apl_name_path  =   'assets/userDocs/appl_photo/'.$apl_name_data;
+                        $apl_name_path  =   'assets/userDocs/appl_photo/'.$pic_file;
                     }
                 }else{
 
@@ -838,7 +847,7 @@
 
                 $org_web        =       $_POST['org_web'];
 
-                $apl_for        =       $_POST['apl_for'];
+                // $apl_for        =       $_POST['apl_for'];
 
                 $yf_name        =       $_POST['yf_name'];
 
@@ -998,9 +1007,17 @@
                     }
                     else
                     {
-                        $this->upload->data();
+
+                        $upload_data = $this->upload->data();
+
+
+                        // print_r();
+                        //get the uploaded file name
+                        $pic_file = $upload_data['file_name'];
+
                         //$data_array = array("apl_name_path"  => 'assets/userDocs/'.$apl_name_data);
-                        $apl_name_path  =   'assets/userDocs/appl_photo/'.$apl_name_data;
+                        // $apl_name_path  =   'assets/userDocs/appl_photo/'.$apl_name_data;
+                        $apl_name_path  =   'assets/userDocs/appl_photo/'.$pic_file;
                     }
                 }
                 else

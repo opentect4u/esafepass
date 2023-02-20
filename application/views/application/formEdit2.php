@@ -164,7 +164,7 @@
 
                                                 <center class="m-t-10">
 
-                                                    <img src="<?php echo base_url($row->appl_photo_path); ?>" alt="" width="150">
+                                                    <img src="<?php echo base_url().$row->appl_photo_path; ?>" alt="" width="150">
                                                     
                                                 </center>
 

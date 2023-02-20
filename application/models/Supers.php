@@ -69,7 +69,7 @@ class Supers extends CI_Model{
 	{
 
 		$sql = $this->db->query(" SELECT user_name FROM md_users WHERE user_id = '$userId' ");
-		return $sql->row();
+		return $sql->result();
 
 	}
 

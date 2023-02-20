@@ -140,7 +140,7 @@
 
                                         <label class="control-label">Application Date.</label>
 
-                                        <input type='text' class="form-control" id="appl_no" name="appl_no"
+                                        <input type='text' class="form-control" id="appl_dt" name="appl_dt"
                                          value="<?php echo date('d/m/Y',strtotime($row->appl_dt)); ?>" readonly />
 
                                     </div>

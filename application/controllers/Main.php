@@ -65,7 +65,7 @@
 					if($count->ecount > 0){
 
 						echo "<script> alert('Supplied Email Id already in use.');
-						document.location= '../../../index.html' </script>";
+						document.location= '".base_url()."' </script>";
 
 					}else{
 
@@ -83,7 +83,7 @@
 							// $this->send_mail($userId,$vText,$fName);
 
 							echo "<script> alert('Successfully submitted.A verification link has been sent to your email account.');
-								document.location= '../../../index.html' </script>";
+								document.location= '".base_url()."' </script>";
 					}
 
 				}
@@ -154,7 +154,7 @@
 			}
 
 			echo "<script> alert('$msg');
-			        document.location= '../../../../index.html'</script>";
+			        document.location= '".base_url()."'</script>";
 
 
 		}
@@ -323,11 +323,11 @@
 
 			$this->session->unset_userdata('login');
 
-			redirect(bese_url());
+			redirect(base_url());
 
 			}else{
 
-				redirect(bese_url());
+				redirect(base_url());
 			}
 		}
 

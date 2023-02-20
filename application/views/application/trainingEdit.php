@@ -197,22 +197,23 @@
 
                                 </div>
 
-                                <?php if($key->certificate1_path != ''){ ?>
+                             
 
                                 <div class="col-md-6">
 
                                     <div class="form-group">
 
                                         <label class="control-label">Uploaded Certificate</label>
-
+                                        <?php if($key->certificate1_path != ''){ ?>
                                         <div><a href="<?php echo base_url($key->certificate1_path); ?>" target= "blank">Download Certificate</a></div>
+                                        <?php } ?>
                                         <input type="hidden" name= "certificat1_path" value= "<?php echo $key->certificate1_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
 
                                 </div>
 
-                                <?php } ?>
+                               
 
                             </div>
                             </div>
@@ -362,22 +363,23 @@
 
                                 </div>
 
-                                <?php if($key->certificate2_path != ''){ ?>
+                               
 
                                 <div class="col-md-6">
 
                                     <div class="form-group">
 
                                         <label class="control-label">Uploaded Certificate</label>
-
+                                        <?php if($key->certificate2_path != ''){ ?>
                                         <div><a href="<?php echo base_url($key->certificate2_path); ?>" target= "blank">Download Certificate</a></div>
+                                        <?php } ?>
                                         <input type="hidden" name= "certificate2_path" value= "<?php echo $key->certificate2_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
 
                                 </div>
 
-                                <?php } ?>
+                               
 
                             </div>
                             </div>
@@ -525,22 +527,23 @@
 
                                 </div>
 
-                                <?php if($key->certificate3_path != ''){ ?>
+                               
 
                                 <div class="col-md-6">
 
                                     <div class="form-group">
 
                                         <label class="control-label">Uploaded Certificate</label>
-
+                                        <?php if($key->certificate3_path != ''){ ?>
                                         <div><a href="<?php echo base_url($key->certificate3_path); ?>" target= "blank">Download Certificate</a></div>
+                                        <?php } ?>
                                         <input type="hidden" name= "certificate3_path" value= "<?php echo $key->certificate3_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
 
                                 </div>
 
-                                <?php } ?>
+                                
 
                             </div>
                             </div>
@@ -688,22 +691,23 @@
 
                                 </div>
 
-                                <?php if($key->certificate4_path != ''){ ?>
-
+                               
                                 <div class="col-md-6">
 
                                     <div class="form-group">
 
                                         <label class="control-label">Uploaded Certificate</label>
+                                        <?php if($key->certificate4_path != ''){ ?>
 
                                         <div><a href="<?php echo base_url($key->certificate4_path); ?>" target= "blank">Download Certificate</a></div>
+                                        <?php } ?>
                                         <input type="hidden" name= "certificate4_path" value= "<?php echo $key->certificate4_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
 
                                 </div>
 
-                                <?php } ?>
+                               
 
                             </div>
                             </div>
@@ -849,22 +853,23 @@
 
                                 </div>
 
-                                <?php if($key->certificate5_path != ''){ ?>
+                                
 
                                 <div class="col-md-6">
 
                                     <div class="form-group">
 
                                         <label class="control-label">Uploaded Certificate</label>
-
+                                        <?php if($key->certificate5_path != ''){ ?>
                                         <div><a href="<?php echo base_url($key->certificate5_path); ?>" target= "blank">Download Certificate</a></div>
+                                        <?php } ?>
                                         <input type="hidden" name= "certificate5_path" value= "<?php echo $key->certificate5_path; ?>" id= "certificate1_path" >
                                         
                                     </div>
 
                                 </div>
 
-                                <?php } ?>
+                                
 
                             </div>
                             </div>

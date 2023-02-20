@@ -373,7 +373,7 @@
                 $inst_name2         =       $_POST['inst_name2'];
                 $adr2               =       $_POST['adr2'];
                 $course2            =       $_POST['course2'];
-                $cert_no2           =       $_POST['certificat2_path'];
+                $cert_no2           =       $_POST['certificate2_path'];
                 $from_dt2           =       $_POST['from_dt2'];
                 $to_dt2             =       $_POST['to_dt2'];
                 $validity2          =       $_POST['validity2'];
@@ -381,7 +381,7 @@
                 $inst_name3         =       $_POST['inst_name3'];
                 $adr3               =       $_POST['adr3'];
                 $course3            =       $_POST['course3'];
-                $cert_no3           =       $_POST['certificat3_path'];
+                $cert_no3           =       $_POST['certificate3_path'];
                 $from_dt3           =       $_POST['from_dt3'];
                 $to_dt3             =       $_POST['to_dt3'];
                 $validity3          =       $_POST['validity3'];
@@ -389,7 +389,7 @@
                 $inst_name4         =       $_POST['inst_name4'];
                 $adr4               =       $_POST['adr4'];
                 $course4            =       $_POST['course4'];
-                $cert_no4           =       $_POST['certificat4_path'];
+                $cert_no4           =       $_POST['certificate4_path'];
                 $from_dt4           =       $_POST['from_dt4'];
                 $to_dt4             =       $_POST['to_dt4'];
                 $validity4          =       $_POST['validity4'];
@@ -397,7 +397,7 @@
                 $inst_name5         =       $_POST['inst_name5'];
                 $adr5               =       $_POST['adr5'];
                 $course5            =       $_POST['course5'];
-                $cert_no5           =       $_POST['certificat5_path'];
+                $cert_no5           =       $_POST['certificate5_path'];
                 $from_dt5           =       $_POST['from_dt5'];
                 $to_dt5             =       $_POST['to_dt5'];
                 $validity5          =       $_POST['validity5'];
@@ -421,12 +421,14 @@
 
                         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
+                        // redirect('Application/apln');
+                        $certificate1_path = $cert_no1;
                     }
                     else
                     {
-                        $this->upload->data();
-                        $certificate1_path  =   'assets/userDocs/training/'.$certificate_data1;
+                        $upload_data1 = $this->upload->data();
+                        $pic_file1 = $upload_data1['file_name'];
+                        $certificate1_path  =   'assets/userDocs/training/'.$pic_file1;
                     }
                 }
                 else
@@ -451,12 +453,16 @@
 
                         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
+                        // redirect('Application/apln');
+                        $certificate2_path = $cert_no2;
                     }
                     else
                     {
                         $this->upload->data();
-                        $certificate2_path  =   'assets/userDocs/training/'.$certificate_data2;
+
+                        $upload_data2 = $this->upload->data();
+                        $pic_file2 = $upload_data2['file_name'];
+                        $certificate2_path  =   'assets/userDocs/training/'.$pic_file2;
                     }
                 }
                 else
@@ -482,12 +488,13 @@
 
                         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
+                        $certificate3_path = $cert_no3;
                     }
                     else
                     {
-                        $this->upload->data();
-                        $certificate3_path  =   'assets/userDocs/training/'.$certificate_data3;
+                        $upload_data3 = $this->upload->data();
+                        $pic_file3 = $upload_data3['file_name'];
+                        $certificate3_path  =   'assets/userDocs/training/'.$pic_file3;
                     }
                 }
                 else
@@ -514,12 +521,13 @@
 
                         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
+                        $certificate4_path = $cert_no4;
                     }
                     else
                     {
-                        $this->upload->data();
-                        $certificate4_path  =   'assets/userDocs/training/'.$certificate_data4;
+                        $upload_data4 = $this->upload->data();
+                        $pic_file4 = $upload_data4['file_name'];
+                        $certificate4_path  =   'assets/userDocs/training/'.$pic_file4;
                     }
                 }
                 else
@@ -546,19 +554,21 @@
 
                         $this->session->set_flashdata('error',$error['error']);
 
-                        redirect('Application/apln');
+                        $certificate5_path = $cert_no5;
                     }
                     else
                     {
-                        $this->upload->data();
-                        $certificate5_path  =   'assets/userDocs/training/'.$certificate_data5;
+                        $upload_data5 = $this->upload->data();
+                        $pic_file5 = $upload_data5['file_name'];
+                        $certificate5_path  =   'assets/userDocs/training/'.$pic_file5;
                     }
                 }
                 else
                 {
                     $certificate5_path = $cert_no5;
                 }
-
+// print_r($certificate2_path);
+// exit();
                 $editValue = array(
                                     'inst_name1' => strtoupper($inst_name1),
                                     'adr1' => strtoupper($adr1),

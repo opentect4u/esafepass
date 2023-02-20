@@ -9,13 +9,17 @@
         <div class="col-md-4 col-12 align-self-center">
             <div >
             <font color="red">
-                <?php echo $this->session->flashdata('msg')['status']; ?>
+                <?php if (isset($this->session->flashdata('msg')['status'])) {
+                            echo $this->session->flashdata('msg')['status'];
+                    } ?>
+                <!-- <?php //echo $this->session->flashdata('msg')['status']; ?> -->
                 </font>
             </div>
         </div>
     </div>
 
-    <?php if($this->session->flashdata('error')){echo $this->session->flashdata('error');} ?>
+    <?php if($this->session->flashdata('error')){echo $this->session->flashdata('error'); 
+        $this->session->unset_userdata('message');} ?>
     
     <div class="row">
     

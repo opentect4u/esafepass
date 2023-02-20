@@ -8,7 +8,7 @@
             </ol>
         </div>
         <div class="col-md-4 col-12 align-self-center">
-            <div class="alert alert-<?php echo $this->session->flashdata('msg')['status']; ?>"></div>
+            <div class="alert alert-<?php if (isset($this->session->flashdata('msg')['status'])) { echo $this->session->flashdata('msg')['status']; } ?>"></div>
         </div>
     </div>
     
