@@ -526,3 +526,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+$config['google_key'] = '6LfC950kAAAAACvx29-HKGhNVR-t5TbjGl4NRxuH';//client
+$config['google_secret'] = '6LfC950kAAAAAIHfMrjUBMrSj_fQVZ0adcUyIqYb';//server
+
+

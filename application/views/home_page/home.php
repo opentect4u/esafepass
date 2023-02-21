@@ -19,6 +19,10 @@
 	<link href="<?php echo base_url() ?>/home_assets/css/font-awesome.css" rel="stylesheet">
 
 	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+	
 </head>
 
 <body>
@@ -480,6 +484,8 @@
 									<!-- <form action="/app/index.php/main/index" method="post"> -->
 									<input type="email" name="email" id="userid" placeholder="E-mail" required="" autocomplete="off">
 									<input type="password" name="password" id="upwd" placeholder="Password" required="" autocomplete="off">
+
+									<div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>" style=" text-align: center;"></div>
 									<div class="tp">
 										<input type="submit" value="Sign In">
 									</div>
@@ -513,6 +519,8 @@
 									<input type="password" name="password" id="pwd" placeholder="Password" required="">
 									<input type="password" name="cpassword" id="cpwd" placeholder="Confirm Password"
 										required="">
+
+										<div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
 									<input type="submit" value="Sign Up">
 								</form>
 							</div>

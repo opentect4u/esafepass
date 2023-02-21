@@ -23,6 +23,21 @@
 
 
 				if($_SERVER['REQUEST_METHOD']=="POST"){
+
+				$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+				$userIp=$this->input->ip_address();
+				$secret = $this->config->item('google_secret');
+				$url="https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$recaptchaResponse."&remoteip=".$userIp;
+
+				$ch = curl_init(); 
+				curl_setopt($ch, CURLOPT_URL, $url); 
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+				$output = curl_exec($ch); 
+				curl_close($ch);      
+				 
+				$status= json_decode($output, true);
+		 
+				if ($status['success']) {
 					
 					$fName			= $_POST['fname'];
 
@@ -85,6 +100,10 @@
 							echo "<script> alert('Successfully submitted.A verification link has been sent to your email account.');
 								document.location= '".base_url()."' </script>";
 					}
+				}else{
+					// $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
+					redirect(base_url());
+				}
 
 				}
 		}	
@@ -177,6 +196,27 @@
 
 			if($_SERVER['REQUEST_METHOD']=="POST"){
 
+				$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+				$userIp=$this->input->ip_address();
+				$secret = $this->config->item('google_secret');
+				$url="https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$recaptchaResponse."&remoteip=".$userIp;
+
+				$ch = curl_init(); 
+				curl_setopt($ch, CURLOPT_URL, $url); 
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+				$output = curl_exec($ch); 
+				curl_close($ch);      
+				 
+				$status= json_decode($output, true);
+		 
+				if ($status['success']) {
+
+				
+
+
+
+
+
 					$userId	=	$_POST['email'];
 
 					$pwd	=	$_POST['password'];
@@ -205,6 +245,11 @@
 
 						redirect('Main/login');
 					}
+
+				}else{
+					// $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
+					redirect('Main/login');
+				}
 
 				}else{
 
